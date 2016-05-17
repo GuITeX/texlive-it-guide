@@ -22,14 +22,14 @@
 \begin{document}
 
 \title{%
-  {\huge \textit{Guida a \TeX\ Live---2013}}
+  {\huge \textit{Guida a \TeX\ Live---2015}}
 }
 
 \author{Karl Berry\\[3mm]
         \url{http://tug.org/texlive/}
        }
 
-\date{Maggio 2013}
+\date{Maggio 2015}
 
 \maketitle
 
@@ -310,11 +310,10 @@ file \filename{README} (in varie lingue) si trovano nella directory della
 distribuzione.
 
 Per quanto riguarda la documentazione, i collegamenti nel file
-\OnCD{doc.html} possono risultare utili. La documentazione per i programmi
-(manuali, pagine di manuale, file Info) si trova in \dirname{texmf-dist/doc}.
-La documentazione per i pacchetti ed i formati \TeX\ si trova nella
-directory \dirname{texmf-dist/doc}. Potete usare il programma
-\cmdname{texdoc} per trovare una qualsiasi documentazione, ovunque sia
+\OnCD{doc.html} possono risultare utili. La documentazione per quasi
+tutto (pacchetti, formati, font, programmi, pagine di manuel, file Info)
+si trova in \dirname{texmf-dist/doc}. Potete usare il programma
+\cmdname{texdoc} per trovare la documentazione, ovunque sia
 collocata.
 
 Questa stessa documentazione di \TL\ si trova in
@@ -385,8 +384,8 @@ La strutturazione predefinita è:
 \begin{description}
   \item[percorso del sistema] può contenere diverse edizioni di \TL{}:
   \begin{ttdescription}
-    \item[2012] Un'edizione precedente.
-    \item[2013] L'attuale edizione.
+    \item[2014] Un'edizione precedente.
+    \item[2015] L'attuale edizione.
     \begin{ttdescription}
       \item [bin] ~
       \begin{ttdescription}
@@ -405,9 +404,9 @@ La strutturazione predefinita è:
   \item[percorso home dell'utente] (\texttt{\$HOME} o
       \texttt{\%USERPROFILE\%})
     \begin{ttdescription}
-      \item[.texlive2012] Dati privati generati e di configurazione per
+      \item[.texlive2014] Dati privati generati e di configurazione per
         un'edizione precedente.
-      \item[.texlive2013] Dati privati generati e di configurazione per
+      \item[.texlive2015] Dati privati generati e di configurazione per
         l'attuale edizione.
       \begin{ttdescription}
         \item [texmf-var\ \ \ ] \envname{TEXMFVAR}, \envname{TEXMFCACHE}
@@ -477,16 +476,13 @@ Seguono alcuni altri programmi di uso comune inclusi in \TL{}:
 
 \begin{cmddescription}
 
-\item [bibtex, bibtex8] supporto per la bibliografia.
+\item [bibtex] supporto per la bibliografia.
 
 \item [makeindex, xindy] supporto per gli indici.
 
 \item [dvips] converte i \dvi{} in \PS{}.
 
 \item [xdvi] programma di anteprima dei \dvi{} per l'X Window System.
-
-\item [dvilj] convertitore di \dvi{} per la famiglia di stampanti HP
-LaserJet.
 
 \item [dviconcat, dviselect] tagliano ed incollano le pagine contenute nei
 file \dvi{}.
@@ -514,20 +510,29 @@ a pdf\TeX\ (citato in precedenza).
 \label{sec:inst-start}
 
 Per cominciare, procuratevi il \DVD{} \TK{} oppure scaricate
-l'installatore di rete di \TL{} ed individuate il programma di
-installazione: \filename{install-tl} per Unix, \filename{install-tl.bat}
-per Windows. Consulate \url{http://tug.org/texlive/acquire.html} per
-maggiori informazioni ed altri metodi per ottenere il software.
+l'installatore di rete di \TL. Consulate
+\url{http://tug.org/texlive/acquire.html} per maggiori informazioni ed
+altri metodi per ottenere il software.
 
-\begin{description}
-\item [Installatore di rete:] Scaricatelo da \CTAN, dal percorso
-\dirname{systems/texlive/tlnet}; l'indirizzo
-\url{http://mirror.ctan.org/systems/texlive/tlnet} reindirizzerà
-automaticamente ad un mirror aggiornato vicino. Potete scaricare sia
-\filename{install-tl.zip} che può essere usato sotto Unix e Windows, sia
-il notevolmente più piccolo \filename{install-unx.tar.gz} solo per Unix.
-Dopo averlo decompresso, \filename{install-tl} e \filename{install-tl.bat}
-si troveranno nella sotto directory \dirname{install-tl}.
+\begin{description} \item [Installatore di rete, .zip o .tar.gz:]
+Scaricatelo da \CTAN, dal percorso \dirname{systems/texlive/tlnet};
+l'indirizzo \url{http://mirror.ctan.org/systems/texlive/tlnet}
+dovrebbe reindirizzare ad un mirror aggiornato vicino. Potete
+scaricare sia \filename{install-tl.zip} che può essere usato sotto
+Unix e Windows, sia il notevolmente più piccolo
+\filename{install-unx.tar.gz} solo per Unix. Dopo averlo
+decompresso, \filename{install-tl} e
+\filename{install-tl-windows.bat} si troveranno nella sotto
+directory \dirname{install-tl}.
+
+\item [Installatore di rete, .exe per Windows:] Scaricatelo da \CTAN{}
+come sopra e fate doppio clic su di esso. Questo avvierà una prima fase
+di decompressione e installazione; fate riferimento alla
+Figura~\ref{fig:nsis}. Avete tre scelte: ``Installazione semplice'' avvia
+l'installazione guidata, ``Installazione personalizzata'' avvia
+l'installazione grafica avanzata, come descritto nella
+sezione~\ref{sec:wininst}. Una terza opzione permette semplicemente di
+decomprimere il pacchetto.
 
 \item [\DVD{} \TeX{} Collection:] aprite la sotto directory
 \dirname{texlive} del \DVD. Sotto Windows, il programma di installazione
@@ -542,11 +547,23 @@ volete ottenere gli aggiornamenti da Internet, consulate
 
 \end{description}
 
+\begin{figure}[tb]
+\tlpng{nsis_installer}{.6\linewidth}
+\caption{Prima fase dell'installatore .exe per Windows}\label{fig:nsis}
+\end{figure}
+
 Indipendentemente dall'origine, viene eseguito lo stesso programma di
 installazione. La differenza più evidente tra i due è che con l'installatore
 di rete riceverete i pacchetti che sono disponibili al momento. Questo
 contrasta con le immagini \DVD\ e \ISO, che non vengono aggiornate tra le
 principali versioni pubbliche.
+
+Se avete la necessità di usare un proxy, usate un file
+\filename{~/.wgetrc} o le variabili d'ambiente con le impostazioni proxy
+per Wget
+(\url{http://www.gnu.org/software/wget/manual/html_node/Proxies.html}).
+\TL{} usa sempre il Wget di \GNU\ per il download. Ovviamente questo non
+ha importanza se state installando dal \DVD\ o da un'immagine \ISO.
 
 \noindent
 Le sezioni seguenti spiegano l'avvio dell'installazione in maggiore
@@ -559,12 +576,11 @@ in \Ucom{\texttt{grassetto}}.
 Il programma \filename{install-tl} è uno script Perl. Il modo più semplice
 per avviarlo su un sistema compatibile Unix è il seguente:
 \begin{alltt}
-> \Ucom{cd /percorso/verso/il/programma}
-> \Ucom{perl install-tl}
+> \Ucom{perl /percorso/verso/il/programma/install-tl}
 \end{alltt}
 In alternativa potete invocare
-\Ucom{perl /percorso/verso/il/programma/install-lt}, oppure
-\Ucom{./install-tl} se avete i permessi di esecuzione, ecc.; non ripeteremo
+\Ucom{/percorso/verso/il/programma/install-lt} se è rimasto eseguibile,
+oppure spostarvi con \texttt{cd} nella directory, ecc.; non ripeteremo
 tutte queste varianti. Potreste dover ingrandire la finestra di terminale
 affinché mostri l'intera schermata dell'installatore testuale
 (Figura~\ref{fig:text-main}).
@@ -597,6 +613,7 @@ sezione~\ref{sec:cygwin}.
 
 
 \subsubsection{MacOSX}
+\label{sec:macosx}
 
 Come accennato nella sezione~\ref{sec:tl-coll-dists}, abbiamo preparato
 una distribuzione separata per \MacOSX{} chiamata Mac\TeX\
@@ -613,11 +630,11 @@ alcune ulteriori cartelle con documentazione e applicazioni specifici per
 il Mac.
 
 
-\subsubsection{Windows}
+\subsubsection{Windows}\label{sec:wininst}
 
-Se state usando l'installatore di rete oppure se l'installatore su \DVD\
-non si avvia automaticamente, fate doppio click su
-\filename{install-tl.bat}. Per ottenere maggiori opzioni di
+Se state usando il file zip scaricato e decompresso, oppure se
+l'installatore su \DVD\ non si avvia automaticamente, fate doppio clic su
+\filename{install-tl-windows.bat}. Per ottenere maggiori opzioni di
 configurazione, come la selezione di specifiche collezioni di pacchetti,
 lanciate \filename{install-tl-advanced.bat}.
 
@@ -626,12 +643,12 @@ Potete avviare l'installatore anche dal prompt dei comandi. Qui sotto,
 \Ucom{\texttt{grassetto}}. Se vi trovate nella cartella dell'installatore,
 eseguite semplicemente:
 \begin{alltt}
-> \Ucom{install-tl}
+> \Ucom{install-tl-windows}
 \end{alltt}
 
 In aternativa potete lanciarlo con un percorso assoluto, come:
 \begin{alltt}
-> \Ucom{D:\bs{}texlive\bs{}install-tl}
+> \Ucom{D:\bs{}texlive\bs{}install-tl-windows}
 \end{alltt}
 per il \DVD\ \TK, supponendo che \dirname{D:} sia il lettore \DVD. La
 figura~\ref{fig:wizard-w32} mostra l'installazione guidata, che è quella
@@ -639,33 +656,34 @@ preimpostata per Windows.
 
 Per installare in modalità testuale, usate:
 \begin{alltt}
-> \Ucom{install-tl -no-gui}
+> \Ucom{install-tl-windows -no-gui}
 \end{alltt}
 
 Per un elenco completo delle diverse opzioni:
 \begin{alltt}
-> \Ucom{install-tl -help}
+> \Ucom{install-tl-windows -help}
 \end{alltt}
 
 %%% TODO
 \begin{figure}[tb]
 \begin{boxedverbatim}
-Installing TeX Live 2013 from: ...
-Platform: i386-linux => 'Intel x86 with GNU/Linux'
+Installing TeX Live 2015 from: ...
+Platform: i386-linux => 'GNU/Linux on Intel x86'
 Distribution: inst (compressed)
+Directory for temporary files: /tmp
 ...
- Detected platform: Intel x86 with GNU/Linux
+ Detected platform: GNU/Linux on Intel x86
 
- <B> binary platforms: 1 out of 21
+ <B> binary platforms: 1 out of 19
 
  <S> set installation scheme (scheme-full)
 
  <C> customizing installation collections
-     43 collections out of 45, disk space required: 3909 MB
+     47 collections out of 48, disk space required: 4022 MB
 
  <D> directories:
    TEXDIR (the main TeX directory):
-     /usr/local/texlive/2013
+     /usr/local/texlive/2015
    ...
 
  <O> options:
@@ -749,7 +767,7 @@ guidata''. Questa installa tutto e praticamente non pone domande. Se
 volete personalizzare la vostra installazione, dovete lanciare uno degli
 altri installatori.
 
-Questa modalità può essere invocata esplicitamente con
+Su altre piattaforme, questa modalità può essere invocata esplicitamente con
 \begin{alltt}
 > \Ucom{install-tl -gui=wizard}
 \end{alltt}
@@ -769,27 +787,25 @@ alcune note riguardo varie opzioni e sottomenu.
 \begin{boxedverbatim}
 Available platforms:
 ===============================================================================
-   a [ ] alpha-linux      DEC Alpha with GNU/Linux
-   b [ ] amd64-freebsd    x86_64 with FreeBSD
-   c [ ] amd64-kfreebsd   x86_64 with GNU/kFreeBSD
-   d [ ] amd64-netbsd     x86_64 with NetBSD
-   e [ ] armel-linux      ARM with GNU/Linux
-   f [ ] armhf-linux      ARMhf with GNU/Linux
-   g [ ] i386-cygwin      Intel x86 with Cygwin
-   h [ ] i386-freebsd     Intel x86 with FreeBSD
-   i [ ] i386-kfreebsd    Intel x86 with GNU/kFreeBSD
-   j [ ] i386-linux       Intel x86 with GNU/Linux
-   k [ ] i386-netbsd      Intel x86 with NetBSD
-   l [ ] i386-solaris     Intel x86 with Solaris
-   m [ ] mips-irix        SGI IRIX
-   o [ ] mipsel-linux     mipsel with Linux
-   p [ ] powerpc-linux    PowerPC with GNU/Linux
-   s [ ] sparc-solaris    Sparc with Solaris
-   t [ ] universal-darwin universal binaries for MacOSX/Darwin
-   u [ ] win32            Windows
-   v [ ] x86_64-darwin    x86_64 with MacOSX/Darwin
-   w [ ] x86_64-linux     x86_64 with GNU/Linux
-   x [ ] x86_64-solaris   x86_64 with Solaris
+   a [ ] Cygwin on Intel x86 (i386-cygwin)
+   b [ ] Cygwin on x86_64 (x86_64-cygwin)
+   c [ ] MacOSX/Darwin universal binaries (universal-darwin)
+   d [ ] MacOSX/Darwin on x86_64 (x86_64-darwin)
+   e [ ] FreeBSD on x86_64 (amd64-freebsd)
+   f [ ] FreeBSD on Intel x86 (i386-freebsd)
+   g [ ] GNU/Linux on DEC Alpha (alpha-linux)
+   h [ ] GNU/Linux on ARM (armel-linux)
+   i [ ] GNU/Linux on ARMhf (armhf-linux)
+   j [X] GNU/Linux on Intel x86 (i386-linux)
+   k [ ] GNU/Linux on MIPSel (mipsel-linux)
+   l [ ] GNU/Linux on PowerPC (powerpc-linux)
+   m [ ] GNU/Linux on x86_64 (x86_64-linux)
+   o [ ] NetBSD on x86_64 (amd64-netbsd)
+   p [ ] NetBSD on Intel x86 (i386-netbsd)
+   s [ ] Solaris on Intel x86 (i386-solaris)
+   t [ ] Solaris on Sparc (sparc-solaris)
+   u [ ] Solaris on x86_64 (x86_64-solaris)
+   v [ ] Windows (win32)
 \end{boxedverbatim}
 \caption{Menu delle architetture}\label{fig:bin-text}
 \end{figure}
@@ -855,23 +871,40 @@ singoli pacchetti.
 
 La strutturazione predefinita è descritta nella
 sezione~\ref{sec:texmftrees}, \p.\pageref{sec:texmftrees}. La posizione
-predefinita di \dirname{TEXDIR} è \dirname{/usr/local/texlive/2013} sotto
-Unix e |%SystemDrive%\texlive\2013| sotto Windows.
+predefinita di installazione di \dirname{TEXDIR} è
+\dirname{/usr/local/texlive/2015} sotto
+Unix e |%SystemDrive%\texlive\2013| sotto Windows. Questa configurazione
+permette di avere molte installazioni parallele di \TL, ad esempio una per
+ogni edizione (tipicamente per anno, come qui) e di passare tra di loro
+semplicemente modificando il vostro percorso di ricerca.
 
-La ragione principale per cambiare il valore preimpostato si ha quando non
-avete i permessi di scrittura per tale percorso. Non dovete essere root o
-l'amministratore per installare \TL, ma avete bisogno dell'accesso in
-scrittura sulla directory di destinazione.
+La directory di installazione può essere modificata impostando la
+cosiddetta \dirname{TEXDIR} nel programma di installazione. La schermata
+\GUI\ per questa ed altre opzioni è mostrata nella
+figura~\ref{fig:gui-main}. Tra le ragioni più comuni per cambiarla ci sono
+la mancanza di spazio su disco sufficiente in quella partizione (l'intera
+\TL\ richiede diversi gigabyte) o la mancanza di permessi di scrittura per
+la posizione predefinita (non è necessario essere root o amministratori
+per installare \TL, ma avrete bisogno dei permessi di scrittura sulla
+directory di destinazione).
+
+Le directory di installazione possono essere modificate anche impostando
+una varietà di variabili d'ambiente prima di eseguire il programma di
+installazione (molto probabilmente \env{TEXLIVE\_INSTALL\_PREFIX} o
+\envname{TEXLIVE\_INSTALL\_TEXDIR}); consultate la documentazione tramite
+|install-tl --help| (disponibile online su
+\url{http://tug.org/texlive/doc/install-tl.html}) per la lista completa e
+per maggiori dettagli.
 
 Una ragionevole scelta alternativa è una directory all'interno della
-vostra home, soprattutto se sarete gli unici utilizzatori. Usate ``|~|''
-per specificare la vostra home, come ad esempio in ``|~/texlive/2013|''.
+vostra home, soprattutto se sarete gli unici utilizzatori. Usate `|~|'
+per specificare la vostra home, come ad esempio in `|~/texlive/2015|'.
 
 Raccomandiamo di includere l'anno nel percorso, così da poter tenere
-diverse edizioni di \TL{} fianco a fianco (potete usare un collegamento
-simbolico con il nome indipendente dalla edizione, come
-\dirname{/usr/local/texlive-cur}, da redirigere dopo aver provato la nuova
-edizione).
+diverse edizioni di \TL{} fianco a fianco (potete anche mantenere un nome
+indipendente dall'edizione, come \dirname{/usr/local/texlive-cur}, sotto
+forma di collegamento simbolico, di cui modificare la destinazione dopo
+aver provato la nuova edizione).
 
 Modificare \dirname{TEXDIR} durante l'installazione causerà anche la
 modifica di \dirname{TEXMFLOCAL}, \dirname{TEXMFSYSVAR} e
@@ -1065,7 +1098,6 @@ file non compressi).
 
 Potrebbero essere necessarie alcune azioni successivie all'installazione.
 
-
 \subsubsection{Variabili d'ambiente per Unix}
 \label{sec:env}
 
@@ -1091,9 +1123,9 @@ da modificare dovrebbe essere \filename{$HOME/.profile} %stopzone
 aggiungere sarebbero simili alle seguenti:
 
 \begin{sverbatim}
-PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2013/texmf/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2013/texmf/doc/info:$INFOPATH; export INFOPATH
+PATH=/usr/local/texlive/2015/bin/i386-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2015/texmf/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2015/texmf/doc/info:$INFOPATH; export INFOPATH
 \end{sverbatim}
 %stopzone
 
@@ -1102,13 +1134,13 @@ Per csh o tcsh, il file da modificare tipicamente è
 tipo:
 
 \begin{sverbatim}
-setenv PATH /usr/local/texlive/2013/bin/i386-linux:$PATH
-setenv MANPATH /usr/local/texlive/2013/texmf/doc/man:$MANPATH
-setenv INFOPATH /usr/local/texlive/2013/texmf/doc/info:$INFOPATH
+setenv PATH /usr/local/texlive/2015/bin/i386-linux:$PATH
+setenv MANPATH /usr/local/texlive/2015/texmf/doc/man:$MANPATH
+setenv INFOPATH /usr/local/texlive/2015/texmf/doc/info:$INFOPATH
 \end{sverbatim}
 
 Se già avete delle impostazioni del genere in uno dei file citati,
-naturalmente dovete semplicemente unirvi le directory di \TL\ come è più
+naturalmente dovete unirvi le directory di \TL\ come è più
 opportuno.
 
 
@@ -1124,8 +1156,8 @@ I nostri due suggerimenti sono: 1)~potete controllare il file
 \filename{/etc/manpath.config} e, se esiste, aggiungere linee come
 
 \begin{sverbatim}
-MANPATH_MAP /usr/local/texlive/2013/bin/i386-linux \
-            /usr/local/texlive/2013/texmf/doc/man
+MANPATH_MAP /usr/local/texlive/2015/bin/i386-linux \
+            /usr/local/texlive/2015/texmf/doc/man
 \end{sverbatim}
 
 E 2)~verificate la presenza di un file \filename{/etc/environment} che
@@ -1192,7 +1224,7 @@ abbiate gli opportuni privilegi), procedete come segue:
 \end{enumerate*}
 
 Se non avete privilegi sufficienti per completare i passi precedenti,
-p se volete semplicemente rendere disponibili i font di \TL{} ad un
+p se volete rendere disponibili i font di \TL{} ad un
 solo utente, fate quello che segue:
 \begin{enumerate*}
 \item Copiate il file \filename{texlive-fontconfig.conf} in
@@ -1204,11 +1236,11 @@ solo utente, fate quello che segue:
 
 Potete eseguire \code{fc-list} per vedere i nomi dei font di sistema.
 L'incantesimo \code{fc-list : family style file spacing} (dove tutti gli
-argomenti sono esattamente come mostrati) generalmente fornisce delle
+argomenti sono esattamente come mostrati) generalmente fornisce alcune
 informazioni interessanti.
 
 
-\subsubsection{\ConTeXt{} Mark IV}
+\subsubsection{\ConTeXt{} Mark \acro{IV}}
 \label{sec:context-mkiv}
 
 Sia il ``vecchio'' \ConTeXt{} (Mark \acro{II}) che il ``nuovo'' \ConTeXt{}
@@ -1295,20 +1327,25 @@ del sistema operativo senza alcuna installazione in \TeX.
 
 Se avete comunque bisogno di farlo, visitate la pagina
 \url{http://tug.org/fonts/fontinstall.html} dove abbiamo fatto del nostro
-meglio nel descrivere la procedura. Se mantenete le vostre mappe di font
-locali in modo rigoroso, \texttt{tlmgr generate updmap} \textit{potrebbe}
-essere utile, soprattutto nel muoversi tra una versione e l'altra;
-consultate la documentazione di \cmdname{tlmgr}.
+meglio nel descrivere la procedura.
 
 
 \subsection{Collaudare l'installazione}
 \label{sec:test-install}
 
-Dopo aver installato \TL{} nel modo migliore, naturalmente vorrete
-collaudarla, così da poter iniziare a creare bellissimi documenti e\slash
-o font.
+Dopo aver installato \TL, naturalmente vorrete provarla, così da poter
+iniziare a creare bellissimi documenti e\slash o font.
 
-Questa sezione fornisce alcune procedure elementari per verificare che il
+Una cosa che vorrete immediatamente cercare è un programma con cui
+elaborare i file. \TL{} installa \TeX{}works su Windows
+(\url{http://tug.org/texworks}) e Mac\TeX\ installa TeXShop
+(\url{http://pages.uoregon.edu/koch/texshop}). Su altri sistemi Unix
+spetta a voi scegliere un editor. Ci sono molte scelte disponibili, alcune
+delle quali sono elencate nella prossima sezione; consultate anche
+\url{http://tug.org/interest.html#editors}. Qualsiasi editor di testo
+funzionerà; non è necessario qualcosa specifico per \TeX.
+
+Il resto di questa sezione fornisce alcune procedure elementari per verificare che il
 nuovo sistema funzioni. Qui daremo i comandi per Unix; è più facile che
 sotto \MacOSX e Windows eseguiate le prove tramite un'interfaccia grafica,
 ma i principi sono gli stessi.
@@ -1319,8 +1356,7 @@ ma i principi sono gli stessi.
 \cmdname{tex}:
 \begin{alltt}
 > \Ucom{tex -{}-version}
-TeX 3.1415926 (TeX Live ...)
-kpathsea version 6.0.1
+TeX 3.14159265 (TeX Live ...)
 Copyright ... D.E. Knuth.
 ...
 \end{alltt}
@@ -1333,7 +1369,7 @@ variabili d'ambiente a \p.\pageref{sec:env}.
 \item Elaborate un file \LaTeX{} elementare:
 \begin{alltt}
 > \Ucom{latex sample2e.tex}
-pdfTeX 3.1415926-... (TeX Live ...)
+This is pdfTeX 3.14...
 ...
 Output written on sample2e.dvi (3 pages, 7484 bytes).
 Transcript written on sample2e.log.
@@ -1400,7 +1436,7 @@ Dovete digitare \samp{\bs bye} al prompt \code{*} dopo \samp{tex story.tex}.
 riesca ad accedere ai font di sistema in questo modo:
 \begin{alltt}
 > \Ucom{xetex opentype-info.tex}
-This is XeTeX, Version 3.1415926\dots
+This is XeTeX, Version 3.14\dots
 ...
 Output written on opentype-info.pdf (1 page).
 Transcript written on opentype-info.log.
@@ -1449,8 +1485,8 @@ considerazione per l'installazione:
         \url{http://www.texniccenter.org} e nella distribuzione
         pro\TeX{}t.
   \item \cmdname{TeXworks} è un software libero disponibile su
-        \url{http://tug.org/texworks} e installato per Windows e \MacOSX\
-        come parte di \TL.
+        \url{http://tug.org/texworks} e installato come parte di \TL\ solo
+        su Windows.
   \item \cmdname{Vim} è un software libero disponibile su
         \url{http://www.vim.org}.
   \item \cmdname{WinEdt} è un software shareware disponibile su
@@ -1567,7 +1603,7 @@ Per l'integrazione con il sistema Windows, potete includere gli script
 \url{http://tug.org/texlive/w32client.html}, che funzionano per
 un'installazione \ISO\ così come per una condivisa.
 
-Su \MacOSX, TeXShop e \TeX{}works saranno capaci di usare l'installazione su
+Su \MacOSX, TeXShop sarà capace di usare l'installazione su
 \acro{DVD} se un collegamento simbolico \filename{/usr/texbin} punta alla
 directory degli eseguibili appropriata, per esempio,
 \begin{verbatim}
@@ -1612,18 +1648,21 @@ questo.
 \end{figure}
 
 \TL{} include un programma chiamato \prog{tlmgr} per gestire \TL{} dopo
-l'installazione iniziale. I programmi \prog{updmap}, \prog{fmtutil} e
-\prog{texconfig} sono ancora inclusi e saranno mantenuti nel futuro, ma
-\prog{tlmgr} è ora l'interfaccia preferita. Le sue funzionalità includono:
+l'installazione iniziale. Le sue funzionalità includono:
 
 \begin{itemize*}
 \item installare, aggiornare, archiviare, ripristinare e disinstallare i
   singoli pacchetti, eventualmente tenendo conto delle dipendenze;
-\item cercare ed elencare pacchetti, ecc.;
+\item cercare ed elencare pacchetti e le loro descrizioni;
 \item elencare, aggiungere e rimuovere le piattaforme disponibili;
 \item cambiare le opzioni di installazione come la dimensione del foglio e
   il percorso di installazione (consultate la sezione~\ref{sec:location}).
 \end{itemize*}
+
+Le funzionalità di \prog{tlmgr} incorporano completamente quelle del
+programma \prog{texconfig}. Distribuiamo e manteniamo ancora
+\prog{texconfig} per tutti quelli abituati alla sua interfaccia, ma
+raccomandiamo di usare \prog{tlmgr} al giorno d'oggi.
 
 \subsection{Modalità GUI di \cmdname{tlmgr}}
 \prog{tlmgr} può essere avviato in modalità \GUI{}
@@ -1676,12 +1715,12 @@ running post install action for xetex
 install: xetex-def
 ...
 running mktexlsr
-mktexlsr: Updating /usr/local/texlive/2013/texmf-dist/ls-R...
+mktexlsr: Updating /usr/local/texlive/2015/texmf-dist/ls-R...
 ...
 running fmtutil-sys --missing
 ...
 Transcript written on xelatex.log.
-fmtutil: /usr/local/texlive/2013/texmf-var/web2c/xetex/xelatex.fmt installed.
+fmtutil: /usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt installed.
 \end{fverbatim}
 
 Come potete vedere, \prog{tlmgr} installa le dipendenze e si occupa di ogni
@@ -1694,14 +1733,14 @@ schema):
 \begin{alltt}
 > \Ucom{tlmgr show collection-latexextra}
 \end{alltt}
-che produce
+che produce un output simile a
 \begin{fverbatim}
 package:    collection-latexextra
 category:   Collection
 shortdesc:  LaTeX supplementary packages
-longdesc:   A large collection of add-on packages for LaTeX.
+longdesc:   A very large collection of add-on packages for LaTeX.
 installed:  Yes
-revision:   14675
+revision:   32768
 \end{fverbatim}
 
 Infine, cosa più importante, per ottenere la documentazione completa,
@@ -1745,7 +1784,9 @@ Sotto Windows, l'installatore fa alcune cose in più:
 
 Per essere completa, un'installazione di \TL\ ha bisogno di alcuni
 pacchetti di supporto che non si trovano abitualmente su una macchina
-Windows. \TL{} fornisce questi pezzi mancanti:
+Windows. \TL{} fornisce questi pezzi mancanti. Questi programmi sono
+installati come parte di \TL{} solo su Windows.
+
 \begin{description}
 \item[Perl e Ghostscript.] A causa dell'importanza di Perl e Ghostscript,
   \TL{} include una copia ``nascosta'' di questi programmi. I programmi di
@@ -1827,17 +1868,15 @@ registro.
 
 Nelle ultime versioni di Windows si fa distinzione tra utenti normali ed
 amministratori e solo questi ultimi hanno libero accesso all'intero
-sistema operativo. In pratica, però, si potrebbero meglio descrivere
-queste classi come ``utenti senza privilegi'' e ``utenti normali'': essere
-un amministratore è la regola, non l'eccezione. Ciononostante, ci siamo
-sforzati di rendere \TL{} installabile senza i privilegi amministrativi.
+sistema operativo. Ci siamo sforzati di rendere \TL{} installabile senza i
+privilegi di amministratore.
 
-Se l'utente è un amministratore, c'è un'opzione per rendere
-l'installazione disponibile a tutti gli utenti. Se questa opzione è
-selezionata, i collegamenti sono creati per tutti gli utenti e l'ambiente
-di sistema è modificato. In alternativa, i collegamenti e le voci nel menu
-sono creati solo per l'utente corrente e viene modificato l'ambiente
-dell'utente.
+Se il programma di installazione è eseguito con i privilegi di
+amministratore, c'è un'opzione per rendere l'installazione disponibile a
+tutti gli utenti. Se questa opzione è selezionata, i collegamenti sono
+creati per tutti gli utenti e l'ambiente di sistema è modificato. In
+alternativa, i collegamenti e le voci nel menu sono creati solo per
+l'utente corrente e viene modificato l'ambiente dell'utente.
 
 Indipendentemente dallo stato di amministratore, la cartella predefinita
 di \TL{} proposta dal programma di installazione si trova sempre sotto
@@ -1855,12 +1894,22 @@ prompt. Anche il collegamento a \TeX{}works, se è installato, antepone
 \TL{} al percorso di ricerca, quindi dovrebbe essere immune a questo
 problema.
 
-Sotto Vista e successivi c'è un ulteriore colpo di scena: anche se avete
+Sotto Vista e successivi, dovete sapere che anche se avete
 eseguito l'accesso come amministratori, dovete chiedere esplicitamente i
 privilegi di amministrazione. In pratica, non serve a molto entrare come
 amministratore. Invece, facendo clic con il tasto destro sul programma o
 sul collegamento che volete eseguire, solitamente appare la voce ``Esegui
 come amministratore''.
+
+\subsubsection{Proteggere la directory di \TL{}}
+
+Un'installazione da amministratore \emph{non} protegge la directory di
+\TL{} dalla manomissione da parte degli utenti normali. Questo deve essere
+fatto in un passo separato impostando un'opportuna \acro{ACL} (Access
+Control Lista, lista di controllo degli accessi) per la directory. Per
+questo scopo, fate riferimento all'utility a riga di comando di Windows
+\filename{icacls}.
+
 
 \subsection{Incrementare la memoria massima sotto Windows e Cygwin}
 \label{sec:cygwin-maxmem}
@@ -2062,10 +2111,10 @@ percorso di ricerca usato per cercare questi file è chiamato
 altra) variabile d'ambiente.
 
 Invece, l'installazione normale dà luogo ad un file
-\file{.../2013/texmf.cnf}. Se dovete apportare delle modifiche ai valori
+\file{.../2015/texmf.cnf}. Se dovete apportare delle modifiche ai valori
 predefiniti (di norma non è necessario), questo è il posto in cui
 piazzarle. Il file di configurazione principale è
-\file{.../2013/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
+\file{.../2015/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
 quest'ultimo file, dato che le vostre modifiche andrebbero perdute quando
 la versione distribuita viene aggiornata.
 
@@ -2763,6 +2812,7 @@ Inoltre, se desiderate rendere disponibili i vostri eseguibili ad altri,
 contattateci. Saremo felici di inserirli nelle pagine web di \TL.
 \end{comment}
 
+
 \htmlanchor{ack}
 \section{Ringraziamenti}
 
@@ -2900,22 +2950,21 @@ supporto per \MacOSX{}.
 \end{itemize*}
 
 Preparatori degli eseguibili:
+Per informazioni sul processo di compilazione di \TL, visitate
 Ettore Aldrovandi (\pkgname{i386-solaris}, \pkgname{x86\_64-solaris}),
 Marc Baudoin (\pkgname{amd64-netbsd}, \pkgname{i386-netbsd}),
-Karl Berry (\pkgname{i386-linux}, \pkgname{sparc-solaris}),
-Alan Braslau (\pkgname{amd64-kfreebsd}, \pkgname{i386-kfreebsd}),
+Karl Berry (\pkgname{i386-linux}),
 Peter Breitenlohner (\pkgname{x86\_64-linux}),
-Ken Brown (\pkgname{i386-cygwin}),
+Ken Brown (\pkgname{i386-cygwin}, \pkgname{x86\_64-cygwin}),
 Simon Dales (\pkgname{armhf-linux}),
-Christian Mensing (\pkgname{mips-irix}),
+%Christian Mensing (\pkgname{mips-irix}),
 Akira Kakuto (\pkgname{win32}),
 Dick Koch (\pkgname{universal-darwin}, \pkgname{x86\_64-darwin}),
 Nikola Le\v{c}i\'c (\pkgname{amd64-freebsd}, \pkgname{i386-freebsd}),
-Mojca Miklavec (\pkgname{mipsel-linux}),
+Mojca Miklavec (\pkgname{mipsel-linux}), \pkgname{sparc-solaris}),
 Norbert Preining (\pkgname{alpha-linux}),
 Thomas Schmitz (\pkgname{powerpc-linux}),
 Boris Veytsman (\pkgname{armel-linux}).
-Per informazioni sul processo di compilazione di \TL, visitate
 \url{http://tug.org/texlive/build.html}.
 
 Attuali traduttori della documentazione:
@@ -2931,7 +2980,6 @@ Staszek Wawrykiewicz (polacco).  La pagina web della documentazione di
 
 Ovviamente il più importante ringraziamento deve andare a Donald Knuth,
 innanzitutto per aver inventato \TeX{} e poi per averlo donato al mondo.
-
 
 
 \section{Storia delle edizioni}
@@ -3396,7 +3444,7 @@ fondo da Hermann Zapf (visitate
 caso, le metriche non hanno subito modifiche. La pagina dei font AMS è
 \url{http://www.ams.org/tex/amsfonts.html}.
 
-Il nuovo editor GUI \TeX{}works è incluso per Windows così come in
+Il nuovo editor \GUI{} \TeX{}works è incluso per Windows così come in
 Mac\TeX. Per le altre piattaforme e per ulteriori informazioni, consultate
 il sito di \TeX{}works, \url{http://tug.org/texworks}. Si tratta di un
 programma multi piattaforma ispirato all'editor TeXShop per \MacOSX\ e che
@@ -3527,8 +3575,7 @@ molto più velocemente.
 I programmi \cmdname{initex} e \cmdname{inimf} sono stati ripristinati
 (ma non le altre varianti \cmdname{ini*}).
 
-% 
-\subsubsection{2013}
+\subsubsection{2012}
 
 \code{tlmgr} supporta gli aggiornamenti da archivi di rete multipli. La
 sezione sugli archivi multipli nel messaggio di \code{tlmgr help} ha
@@ -3562,9 +3609,7 @@ Piattaforme: aggiunte \pkgname{armel-linux} e \pkgname{mipsel-linux};
 \pkgname{sparc-linux} e \pkgname{i386-netbsd} non fanno più parte della
 distribuzione principale.
 
-\htmlanchor{news}
-\subsection{Presente}
-\label{sec:tlcurrent}
+\subsubsection{2013}
 
 Struttura della distribuzione: la directory \code{texmf/} è stata fusa
 all'interno di \code{texmf-dist}, per semplicità. Entrambe le variabili
@@ -3611,14 +3656,132 @@ ne parla più approfonditamente.
 
 Piattaforme: \pkgname{armhf-linux}, \pkgname{mips-irix},
 \pkgname{i386-netbsd} e \pkgname{amd64-netbsd} aggiunte o resuscitate;
-\pkgname{powerpc-aix} rimossa. Il supporto per alcune altre piattaforme
-è disponibile come eseguibili personalizzati
-(\url{http://tug.org/texlive/custom-bin.html}). Inoltre, alcune
-piattaforme sono omesse dal \DVD\ (semplicemente per risparmiare spazio),
-ma possono essere installate normalmente via rete.
+\pkgname{powerpc-aix} rimossa.
+
+% 
+\subsubsection{2014}
+
+Il 2014 ha visto un altro aggiustamento a \TeX\ da Knuth; questo ha
+toccato tutti i motori, ma l'unico cambiamento visibile è probabilmente il
+ripristino della stringa \code{preloaded format} nella linea di
+intestazione. Dal punto di vista di Knuth, questo riflette il formato che
+\empt{dovrebbe} essere caricato di default, piuttosto che un formato che è
+precaricato nei binary; può essere sostituito in vari modi.
+
+pdf\TeX: nuovo parametro per la soppressione dei warning
+\cs{pdfsuppresswarningpagegroup}; nuove primitive per falsi spazi tra
+parole per aiutare con il riflusso del testo \acro{PDF}:
+\cs{pdfinterwordspaceon}, \cs{pdfinterwordspaceoff}, \cs{pdffakespace}.
+
+Lua\TeX: sono stati fatti notevoli cambi e correzioni al caricamento dei
+font e alla sillabazione. L'aggiunta più grande è una nuova variante del
+motore, \code{luajittex}
+(\url{http://foundry.supelec.fr/projects/luajittex}) e i suoi fratelli
+\code{texluajit} e \code{texluajitc}. Questo motore usa un compilatore Lua
+just-in-time (l'articolo dettagliato su \textsl{TUGboat} all'indirizzo
+\url{http://tug.org/TUGboat/tb34-1/tb106scarso.pdf}). \code{luajittex} è
+ancora in fase di sviluppo, non è disponibile su tute le piattaforme ed è
+notevolmente meno stabile di \code{luatex}. Né noi né i suoi sviluppatori
+lo raccomandano eccetto che per lo scopo di sperimentare con la
+compilazione jit del codice Lua.
+
+\XeTeX: gli stessi formati di immagini sono ora supportati su tutte le
+piattaforme (incluso il Mac); evita il fallback di decomposizione di
+compatibilità di Unicode (ma non altre varianti); preferisce i font
+OpenType ai Graphite, per compatibilità con le versioni precedenti di
+\XeTeX.
+
+\MP: un nuovo sistema di numerazione \code{decimal} è supportato, insieme
+ad un compagno ad uso interno \code{numberprecision}; una nuova
+definizione di \code{drawdot} in \filename{plain.mp}, come da Knuth;
+correzioni di bug nell'output in \acro{SVG} e \acro{PNG}, tra le altre
+cose.
+
+L'utilità Con\TeX{}t \cmdname{pstopdf} sarà rimossa come comando a sé
+stante ad un certo punto dopo questa versione, a causa dei conflitti con
+le utilità del sistema operativo con lo stesso nome. Può essere ancora (e
+tuttora) invocato con \code{mtxrun --script pstopdf}.
+
+\cmdname{psutils} è stato notevolmente revisionato da un nuovo
+mantenitore. Come risultato, molte utilità usate raramente (\code{fix*},
+\code{getafm}, \code{psmerge}, \code{showchar}) ora si trovano solo nella
+diretory \dirname{scripts/} invece che essere eseguibili accessibili
+direttamente (si può tornare indietro, se si rivela problematico). Un
+nuovo script, \code{psjoin}, è stato aggiunto.
+
+La distribuzione Mac\TeX\ di \TeX\ Live (sezione~\ref{sec:macosx}) non
+include più i pacchetti opzionali solo per Mac dei font Latin Modern e
+\TeX\ Gyre, dato che è abbastanza semplice per gli utenti renderli
+disponibili al sitema. Anche il programma \cmdname{convert} da Imagemagick
+è stato rimosso, dato che \TeX4ht (nello specifico \code{tex4ht.env}) ora
+usa Ghostscript direttamente.
+
+La collezione \pkgname{langcjk} per il supporto al cinese, giapponese e
+coreano è stata suddivisa in collezioni per le singole lingue per avere
+dimensioni più piccole.
+
+Piattaforme: \pkgname{x86\_64-cygwin} aggiunta, \pkgname{mips-irix}
+rimossa; Microsoft ha cessato il supporto di Windows \acro{XP}, quindi i
+nostri programmi potrebbero iniziare a funzionare male su quel sistema in
+qualunque momento.
+
+
+\htmlanchor{news}
+\subsection{Presente---2015}
+\label{sec:tlcurrent}
+
+\LaTeXe\ ora incorpora, per default, i cambiamenti precedentemente inclusi
+solo caricando esplicitamente il pacchetto \pkgname{fixltx2e}, che ora non
+fa nulla. Un nuovo pacchetto \pkgname{latexrelease} ed altri meccanismi
+permettono di controllare ciò che viene fatto. I documenti inclusi \LaTeX\
+News \#22 e ``\LaTeX\ changes'' contengono i dettagli. Incidentalmente, i
+pacchetti \pkgname{babel} e \pkgname{psnfss}, nonostante siano parti
+centrali di \LaTeX, sono mantenuti separatamente e non sono toccati da
+questi cambiamenti (e dovrebbero ancora funzionare).
+
+Internamente, \LaTeXe\ ora include una configurazione del motore relativa
+a Unicode (quali caratteri sono lettere, nome delle primitive, ecc.) che
+prima erano parte di \TeX\ Live. Questo cambiamento dovrebbe essere
+invisibile agli utenti; alcune sequenze di controllo interne sono state
+rinominate o rimosse, ma il comportamento dovrebbe essere lo stesso.
+
+pdf\TeX: supporto per gli Exif nei \acro{JPEG} e per i \acro{JFIF}; non
+emette più un warning se \cs{pdfinclusionerrorlevel} è negativo;
+sincronizzazione con \prog{xpdf}~3.04.
+
+Lua\TeX: nuova libreria \pkgname{newtokenlib} per la scansione dei token;
+correzione di errori nel generatore di numeri casuali \code{normal} e in
+altri posti.
+
+\XeTeX: corretta la gestione delle immagini; l'eseguibile \prog{xdvipdfmx}
+viene cercato per primo da \prog{xetex}; cambiato l'opcode interno
+\code{XDV}.
+
+MetaPost: nuovo sistema di numerazione \code{binary}; nuovi programmi per
+il giapponese \prog{upmpost} e \prog{updvitomp}, analogamentea
+\prog{up*tex}.
+
+Mac\TeX: aggiornamenti al pacchetto Ghostscript per il supporto a
+\acro{CJK}. Il Pannello delle Preferenze della Distribuzione \TeX\ ora
+funziona in Yosemite (\MacOSX~10.10). I resource fork dei font (di solito
+senza un'estensione) non sono più supportati da \XeTeX; i data fork
+(\code{.dfont}) restano supportati.
+
+Infrastruttura: lo script \prog{fmtutil} è stato reimplementato per
+leggere i \filename{fmtutil.cnf} rispettando gli alberi, analogamente a
+\prog{updmap}. Gli script Web2c \prog{mktex*} (inclusi \prog{mktexlsr},
+\prog{mktextfm}, \prog{mktexpk}) ora preferiscono i programmi nelle loro
+directory, invece di usare sempre il \envname{PATH} esistente.
+
+Piattaforme: \pkgname{*-kfreebsd} rimossa, dato che \TeX\ Live è ora
+facilmente disponibile tramite il meccanismo di pacchetti del sistema.
+Il supporto per alcune piattaforme aggiuntive è disponibile come
+eseguibili personalizzati (\url{http://tug.org/texlive/custom-bin.html}).
+In più, alcune piattaforme adesso sono omesse dal \DVD\ (semplicemente per
+risparmiare spazio), ma possono essere installate normalmente via
+internet.
 
 \subsection{Futuro}
-%\subsection{Future}
 
 \emph{\TL{} non è perfetto!} (e mai lo sarà). Intendiamo di continuare a
 fornire nuove versione e vorremmo fornire ulteriore materiale d'aiuto, più
