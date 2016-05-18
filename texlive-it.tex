@@ -19,19 +19,23 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\begin{document}
-
 \title{%
-  {\huge \textit{Guida a \TeX\ Live---2015}}
+  {\huge \textit{Guida a \TeX\ Live---2016}}
 }
 
 \author{Karl Berry\\[3mm]
         \url{http://tug.org/texlive/}
        }
 
-\date{Maggio 2015}
+\date{Giugno 2016}
 
+\begin{document}
 \maketitle
+
+\begin{center}
+Quest'anno \TeX\ Live è dedicata ai nostri colleghi scomparsi
+Sebastian Rahtz e Peter Breitenlohner.
+\end{center}
 
 \begin{multicols}{2}
 \tableofcontents
@@ -110,9 +114,9 @@ Per un breve riassunto dei principali cambiamenti in questa edizione di
 inclusi \GNU/Linux, \MacOSX{} e Cygwin. I sorgenti inclusi possono essere
 compilati per quelle piattaforme per le quali non forniamo i binari.
 
-Per quanto riguarda Windows: Windows \acro{XP} e successivi sono supportati.
-Windows~2000 probabilmente continuerà a funzionare quasi del tutto.  Non ci
-sono specifici eseguibili a 64-bit per Windows, ma quelli a 32-bit
+Per quanto riguarda Windows: Windows Vista e successivi sono supportati.
+Windows~XP e 2000 probabilmente continueranno a funzionare quasi del tutto.
+Non ci sono specifici eseguibili a 64-bit per Windows, ma quelli a 32-bit
 dovrebbero funzionare sui sistemi a 64-bit.
 
 Consulta la sezione~\ref{sec:tl-coll-dists} per scoprire soluzioni
@@ -195,7 +199,7 @@ raccomandiamo di usarle:
 \item [Per Cominciare] Se siete nuovi di \TeX, alla pagina web
   \url{http://tug.org/begin.html} troverete una breve introduzione al sistema.
 
-\item [\TeX{} \acro{FAQ}] Le \TeX{} \acro{FAQ} sono un enorme compendio di
+\item [\TeX{} FAQ] Le \TeX{} FAQ sono un enorme compendio di
   risposte ad ogni genere di domanda, dalle più elementari alle più
   oscure. Sono incluse in \TL{} in
   \OnCD{texmf-dist/doc/generic/FAQ-en} e sono disponibili
@@ -227,7 +231,7 @@ raccomandiamo di usarle:
   formulare la vostra domanda su \dirname{comp.text.tex} tramite Google o
   un programma per Usenet, oppure tramite posta elettronica su
   \email{texhax@tug.org}. Ma prima di scrivere, \emph{leggete} questa voce
-  delle \acro{FAQ}, al fine di massimizzare le probabilità di ottenere una
+  delle FAQ, al fine di massimizzare le probabilità di ottenere una
   risposta utile:
   \url{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=askquestion}.
   Vale anche la pena nominare il sito della Comunità \LaTeX{} su
@@ -373,7 +377,7 @@ descrive ciò con maggior dettaglio.
   \verb+texconfig-sys+, \verb+updmap-sys+, \verb+fmtutil-sys+ ed anche da
   \verb+tlmgr+ per memorizzare i dati generati durante l'esecuzione, come
   i file dei formati e le mappe per i font.
-\item [TEXMFCACHE] I percorsi usati da \ConTeXt\ Mk\acro{IV} e Lua\LaTeX\
+\item [TEXMFCACHE] I percorsi usati da \ConTeXt\ MkIV e Lua\LaTeX\
   per memorizzare i dati generati durante l'esecuzione; il valore
   predefinito è \code{TEXMFSYSVAR}, oppure (se non si hanno i permessi di
   scrittura) \code{TEXMFVAR}.
@@ -384,8 +388,8 @@ La strutturazione predefinita è:
 \begin{description}
   \item[percorso del sistema] può contenere diverse edizioni di \TL{}:
   \begin{ttdescription}
-    \item[2014] Un'edizione precedente.
-    \item[2015] L'attuale edizione.
+    \item[2015] Un'edizione precedente.
+    \item[2016] L'attuale edizione.
     \begin{ttdescription}
       \item [bin] ~
       \begin{ttdescription}
@@ -404,9 +408,9 @@ La strutturazione predefinita è:
   \item[percorso home dell'utente] (\texttt{\$HOME} o
       \texttt{\%USERPROFILE\%})
     \begin{ttdescription}
-      \item[.texlive2014] Dati privati generati e di configurazione per
-        un'edizione precedente.
       \item[.texlive2015] Dati privati generati e di configurazione per
+        un'edizione precedente.
+      \item[.texlive2016] Dati privati generati e di configurazione per
         l'attuale edizione.
       \begin{ttdescription}
         \item [texmf-var\ \ \ ] \envname{TEXMFVAR}, \envname{TEXMFCACHE}
@@ -435,7 +439,7 @@ di base, \eTeX{} è compatibile al 100\% con il \TeX{} ordinario.
 Consultate \OnCD{texmf-dist/doc/etex/base/etex_man.pdf}.
 
 \item [pdf\TeX] parte dalle estensioni di \eTeX, aggiunge il supporto per
-la generazione di file \acro{PDF} oltre che dei \dvi{} e molte estensioni
+la generazione di file PDF oltre che dei \dvi{} e molte estensioni
 che non sono legate alla generazione dell'output. Questo programma è
 invocato dalla maggior parte dei formati, come \prog{etex}, \prog{latex},
 \prog{pdflatex}. Il suo sito web è \url{http://www.pdftex.org/}.
@@ -451,7 +455,7 @@ predisposta la compatibilità tecnica. L'interprete Lua incorportato
 spinosi di \TeX. Quando è invocato come \filename{texlua}, si comporta
 come un interprete Lua autonomo ed è già usato in questo modo all'interno
 di \TL. Il suo sito web è \url{http://www.luatex.org} e il manuale di
-riferimento è \OnCD{texmf-dist/doc/luatex/base/luatexref-t.pdf}.
+riferimento è \OnCD{texmf-dist/doc/luatex/base/luatexref.pdf}.
 
 \item [\XeTeX] aggiunge il supporto per l'input in Unicode e per i font
 OpenType e di sistema, implementato usando librerie di terze parti
@@ -460,7 +464,7 @@ standard. Visitate \url{http://tug.org/xetex}.
 \item [\OMEGA\ (Omega)] è basato sull'Unicode (caratteri a 16 bit) e
 dunque consente di lavorare con quasi tutti gli alfabeti del mondo
 contemporaneamente. Supporta anche i cosiddetti ``\OMEGA{} Translation
-Process'' (\acro{OTP}, Processi di Traduzione Omega), per compiere
+Process'' (OTP, Processi di Traduzione Omega), per compiere
 trasformazioni complesse su input arbitrari. Omega non è più incluso in
 \TL{} come programma separato; soltanto Aleph è fornito.
 
@@ -487,17 +491,17 @@ Seguono alcuni altri programmi di uso comune inclusi in \TL{}:
 \item [dviconcat, dviselect] tagliano ed incollano le pagine contenute nei
 file \dvi{}.
 
-\item [dvipdfmx] converte i \dvi{} in \acro{PDF}, un approccio alternativo
+\item [dvipdfmx] converte i \dvi{} in PDF, un approccio alternativo
 a pdf\TeX\ (citato in precedenza).
 
 \item [psselect, psnup, \ldots] programmi di manipolazione dei \PS{}.
 
-\item [pdfjam, pdfjoin, \ldots] programmi di manipolazione dei \acro{PDF}.
+\item [pdfjam, pdfjoin, \ldots] programmi di manipolazione dei PDF.
 
-\item [context, mtxrun] processore Con\TeX{}t e \acro{PDF}.
+\item [context, mtxrun] processore Con\TeX{}t e PDF.
 
 \item [htlatex, \ldots] \cmdname{tex4ht}: convertitore da \AllTeX{} a
-  \acro{HTML} (e a \acro{XML} ed altro ancora).
+  HTML (e a XML ed altro ancora).
 
 \end{cmddescription}
 
@@ -587,7 +591,7 @@ affinché mostri l'intera schermata dell'installatore testuale
 
 Per eseguire l'installazione nella modalità \GUI\ avanzata
 (figura~\ref{fig:gui-main}) avete bisogno del modulo \dirname{Perl::TK})
-compilato con il supporto per \acro{XFT}, che avviene normalmente con
+compilato con il supporto per XFT, che avviene normalmente con
 \GNU/Linux, ma non altrettanto spesso altri sistemi. Detto questo, potete
 eseguire:
 \begin{alltt}
@@ -667,23 +671,23 @@ Per un elenco completo delle diverse opzioni:
 %%% TODO
 \begin{figure}[tb]
 \begin{boxedverbatim}
-Installing TeX Live 2015 from: ...
+Installing TeX Live 2016 from: ...
 Platform: i386-linux => 'GNU/Linux on Intel x86'
 Distribution: inst (compressed)
 Directory for temporary files: /tmp
 ...
  Detected platform: GNU/Linux on Intel x86
 
- <B> binary platforms: 1 out of 19
+ <B> binary platforms: 1 out of 17
 
  <S> set installation scheme (scheme-full)
 
  <C> customizing installation collections
-     47 collections out of 48, disk space required: 4022 MB
+     47 collections out of 48, disk space required: 4268 MB
 
  <D> directories:
    TEXDIR (the main TeX directory):
-     /usr/local/texlive/2015
+     /usr/local/texlive/2016
    ...
 
  <O> options:
@@ -793,19 +797,17 @@ Available platforms:
    d [ ] MacOSX/Darwin on x86_64 (x86_64-darwin)
    e [ ] FreeBSD on x86_64 (amd64-freebsd)
    f [ ] FreeBSD on Intel x86 (i386-freebsd)
-   g [ ] GNU/Linux on DEC Alpha (alpha-linux)
-   h [ ] GNU/Linux on ARM (armel-linux)
-   i [ ] GNU/Linux on ARMhf (armhf-linux)
-   j [X] GNU/Linux on Intel x86 (i386-linux)
-   k [ ] GNU/Linux on MIPSel (mipsel-linux)
-   l [ ] GNU/Linux on PowerPC (powerpc-linux)
-   m [ ] GNU/Linux on x86_64 (x86_64-linux)
-   o [ ] NetBSD on x86_64 (amd64-netbsd)
-   p [ ] NetBSD on Intel x86 (i386-netbsd)
-   s [ ] Solaris on Intel x86 (i386-solaris)
-   t [ ] Solaris on Sparc (sparc-solaris)
-   u [ ] Solaris on x86_64 (x86_64-solaris)
-   v [ ] Windows (win32)
+   g [ ] GNU/Linux on ARM (armel-linux)
+   h [ ] GNU/Linux on ARMhf (armhf-linux)
+   i [X] GNU/Linux on Intel x86 (i386-linux)
+   j [ ] GNU/Linux on PowerPC (powerpc-linux)
+   k [ ] GNU/Linux on x86_64 (x86_64-linux)
+   l [ ] NetBSD on x86_64 (amd64-netbsd)
+   m [ ] NetBSD on Intel x86 (i386-netbsd)
+   o [ ] Solaris on Intel x86 (i386-solaris)
+   p [ ] Solaris on Sparc (sparc-solaris)
+   s [ ] Solaris on x86_64 (x86_64-solaris)
+   t [ ] Windows (win32)
 \end{boxedverbatim}
 \caption{Menu delle architetture}\label{fig:bin-text}
 \end{figure}
@@ -872,8 +874,8 @@ singoli pacchetti.
 La strutturazione predefinita è descritta nella
 sezione~\ref{sec:texmftrees}, \p.\pageref{sec:texmftrees}. La posizione
 predefinita di installazione di \dirname{TEXDIR} è
-\dirname{/usr/local/texlive/2015} sotto
-Unix e |%SystemDrive%\texlive\2013| sotto Windows. Questa configurazione
+\dirname{/usr/local/texlive/2016} sotto
+Unix e |%SystemDrive%\texlive\2016| sotto Windows. Questa configurazione
 permette di avere molte installazioni parallele di \TL, ad esempio una per
 ogni edizione (tipicamente per anno, come qui) e di passare tra di loro
 semplicemente modificando il vostro percorso di ricerca.
@@ -898,7 +900,7 @@ per maggiori dettagli.
 
 Una ragionevole scelta alternativa è una directory all'interno della
 vostra home, soprattutto se sarete gli unici utilizzatori. Usate `|~|'
-per specificare la vostra home, come ad esempio in `|~/texlive/2015|'.
+per specificare la vostra home, come ad esempio in `|~/texlive/2016|'.
 
 Raccomandiamo di includere l'anno nel percorso, così da poter tenere
 diverse edizioni di \TL{} fianco a fianco (potete anche mantenere un nome
@@ -922,7 +924,7 @@ secondo il \TDS, o i file potrebbero non essere trovati. %stopzone
 \dirname{TEXMFVAR} è la posizione in cui vengono memorizzati la maggior
 parte dei dati generati durante l'esecuzione specifici per ciascun utente.
 \dirname{TEXMFCACHE} è il nome della variabile usata per lo stesso scopo da
-Lua\LaTeX\ e \ConTeXt\ Mk\acro{IV} (consultate la
+Lua\LaTeX\ e \ConTeXt\ MkIV (consultate la
 sezione~\ref{sec:context-mkiv}, \p.\pageref{sec:context-mkiv}); il suo
 valore predefinito è \dirname{TEXMFSYSVAR}, oppure (se non si hanno i
 permessi di scrittura) \dirname{TEXMFVAR}.
@@ -1023,7 +1025,7 @@ comuni:
 \item[-gui] Se possibile, usa l'installatore grafico. Questa opzione
   richiede il modulo Perl/Tk
   (\url{http://tug.org/texlive/distro.html#perltk}) compilato con il
-  supporto per \acro{XFT}; se Perl/Tk non è disponibile, l'installazione
+  supporto per XFT; se Perl/Tk non è disponibile, l'installazione
   prosegue in modalità testuale.
 
 \item[-no-gui] Costringe all'uso dell'installatore testuale, anche sotto
@@ -1123,9 +1125,9 @@ da modificare dovrebbe essere \filename{$HOME/.profile} %stopzone
 aggiungere sarebbero simili alle seguenti:
 
 \begin{sverbatim}
-PATH=/usr/local/texlive/2015/bin/i386-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2015/texmf/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2015/texmf/doc/info:$INFOPATH; export INFOPATH
+PATH=/usr/local/texlive/2016/bin/i386-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2016/texmf/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2016/texmf/doc/info:$INFOPATH; export INFOPATH
 \end{sverbatim}
 %stopzone
 
@@ -1134,9 +1136,9 @@ Per csh o tcsh, il file da modificare tipicamente è
 tipo:
 
 \begin{sverbatim}
-setenv PATH /usr/local/texlive/2015/bin/i386-linux:$PATH
-setenv MANPATH /usr/local/texlive/2015/texmf/doc/man:$MANPATH
-setenv INFOPATH /usr/local/texlive/2015/texmf/doc/info:$INFOPATH
+setenv PATH /usr/local/texlive/2016/bin/i386-linux:$PATH
+setenv MANPATH /usr/local/texlive/2016/texmf/doc/man:$MANPATH
+setenv INFOPATH /usr/local/texlive/2016/texmf/doc/info:$INFOPATH
 \end{sverbatim}
 
 Se già avete delle impostazioni del genere in uno dei file citati,
@@ -1156,8 +1158,8 @@ I nostri due suggerimenti sono: 1)~potete controllare il file
 \filename{/etc/manpath.config} e, se esiste, aggiungere linee come
 
 \begin{sverbatim}
-MANPATH_MAP /usr/local/texlive/2015/bin/i386-linux \
-            /usr/local/texlive/2015/texmf/doc/man
+MANPATH_MAP /usr/local/texlive/2016/bin/i386-linux \
+            /usr/local/texlive/2016/texmf/doc/man
 \end{sverbatim}
 
 E 2)~verificate la presenza di un file \filename{/etc/environment} che
@@ -1202,12 +1204,12 @@ specificarne uno in particolare dall'elenco alla pagina
 non solo quelli nelle directory di \TeX. Fanno questo tramite metodi
 correlati, ma non identici.
 
-Su Windows, i font distribuiti con \TL\ sono resi disponibili a \XeTeX\
-automaticamente. Ma se avete installato il pacchetto \filename{xetex} su
-un sistema Unix, dovete configurare il vostro sistema in modo che sia
-capace di trovare i font distribuiti con \TL\ tramite il meccanismo di
-ricerca dei nomi di sistema e non semplicemente la ricerca di nomi di
-file.
+Su Windows, i font distribuiti con \TL\ sono resi automaticmanete
+disponibili a \XeTeX\ tramite il loro nome. Su \MacOSX, il supporto
+alla ricerca per nome dei font richiede del passi aggiuntivi; visitate
+le pagine dedicate a Mac\TeX\ (\url{http://tug.org/mactex}). Per
+altri sistemi Unix, segue la procedura per trovare i font forniti con
+\TL\ tramite il loro nome.
 
 Per facilitare il compito, quando il pacchetto \pkgname{xetex} è
 installato (sia durante l'installazione iniziale che in seguito), viene 
@@ -1240,18 +1242,18 @@ argomenti sono esattamente come mostrati) generalmente fornisce alcune
 informazioni interessanti.
 
 
-\subsubsection{\ConTeXt{} Mark \acro{IV}}
+\subsubsection{\ConTeXt{} Mark IV}
 \label{sec:context-mkiv}
 
-Sia il ``vecchio'' \ConTeXt{} (Mark \acro{II}) che il ``nuovo'' \ConTeXt{}
-(Mark \acro{IV}) dovrebbero funzionare così come sono dopo l'installazione
+Sia il ``vecchio'' \ConTeXt{} (Mark II) che il ``nuovo'' \ConTeXt{}
+(Mark IV) dovrebbero funzionare così come sono dopo l'installazione
 di \TL{} e non dovrebbero richiedere alcuna attenzione particolare finché
 restate fedeli a \verb+tlmgr+ per gli aggiornamenti.
 
-Comunque, dato che \ConTeXt{} Mk\acro{IV} non usa la libreria kpathsea,
+Comunque, dato che \ConTeXt{} MkIV non usa la libreria kpathsea,
 sarà richiesta un po' di configurazione ogni qual volta installate nuovi
 file manualmente (senza usare \verb+tlmgr+). Dopo ogni installazione del
-genere, ogni utente di Mk\acro{IV} deve eseguire:
+genere, ogni utente di MkIV deve eseguire:
 \begin{sverbatim}
 context --generate
 \end{sverbatim}
@@ -1259,7 +1261,7 @@ per aggiornare  i dati della cache di \ConTeXt{} sul disco.
 I file risultanti sono memorizzati dentro \code{TEXMFCACHE} il cui valore
 predefinito in \TL\ è \verb+TEXMFSYSVAR;TEXMFVAR+.
 
-\ConTeXt\ Mk\acro{IV} leggerà da tutti i percorsi menzionati in
+\ConTeXt\ MkIV leggerà da tutti i percorsi menzionati in
 \verb+TEXMFCACHE+ e scriverà nel primo percorso che sia scrivibile. Durante
 la lettura, in caso di dati di cache duplicati avrà la precedenza l'ultima
 corrispondenza trovata.
@@ -1399,13 +1401,13 @@ funzioni; se non è così, oppure se la vostra variabile d'ambiente
 > \Ucom{dvips sample2e.dvi -o sample2e.ps}
 \end{alltt}
 
-\item Create un file \acro{PDF} al posto di un \dvi{}; questo comando
-elabora il file \filename{.tex} e scrive direttamente un \acro{PDF}:
+\item Create un file PDF al posto di un \dvi{}; questo comando
+elabora il file \filename{.tex} e scrive direttamente un PDF:
 \begin{alltt}
 > \Ucom{pdflatex sample2e.tex}
 \end{alltt}
 
-\item Mostrate un'anteprima del \acro{PDF}:
+\item Mostrate un'anteprima del PDF:
 \begin{alltt}
 > \Ucom{gv sample2e.pdf}
 \textrm{o:}
@@ -1414,7 +1416,7 @@ elabora il file \filename{.tex} e scrive direttamente un \acro{PDF}:
 Né \cmdname{gv}, né \cmdname{xpdf} sono inclusi in \TL{}, quindi dovete
 installarli separatamente. Visitate \url{http://www.gnu.org/software/gv} e
 \url{http://www.foolabs.com/xpdf}, rispettivamente. Ci sono tantissimi
-altri visualizzatori \acro{PDF}. Per Windows, noi raccomandiamo di provare
+altri visualizzatori PDF. Per Windows, noi raccomandiamo di provare
 Sumatra PDF (\url{http://blog.kowalczyk.info/software/sumatrapdf}).
 
 \item Potreste trovare utili, in aggiunta a \filename{sample2e.tex}, i
@@ -1460,7 +1462,7 @@ considerazione per l'installazione:
 \begin{description}
 \item[Ghostscript] \url{http://www.cs.wisc.edu/~ghost/}
 \item[Perl] \url{http://www.perl.org/} con i pacchetti supplementari da
-      \acro{CPAN}, \url{http://www.cpan.org/}
+      CPAN, \url{http://www.cpan.org/}
 \item[ImageMagick] \url{http://www.imagemagick.com}, per l'elaborazione e
       la conversione di immagini
 \item[NetPBM] \url{http://netpbm.sourceforge.net/}, anch'esso per le
@@ -1529,13 +1531,19 @@ per ottenere una configurazione funzionante.
 Per la stessa ragione, potete anche installare \TL{} localmente e
 successivamente muovere l'intera struttura verso una locazione di rete.
 
-Per Windows, uno script di installazione di rete esemplificativo chiamato
-\filename{w32client} può essere scaricato da
-\url{http://tug.org/texlive/w32client.html}. Questo script crea le
-impostazioni e i collegamenti nei menu per usare una installazione di
-\TL{} esistente su una \acro{LAN}. Registra anche un disinstallatore
-\filename{w32unclient}, disponibile nello stesso file zip. Visitate la
-pagina web indicata per maggiori informazioni.
+Per Windows, un programma \filename{tlaunch} è disponibile da
+\url{http://tug.org/texlive/w32client.html}. La sua finestra principale
+contiene voci di menu e pulsanti per i vari programmi e documentazione
+relativi a \TeX.
+
+Al primo utilizzo, il programma modifica il percorso di ricerca per \TL\
+e crea alcune associazioni di file. Crea anche una voce nel menu Start
+per annullare queste configurazioni, in aggiunta ad una tale voce nel
+menu del programma.
+
+Tutto questo è impostato in un file ini. Potete aggiungere da soli le
+voci, ad esempio, per SumatraPDF o qualche editor di \LaTeX. Visitate
+la pagina web di sopra per maggiori informazioni.
 
 
 \htmlanchor{tlportable}
@@ -1575,7 +1583,7 @@ installazione di \TL{} perché:
 \item Se avete due sistemi operativi sulla stessa macchina e volete che
   condividano un'installazione di \TL, un'installazione \ISO\ non è
   vincolata alle idiosincrasie e alle limitazioni di altri filesystem
-  reciprocamente supportati (\acro{FAT32}, \acro{NTFS}, \acro{HFS+}).
+  reciprocamente supportati (FAT32, NTFS, HFS+).
 \item Le macchine virtuali possono semplicemente montare tale \ISO.
 \end{itemize}
 
@@ -1594,7 +1602,7 @@ stesso livello degli altri alberi (\filename{texmf-dist},
 directory nell'installatore.
 
 Per un sistema Windows fisico (piuttosto che virtuale), potete masterizzare
-la \ISO\ su un \acro{DVD}. Comunque, potrebbe valere la pena investigare le
+la \ISO\ su un DVD. Comunque, potrebbe valere la pena investigare le
 varie opzioni gratuite per il montaggio delle \ISO, come WinCDEmu da
 \url{http://wincdemu.sysprogs.org/}.
 
@@ -1604,7 +1612,7 @@ Per l'integrazione con il sistema Windows, potete includere gli script
 un'installazione \ISO\ così come per una condivisa.
 
 Su \MacOSX, TeXShop sarà capace di usare l'installazione su
-\acro{DVD} se un collegamento simbolico \filename{/usr/texbin} punta alla
+DVD se un collegamento simbolico \filename{/usr/texbin} punta alla
 directory degli eseguibili appropriata, per esempio,
 \begin{verbatim}
 sudo ln -s /Volumes/MyTeXLive/bin/universal-darwin /usr/texbin
@@ -1777,7 +1785,13 @@ Sotto Windows, l'installatore fa alcune cose in più:
   richiesti passi manuali.
 \item[Disinstallatore.] Il programma di installazione crea una voce per
   \TL\ in ``Installazione Applicazioni''. La pagina di disinstallazione
-  della \GUI\ \TeX\ Live Manager fa riferimento a questo.
+  della \GUI\ \TeX\ Live Manager fa riferimento a questo. Nel caso di
+  un singolo utente, il programma di installazione crea una voce di
+  disinstallazione nel menu Start.
+\item[Protezione dalla scrittura.] Nel caso dell'installazione da parte
+  di un amministratore, le directory di \TL\ sono protette dalla
+  scrittura, per lo meno se \TL\ è installato su un normale disco non
+  removibile formattato con NTFS.
 \end{description}
 
 \subsection{Software aggiuntivo incluso sotto Windows}
@@ -1796,7 +1810,7 @@ installati come parte di \TL{} solo su Windows.
   interferire con installazioni nel sistema di Perl o Ghostscript.
 
 \item[PS\_View.] Viene installato anche PS\_View, un visualizzatore di
-  file \PS{} e \acro{PDF}; osservate la figura~\ref{fig:psview}.
+  file \PS{} e PDF; osservate la figura~\ref{fig:psview}.
 
 \begin{figure}[tb]
 \tlpng{psview}{.6\linewidth}
@@ -1805,7 +1819,7 @@ installati come parte di \TL{} solo su Windows.
 \end{figure}
 
 \item[dviout.] Viene installato anche \prog{dviout}, un visualizzatore di
-  \acro{DVI}. All'inizio, quando visualizzate i file con \cmdname{dviout},
+  DVI. All'inizio, quando visualizzate i file con \cmdname{dviout},
   questo creerà i font in quanto quelli per la visione su schermo non sono
   isntallati. Dopo un po', avrete creato la maggior parte dei font che
   usate e raramente vedrete la finestra di creazione dei font. Maggiori
@@ -1813,7 +1827,7 @@ installati come parte di \TL{} solo su Windows.
   raccomandato).
 
 \item[\TeX{}works.] \TeX{}works è un editor orientato a \TeX\ con un
-  visualizzatore per \acro{PDF} incorporato.
+  visualizzatore per PDF incorporato.
 
 \item[Strumenti a riga di comando.] Assieme ai soliti programmi di \TL{}
   vengono installate alcune versioni per Windows di tipici programmi Unix
@@ -1821,7 +1835,7 @@ installati come parte di \TL{} solo su Windows.
   \cmdname{unzip} e gli strumenti della suite \cmdname{xpdf}
   (\cmdname{pdfinfo}, \cmdname{pdffonts}, \ldots). Il visualizzatore
   \cmdname{xpdf} non è disponibile per Windows. Come alternativa, tra le
-  altre, potete scaricare Sumatra \acro{PDF}, che è basato su xpdf, da
+  altre, potete scaricare Sumatra PDF, che è basato su xpdf, da
   \url{http://blog.kowalczyk.info/software/sumatrapdf}.
 
 \item[fc-list, fc-cache, \ldots] Gli strumenti dalla libreria fontconfig
@@ -1837,7 +1851,7 @@ installati come parte di \TL{} solo su Windows.
 \label{sec:winhome}
 
 La controparte Windows di una directory di home di Unix è la directory
-\verb|%USERPROFILE%|. Sotto Windows \acro{XP}, di solito
+\verb|%USERPROFILE%|. Sotto Windows XP, di solito
 è \verb|C:\Documents and Settings\<nomeutente>| e sotto Windows Vista e
 successivi è \verb|C:\Users\<nomeutente>|. Nel file \filename{texmf.cnf} e in
 generale in \KPS{}, \verb|~| verrà interpretato in modo appropriato sia
@@ -1900,15 +1914,6 @@ privilegi di amministrazione. In pratica, non serve a molto entrare come
 amministratore. Invece, facendo clic con il tasto destro sul programma o
 sul collegamento che volete eseguire, solitamente appare la voce ``Esegui
 come amministratore''.
-
-\subsubsection{Proteggere la directory di \TL{}}
-
-Un'installazione da amministratore \emph{non} protegge la directory di
-\TL{} dalla manomissione da parte degli utenti normali. Questo deve essere
-fatto in un passo separato impostando un'opportuna \acro{ACL} (Access
-Control Lista, lista di controllo degli accessi) per la directory. Per
-questo scopo, fate riferimento all'utility a riga di comando di Windows
-\filename{icacls}.
 
 
 \subsection{Incrementare la memoria massima sotto Windows e Cygwin}
@@ -2111,10 +2116,10 @@ percorso di ricerca usato per cercare questi file è chiamato
 altra) variabile d'ambiente.
 
 Invece, l'installazione normale dà luogo ad un file
-\file{.../2015/texmf.cnf}. Se dovete apportare delle modifiche ai valori
+\file{.../2016/texmf.cnf}. Se dovete apportare delle modifiche ai valori
 predefiniti (di norma non è necessario), questo è il posto in cui
 piazzarle. Il file di configurazione principale è
-\file{.../2015/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
+\file{.../2016/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
 quest'ultimo file, dato che le vostre modifiche andrebbero perdute quando
 la versione distribuita viene aggiornata.
 
@@ -2155,7 +2160,7 @@ quelli provenienti da \verb|$TEXMF/texmf.cnf|.
   non è disponibile come valore valido; in alternativa, dovete usare una
   variabile aggiuntiva. Un \samp{;}\ in \var{valore} è tradotto
   automaticamente in \samp{:}\ se state usando Unix; questa caratteristica
-  è utile per avere un singlo \file{texmf.cnf} per Unix, \acro{MS-DOS} e
+  è utile per avere un singlo \file{texmf.cnf} per Unix, MS-DOS e
   Windows.
 \item
   Tutte le definizioni vengono lette prima che qualunque cosa sia espanza,
@@ -2472,7 +2477,7 @@ dobbiamo specificare esplicitamente quale tipo stiamo considerando
 \end{alltt}
 
 Diamo ora uno sguardo ravvicinato ai file di supporto per il carattere
-\PS{} \acro{URW} Times. Il prefisso per questi file nello schema dei nomi
+\PS{} URW Times. Il prefisso per questi file nello schema dei nomi
 dei font è \samp{utm}. Il primo file che cerchiamo è quello di
 configurazione, che contiene il nome del file di mappatura:
 \begin{alltt}
@@ -2596,7 +2601,7 @@ viene trovato \file{texmf.cnf}, che fornisce le definizioni dei percorsi
 di ricerca per gli altri file, quindi il file di database \file{ls-R} (per
 ottimizzare la ricerca) e il file \file{aliases}, che rende possibile
 dichiarare diversi nomi (ad esempio, una versione breve in formato
-\acro{DOS} 8.3 e una più lunga e più naturale) per lo stesso file. Quindi
+DOS 8.3 e una più lunga e più naturale) per lo stesso file. Quindi
 \cmdname{dvips} prosegue nel cercare il file di configurazione generico
 \file{config.ps} prima di guardare al file personalizzato \file{.dvipsrc}
 (che in questo caso \emph{non viene trovato}). Infine,
@@ -2687,7 +2692,7 @@ sono:
 \item[\texttt{font\_mem\_size}]
   Numero di registri per le informazioni sui font disponibili in \TeX.
   Questo valore è più o meno pari alla dimensione totale di tutti i file
-  \acro{TFM} che vengono letti.
+  TFM che vengono letti.
 \item[\texttt{hash\_extra}]
   Spazio aggiuntivo per la tabella con i nomi delle sequenze di
   controllo. Nella tabella principale possono essere memorizzate solo
@@ -2716,7 +2721,7 @@ Quello di cui avete bisogno è interamente contenuto nella directory
 
 Avrete bisogno di almeno 100 megabyte di spazio su disco per compilare
 tutto \TeX{} e i suoi programmi di supporto. Avrete anche bisogno di un
-compilatore \acro{ANSI} C, un'utilità \cmdname{make}, un analizzatore
+compilatore ANSI C, un'utilità \cmdname{make}, un analizzatore
 lessicale e un generatore di parser. Raccomandiamo la versione \GNU{} di
 questi programmi (\cmdname{gcc}, \GNU \cmdname{make}, \cmdname{m4},
 \cmdname{flex}, \cmdname{bison}). Potreste essere in grado di lavorare con
@@ -2824,25 +2829,27 @@ elencati qui sotto.
 \begin{itemize*}
 
 \item I gruppi utenti \TeX{} Inglese, Tedesco, Olandese e Polacco
-(\acro{TUG}, \acro{DANTE} e.V., \acro{NTG} e \acro{GUST},
+(TUG}, DANTE} e.V., NTG} e GUST,
 rispettivamente), che forniscono la necessaria infrastruttura tecnica ed
 amministrativa. Unitevi al gruppo utenti \TeX\ più vicino a voi
 (consultate la pagina \url{http://tug.org/usergroups.html})!
 
-\item Il team di \acro{CTAN}, in particolare Robin Fairbairns e Rainer
-Sch\"opf, che distribuiscono le immagini di \TL{} e
-forniscono l'infrastruttura comune per gli aggiornamenti dei pacchetti,
-dalla quale dipende \TL.
+\item Il team di CTAN (\url{http://ctan.org}), che distribuisce le
+immagini di \TL{} e fornisce l'infrastruttura comune per gli aggiornamenti
+dei pacchetti, dalla quale dipende \TL.
 
 \item Nelson Beebe per aver reso disponibili molte piattaforme agli
-sviluppatori di \TL{} e per i suoi esaustivi collaudi.
+sviluppatori di \TL{}, per i suoi esaustivi collaudi e per gli
+impareggiabili sforzi bibliografici.
 
 \item John Bowman per aver fatto molti cambiamenti al suo programma
 di grafica avanzata Asymptote affinché funzionasse in \TL.
 
 \item Peter Breitenlohner ed il team di \eTeX\ per le stabili
-fondamenta del \TeX{} del futuro e Peter in particolare per l'aiuto
-stellare con l'uso degli strumenti \GNU\ autotool in \TL.
+fondamenta del \TeX{} del futuro e Peter in particolare per gli anni
+di aiuto stellare con gli autotool di \GNU. Peter è venuto a mancare
+nell'ottobre 2015 e noi dedichiamo il lavoro che va avanti alla sua
+memoria.
 
 \item Jin-Hwan Cho e tutti i membri del team di DVIPDFM$x$ per il loro
 eccellente driver e la velocità di risposta ai problemi di configurazione.
@@ -2875,11 +2882,14 @@ MetaPost e (Lua)\TeX{} (\url{http://luatex.org}) stesso, per aver
 incorporato \ConTeXt{} in \TL, per aver dato a Kpathsea le funzionalità
 multi-thread e per molto altro ancora.
 
+\item Khaled Hosny, per il considerevole lavoro su \XeTeX, DVIPDFM$x$, e
+per gli sforzi con i font arabici ed altri.
+
 \item Pawe{\l} Jackowski per l'installatore Windows \cmdname{tlpm} e
 Tomasz {\L}uczak per \cmdname{tlpmgui}, usati nelle edizioni passate.
 
 \item Akira Kakuto per aver fornito gli eseguibili per Windows a partire
-dalla sua distribuzione \TeX{} giapponese \acro{W32TEX} e per molti altri
+dalla sua distribuzione \TeX{} giapponese W32TEX e per molti altri
 contributi allo sviluppo.
 
 \item Jonathan Kew per aver sviluppato il notevole motore \XeTeX{} e per
@@ -2926,9 +2936,11 @@ Debian di \TL{} (insieme con Frank Küster), offrendo molti suggerimenti
 lungo il cammino.
 
 \item Sebastian Rahtz per aver originariamente creato \TL{} ed averne
-curato la manutenzione per molti anni.
+curato la manutenzione per molti anni. Sebastian è venuto a mancare nel
+marzo 2016 e noi dedichiamo il lavoro che va avanti alla sua memoria.
 
-\item Phil Taylor per aver allestito gli scaricamenti tramite BitTorrent.
+\item Luigi Scarso, per aver continuato lo sviluppo di Metapost, Lua\TeX\
+e molto altro.
 
 \item Tomasz Trzeciak per aiuti su vasta scala con Windows.
 
@@ -2940,7 +2952,8 @@ questioni di mantenimento e specialmente per aver reso possibile includere
 coordinatore di molti dei maggiori contributori polacchi: font,
 installazione sotto Windows e molto altro.
 
-\item Olaf Weber per la sua paziente manutenzione a \Webc.
+\item Olaf Weber per la sua paziente manutenzione a \Webc\ negli anni
+passati.
 
 \item Gerben Wierda per aver creato e fatto manutenzione all'originale
 supporto per \MacOSX{}.
@@ -2950,32 +2963,31 @@ supporto per \MacOSX{}.
 \end{itemize*}
 
 Preparatori degli eseguibili:
-Per informazioni sul processo di compilazione di \TL, visitate
 Ettore Aldrovandi (\pkgname{i386-solaris}, \pkgname{x86\_64-solaris}),
 Marc Baudoin (\pkgname{amd64-netbsd}, \pkgname{i386-netbsd}),
 Karl Berry (\pkgname{i386-linux}),
-Peter Breitenlohner (\pkgname{x86\_64-linux}),
 Ken Brown (\pkgname{i386-cygwin}, \pkgname{x86\_64-cygwin}),
 Simon Dales (\pkgname{armhf-linux}),
-%Christian Mensing (\pkgname{mips-irix}),
 Akira Kakuto (\pkgname{win32}),
 Dick Koch (\pkgname{universal-darwin}, \pkgname{x86\_64-darwin}),
 Nikola Le\v{c}i\'c (\pkgname{amd64-freebsd}, \pkgname{i386-freebsd}),
 Mojca Miklavec (\pkgname{mipsel-linux}), \pkgname{sparc-solaris}),
-Norbert Preining (\pkgname{alpha-linux}),
+Norbert Preining (\pkgname{alpha-linux}, \pkgname{x86\_64-linu})
 Thomas Schmitz (\pkgname{powerpc-linux}),
 Boris Veytsman (\pkgname{armel-linux}).
+Per informazioni sul processo di compilazione di \TL, visitate
 \url{http://tug.org/texlive/build.html}.
 
 Attuali traduttori della documentazione:
-Boris Veytsman (russo),
+Denis Bitouzé (francese),
+Carlos Enriquez Figueras (spagnolo),
 Jjgod Jiang, Jinsong Zhao, Yue Wang \& Helin Gai (cinese),
-Klaus Höppner (tedesco),
-Manuel Pégourié-Gonnard (francese),
-Marco Pallante (italiano),
 Nikola Le\v{c}ić (serbo),
+Marco Pallante (italiano),
 Petr Sojka \& Jan Busa (ceco\slash slovacco),
-Staszek Wawrykiewicz (polacco).  La pagina web della documentazione di
+Boris Veytsman (russo),
+Staszek Wawrykiewicz (polacco),
+Uwe Ziegenhagen (tedesco), La pagina web della documentazione di
 \TL{} è \url{http://tug.org/texlive/doc.html}.
 
 Ovviamente il più importante ringraziamento deve andare a Donald Knuth,
@@ -2989,10 +3001,10 @@ innanzitutto per aver inventato \TeX{} e poi per averlo donato al mondo.
 
 La discussione iniziò nel tardo 1993 quando il gruppo utenti \TeX{}
 olandese stava iniziando a lavorare al proprio \CD{} 4All\TeX{} per gli
-utenti \acro{MS-DOS} e si sperava a quel tempo di rilasciare un solo
+utenti MS-DOS e si sperava a quel tempo di rilasciare un solo
 razionale \CD{} per tutti i sistemi. Questo era un obiettivo troppo
 ambizioso per il tempo, ma non solo diede vita al \CD{} di grande successo
-4All\TeX{}, ma spinse il gruppo di lavoro del \acro{TUG} Technical
+4All\TeX{}, ma spinse il gruppo di lavoro del TUG Technical
 Council verso una \emph{Struttura delle Directory \TeX{}} (\TDS{}, \TeX{}
 Directory Structure, \url{http://tug.org/tds}), che specificò come creare
 collezioni consistenti e gestibili di file di supporto a \TeX. Una bozza
@@ -3059,8 +3071,8 @@ più:
       \cmdname{pdflatex} affinché usassero \eTeX{} (consultate la
       \p.\pageref{text:etex}).
 \item I nuovi font Latin Modern furono inclusi (e sono raccomandati).
-\item Il supporto per Alpha \acro{OSF} fu rimosso (il supporto per
-      \acro{HPUX} era già stato rimosso in precedenza) dato che nessuno
+\item Il supporto per Alpha OSF fu rimosso (il supporto per
+      HPUX era già stato rimosso in precedenza) dato che nessuno
       aveva (o voleva donare) l'hardware su cui compilare i nuovi
       eseguibili.
 \item L'allestimento per Windows fu cambiato sostanzialmente; per la prima
@@ -3136,7 +3148,7 @@ che richiamano questi script, allora dovranno essere corretti. Consultate
 \item Quasi tutti i formati lasciano la maggior parte dei caratteri
 stampabili uguali a se stessi tramite il ``file di traduzione''
 \filename{cp227.tcx}, piuttosto che trasformarli nella notazione
-\verb|^^|. Nello specifico, i caratteri alle posizioni \acro{ASCII}
+\verb|^^|. Nello specifico, i caratteri alle posizioni ASCII
 32--256, la tabulazione orizzontale, quella verticale e il ``form feed''
 sono considerati stampabili e non vengono trasformati. Le eccezioni sono
 plain \TeX{} (solo i caratteri 32--126 sono stampabili), \ConTeXt{}
@@ -3150,7 +3162,7 @@ caratteri quando viene mostrato il contesto degli errori dato che legge
 l'input come una sequenza di byte, non di caratteri).
 
 \item \textsf{pdfetex} è adesso il motore predefinito per tutti i formati
-tranne (plain) \textsf{tex} stesso (ovviamente genera file \acro{DVI}
+tranne (plain) \textsf{tex} stesso (ovviamente genera file DVI
 quando è eseguito come \textsf{latex}, ecc.). Questo significa, tra le
 altre cose, che le caratteristiche di microtipografia di \textsf{pdftex}
 sono disponibili in \LaTeX, \ConTeXt, ecc., così come le funzionalità di
@@ -3160,10 +3172,10 @@ Significa anche che è \emph{più importante che mai} usare il pacchetto
 \pkgname{ifpdf} (funziona sia con plain \TeX, che con \LaTeX) o del codice
 equivalente, perché verificare semplicemente se \cs{pdfoutput} o qualche
 altra primitiva sono definiti non è un modo affidabile per determinare se
-si sta generando un file \acro{PDF}. Per quest'anno abbiamo cercato di
+si sta generando un file PDF. Per quest'anno abbiamo cercato di
 rendere questo aspetto compatibile con le edizioni passate al meglio delle
 nostra capacità, ma a partire dal prossimo anno \cs{pdfoutput} potrebbe
-essere definito anche se il file generato è un \acro{DVI}.
+essere definito anche se il file generato è un DVI.
 
 \item pdf\TeX\ (\url{http://pdftex.org}) ha molte nuove funzionalità:
 
@@ -3202,7 +3214,7 @@ Consultate il manuale di Web2C per saperne di più:
 in tutti i programmi \TeX, per mezzo dell'opzione \optname{-enc} \Dash\
 \emph{solo quando i formati sono stati generati}. enc\TeX{} supporta la
 ricodifica generale dell'input e dell'output, permettendo il supporto
-completo per l'Unicode (in \acro{UTF}-8). Consultate
+completo per l'Unicode (in UTF-8). Consultate
 \OnCD{texmf-dist/doc/generic/enctex/} e
 \url{http://www.olsak.net/enctex.html}.
 
@@ -3212,12 +3224,12 @@ su \url{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=aleph}. Il formato
 basato su \LaTeX{} per Aleph è chiamato \textsf{lamed}.
 
 \item L'ultimo aggiornamento di \LaTeX\ ha una nuova versione della
-\acro{LPPL} \Dash\ ora una licenza ufficialmente approvata da Debian.
+LPPL \Dash\ ora una licenza ufficialmente approvata da Debian.
 Per altri aggiornamenti assortiti, consultiate i file \filename{ltnews} in
 \OnCD{texmf-dist/doc/latex/base}.
 
-\item \cmdname{dvipng}, un nuovo programma per convertire i \acro{DVI} in
-immagini \acro{PNG}, è incluso. Consultate
+\item \cmdname{dvipng}, un nuovo programma per convertire i DVI in
+immagini PNG, è incluso. Consultate
 \url{http://www.ctan.org/pkg/dvipng}.
 
 \item Abbiamo ridotto il pacchetto \pkgname{cbgreek} ad un insieme di font
@@ -3225,7 +3237,7 @@ di ``medie'' dimensioni, con il consenso e i suggerimenti dell'autore
 (Claudio Beccari). I font omessi sono quelli invisibili, quelli profilati
 e i trasparenti, che sono usati abbastanza raramente, mentre noi avevamo
 bisogno di spazio. L'insieme completo è ovviamente disponibile su
-\acro{CTAN} (\url{http://mirror.ctan.org/tex-archive/fonts/greek/cbfonts}).
+CTAN (\url{http://mirror.ctan.org/tex-archive/fonts/greek/cbfonts}).
 
 \item \cmdname{oxdvi} è stato rimosso; usate semplicemente \cmdname{xdvi}.
 
@@ -3236,7 +3248,7 @@ oramai da anni tramite l'opzione su riga di comando \optname{-ini}.
 
 \item Il supporto per la piattaforma \textsf{i386-openbsd} è stato
 rimosso. Dato che è disponibile il pacchetto \pkgname{tetex} nel sistema
-\acro{BSD} Port e gli eseguibili per \acro{GNU/}Linux e Free\acro{BSD}
+BSD Port e gli eseguibili per GNU/Linux e FreeBSD
 erano disponibili, ci è sembrato che il tempo dedicato dai volontari
 potesse essere meglio speso da altre parti.
 
@@ -3246,7 +3258,7 @@ delle \pkgname{t1utils}. La ragione è che questi sono compilati con il C++
 e non esiste una posizione comune per le librerie (questo problema non è
 nuovo dell'edizione 2004, ma non era stato documentato in precedenza). In
 modo simile, su \textsf{mips-irix}, sono richieste le librerie di runtime
-del \acro{MIPS}pro 7.4.
+del MIPSpro 7.4.
 
 \end{itemize}
 
@@ -3302,9 +3314,9 @@ latex --translate-file=empty.tcx vostrofile.tex
       disponibile, anche se non più raccomandato).
 
 \item Sono inclusi i nuovi programmi \cmdname{pdfopen} e
-      \cmdname{pdfclose} per consentire di ricaricare i file pdf nel
+      \cmdname{pdfclose} per consentire di ricaricare i file PDF nel
       lettore Adobe Acrobat Reader senza riavviare il programma
-      (altri lettori pdf, in particolare \cmdname{xpdf}, \cmdname{gv} e
+      (altri lettori PDF, in particolare \cmdname{xpdf}, \cmdname{gv} e
       \cmdname{gsview}, non hanno mai sofferto di questo problema).
 
 \item Per consistenza, le variabili \envname{HOMETEXMF} e
@@ -3343,7 +3355,7 @@ linee \texttt{\%\&}).
 
 Ovviamente anche quest'anno ha visto (i soliti) centinaia di altri
 aggiornamenti ai pacchetti ed ai programmi. Come sempre, visitate
-\acro{CTAN} (\url{http://mirror.ctan.org}) per tutti gli aggiornamenti.
+CTAN (\url{http://mirror.ctan.org}) per tutti gli aggiornamenti.
 
 Internamente, i sorgenti sono ora memorizzati tramite Subversion, con
 un'interfaccia web standard per visitarli; il collegamento è sulla nostra
@@ -3458,15 +3470,14 @@ al 3D ed altre caratteristiche. Il suo sito web è
 
 Il programma \code{dvipdfm} è stato sostituito da \code{dvipdfmx}, che
 opera in una speciale modalità di compatibilità quando viene invocato con
-il primo nome. \code{dvipdfmx} include il supporto per \acro{CJK}
+il primo nome. \code{dvipdfmx} include il supporto per CJK
 (Chinese-Japanese-Korean, Cinese-Giapponese-Coreano) ed ha accumulato
 molte correzione negli anni trascorsi dall'ultima versione di
-\code{dvipdfm}. Il sito di DVIPDFMx è
-\url{http://project.ktug.or.kr/dvipdfmx}.
+\code{dvipdfm}.
 
 Gli eseguibili per le piattaforme \pkgname{cygwin} e
 \pkgname{i386-netbsd} sono ora inclusi, mentre siamo stati avvisati che
-gli utenti di Open\acro{BSD} ottengono \TeX\ tramite il loro sistema di
+gli utenti di OpenBSD ottengono \TeX\ tramite il loro sistema di
 pacchetti, e in più c'erano difficoltà nel produrre eseguibili che
 avessero una qualche possibilità di funzionare su più di una versione.
 
@@ -3658,7 +3669,6 @@ Piattaforme: \pkgname{armhf-linux}, \pkgname{mips-irix},
 \pkgname{i386-netbsd} e \pkgname{amd64-netbsd} aggiunte o resuscitate;
 \pkgname{powerpc-aix} rimossa.
 
-% 
 \subsubsection{2014}
 
 Il 2014 ha visto un altro aggiustamento a \TeX\ da Knuth; questo ha
@@ -3670,7 +3680,7 @@ precaricato nei binary; può essere sostituito in vari modi.
 
 pdf\TeX: nuovo parametro per la soppressione dei warning
 \cs{pdfsuppresswarningpagegroup}; nuove primitive per falsi spazi tra
-parole per aiutare con il riflusso del testo \acro{PDF}:
+parole per aiutare con il riflusso del testo PDF:
 \cs{pdfinterwordspaceon}, \cs{pdfinterwordspaceoff}, \cs{pdffakespace}.
 
 Lua\TeX: sono stati fatti notevoli cambi e correzioni al caricamento dei
@@ -3694,7 +3704,7 @@ OpenType ai Graphite, per compatibilità con le versioni precedenti di
 \MP: un nuovo sistema di numerazione \code{decimal} è supportato, insieme
 ad un compagno ad uso interno \code{numberprecision}; una nuova
 definizione di \code{drawdot} in \filename{plain.mp}, come da Knuth;
-correzioni di bug nell'output in \acro{SVG} e \acro{PNG}, tra le altre
+correzioni di bug nell'output in SVG e PNG, tra le altre
 cose.
 
 L'utilità Con\TeX{}t \cmdname{pstopdf} sarà rimossa come comando a sé
@@ -3721,14 +3731,12 @@ coreano è stata suddivisa in collezioni per le singole lingue per avere
 dimensioni più piccole.
 
 Piattaforme: \pkgname{x86\_64-cygwin} aggiunta, \pkgname{mips-irix}
-rimossa; Microsoft ha cessato il supporto di Windows \acro{XP}, quindi i
+rimossa; Microsoft ha cessato il supporto di Windows XP, quindi i
 nostri programmi potrebbero iniziare a funzionare male su quel sistema in
 qualunque momento.
 
 
-\htmlanchor{news}
-\subsection{Presente---2015}
-\label{sec:tlcurrent}
+\subsubsection{2015}
 
 \LaTeXe\ ora incorpora, per default, i cambiamenti precedentemente inclusi
 solo caricando esplicitamente il pacchetto \pkgname{fixltx2e}, che ora non
@@ -3745,7 +3753,7 @@ prima erano parte di \TeX\ Live. Questo cambiamento dovrebbe essere
 invisibile agli utenti; alcune sequenze di controllo interne sono state
 rinominate o rimosse, ma il comportamento dovrebbe essere lo stesso.
 
-pdf\TeX: supporto per gli Exif nei \acro{JPEG} e per i \acro{JFIF}; non
+pdf\TeX: supporto per gli Exif nei JPEG e per i JFIF; non
 emette più un warning se \cs{pdfinclusionerrorlevel} è negativo;
 sincronizzazione con \prog{xpdf}~3.04.
 
@@ -3762,7 +3770,7 @@ il giapponese \prog{upmpost} e \prog{updvitomp}, analogamentea
 \prog{up*tex}.
 
 Mac\TeX: aggiornamenti al pacchetto Ghostscript per il supporto a
-\acro{CJK}. Il Pannello delle Preferenze della Distribuzione \TeX\ ora
+CJK. Il Pannello delle Preferenze della Distribuzione \TeX\ ora
 funziona in Yosemite (\MacOSX~10.10). I resource fork dei font (di solito
 senza un'estensione) non sono più supportati da \XeTeX; i data fork
 (\code{.dfont}) restano supportati.
@@ -3780,6 +3788,66 @@ eseguibili personalizzati (\url{http://tug.org/texlive/custom-bin.html}).
 In più, alcune piattaforme adesso sono omesse dal \DVD\ (semplicemente per
 risparmiare spazio), ma possono essere installate normalmente via
 internet.
+
+% 
+\htmlanchor{news}
+\subsection{Presente---2016}
+\label{sec:tlcurrent}
+
+Lua\TeX: cambiamenti radicali alle primitive, che sono state sia
+rinominate che rimosse, assieme ad alcune riorganizzazioni della
+struttura dei nodi. Questi cambiamenti sono ricapitolati in un articolo
+di Hans Hagen, ``Lua\TeX\ 0.90 backend changes for PDF and more''
+(\url{http://tug.org/TUGboat/tb37-1/tb115hagen-pdf.pdf}); per tutti
+i dettagli, consultate il manuale di Lua\TeX,
+\OnCD{texmf-dist/doc/luatex/base/luatex.pdf}.
+
+Metafont: nuovi programmi fratelli altamente sperimentali MFlua e
+MFluajit che integrano Lua con \MF, per scopi di test.
+
+MetaPost: correzione di bug e preparazioni interne per MetaPost 2.0.
+
+pdf\TeX: nuove primitive \cs{pdfinfoomitdate}, \cs{pdftrailerid},
+\cs{pdfsuppressptexinfo}, per controllare quei valori che appaiono
+nell'output e che normalmente cambiano ad ogni esecuzione. Queste
+caratteristiche sono solo per l'output in PDF, non per il DVI.
+
+Xe\TeX: nuove primitive \cs{XeTeXhypenatablelength},
+\cs{XeTeXgenerateactualtext},\\ \cs{XeTeXinterwordspaceshaping},
+\cs{mdfivesum}; limite delle classi di caratteri innalzato a 4096;
+incremetati i byte di id nel DVI.
+
+Altri strumenti:
+\begin{itemize}
+\item \code{gregorio} è un nuovo programma che fa parte del pacchetto
+\code{gregoriotex} per impaginare le partiture di canto gregoriano; è
+incluso di default in \code{shell\_escape\_commads}.
+
+\item \code{upmendex} è un programma di creazione dell'indice, quasi
+del tutto compatibile con \code{makeindex}, con il supporto tra le
+altre cose per l'ordinamento basatu sull'Unicode.
+
+\item \code{afm2tfm} ora esegue solo aggiustamenti dell'altezza basati
+sull'accento verso l'alto; una nuova opzione \code{-a} tralascia tutti
+gli aggiustamenti.
+
+\item \code{ps2pk} può gestire i font PK/GF estesi.
+\end{itemize}
+
+Mac\TeX: il pannello \TeX\ Distribution Preference è stato rimosso; le
+sue funzionalità ora si trovano nella TeX Live Utility; aggiornate le
+applicazioni grafiche a corredo; il nuovo script \code{cjk-gs-integrate}
+deve essere eseguito dagli utenti che vogliono incorporare i font CJK in
+Ghostscript.
+
+Infrastruttura: supporto per il file di configurazione di \code{tlmgr}
+a livello di sistema; verifica delle checksum dei pacchetti; se GPG è
+disponbiile, verifica la firma degli aggiornamenti di rete. Queste
+verifiche avvengono sia nell'installatore che in \code{tlmgr} (se
+GPG non è disponibile, gli aggiornamenti avvengono come di consueto).
+
+Piattaforme: rimosse \code{alpha-linux} e \code{mipsel-linux}.
+
 
 \subsection{Futuro}
 
