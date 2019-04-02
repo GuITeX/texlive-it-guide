@@ -24,22 +24,17 @@
 \usepackage[T1]{fontenc}
 
 \title{%
-  {\huge \textit{Guida a \TeX\ Live---2018}}
+  {\huge \textit{Guida a \TeX\ Live---2019}}
 }
 
 \author{Karl Berry\\[3mm]
-        \url{http://tug.org/texlive/}
+        \url{https://tug.org/texlive/}
        }
 
-\date{Aprile 2018}
+\date{Aprile 2019}
 
 \begin{document}
 \maketitle
-
-\begin{center}
-\TeX\ Live di quest'anno è dedicata alla memoria del nostro collega
-Staszek Wawrykiewicz.
-\end{center}
 
 \begin{multicols}{2}
 \tableofcontents
@@ -144,11 +139,12 @@ sezioni (\p.\pageref{sec:install}), ma eccone un rapido accenno:
 \begin{itemize*}
 
 \item Lo script di installazione è chiamato \filename{install-tl}.
-  Può operare in ``modalità guidata'' (\emph{wizard}) dando l'opzione
-  \code{-gui=wizard} (predefinita sotto Windows), in modalità testuale
-  dando l'opzione \code{-gui=text} (predefinito per gli altri sistemi) e
-  in modalità \GUI{} esperta dando \code{-gui=perltk}. Ad ogni modo,
-  consultate la sezione \ref{sec:wininst} per Windows.
+  Può operare in ``modalità grafica'' dando l'opzione \code{-gui}
+  (predefinita sotto Windows e \MacOSX), in modalità testuale
+  dando l'opzione \code{-gui=text} (predefinito per gli altri sistemi).
+  Nelle piattafforme Unix, le precedenti modalità Perl/Tk e guidata sono
+  ancora disponibili e Perl/Tk installato; consultate la
+  sezione~\ref{sec:wininst} per Windows.
 
 \item Uno degli elementi installati è il programma ``\TL\ Manager'',
   chiamato \prog{tlmgr}. Così come l'installatore, può essere usato sia in
@@ -167,8 +163,8 @@ Sulla base delle nostre conoscenze, i programmi centrali di \TeX\ sono (e
 sono sempre stati) estremamente robusti. Tuttavia, gli altri programmi in
 \TeX\ Live potrebbero non raggiungere lo stesso livello, nonostante il
 massimo impegno di tutti. Come sempre, dovreste essere cauti
-nell'eseguire i programmi su documenti di origine inaffidabile; per la
-massima sicurezza, eseguiteli in una nuova sotto directory.
+nell'eseguire i programmi su documenti di origine inaffidabile; per
+aumentare la sicurezza, eseguiteli in una nuova sotto directory o in chroot.
 
 Questo bisogno di attenzione è particolarmente pressante sotto Windows,
 dato che generalmente Windows cerca i programmi nella directory attuale
@@ -222,12 +218,13 @@ raccomandiamo di usarle:
   \TeX, in particolare a numerosi libri, manuali ed articoli su tutti
   gli aspetti del sistema.
 
-\item [archivi di supporto] I principali forum di supporto includono
+\item [archivi di supporto] I principali forum di supporto per \TeX\
+  includono
   il sito della comunità \LaTeX{} su \url{http://latex-community.org/},
   il sito di domande e risposte \url{http://tex.stackexchange.com}, il
   gruppo Usenet \url{news:comp.text.tex} e la mailing list
   \email{texhax@tug.org}. I loro archivi raccolgono anni di domande e risposte
-  per il vostro piacere di ricerca tramite (per quanto riguarda gli ultimi due)
+  per il vostro piacere di ricerca tramite, per gli ultimi due,
   \url{http://groups.google.com/group/comp.text.tex/topics} e
   \url{http://tug.org/mail-archives/texhax}. E una
   generica ricerca su web, ad esempio da \url{http://google.com}, non fa
@@ -275,8 +272,10 @@ Il \DVD{} \TK{} include quanto segue:
 \item [\TL] Un sistema \TeX{} completo da installare sul proprio disco. Home
   page: \url{http://tug.org/texlive/}.
 
-\item [Mac\TeX] per \MacOSX, aggiunge a \TL{} un installatore nativo per \MacOSX
-  ed altre applicazioni Mac. Home page: \url{http://tug.org/mactex/}.
+\item [Mac\TeX] per \MacOSX\ (chiamato attualmente macOS da Apple, ma noi
+  continuiamo ad usare il vecchio nome in questo documento), aggiunge a \TL{}
+  un installatore nativo per \MacOSX\ ed altre applicazioni Mac. Home page:
+  \url{http://tug.org/mactex/}.
 
 \item [pro\TeX{}t] Un miglioramento della distribuzione \MIKTEX\ per
   Windows, \ProTeXt\ aggiunge alcuni strumenti supplementari a \MIKTEX\ e
@@ -398,14 +397,15 @@ La strutturazione predefinita è:
   \item[percorso a livello di sistema] può contenere diverse edizioni di \TL{}
   (in Unix di default è \texttt{/url/local/texlive}):
   \begin{ttdescription}
-    \item[2017] Un'edizione precedente.
-    \item[2018] L'attuale edizione.
+    \item[2018] Un'edizione precedente.
+    \item[2019] L'attuale edizione.
     \begin{ttdescription}
       \item [bin] ~
       \begin{ttdescription}
-        \item [i386-linux] Esebuibili per \GNU/Linux
+        \item [i386-linux] Esebuibili per \GNU/Linux (32 bit)
         \item [...]
         \item [x86\_64-darwin] Eseguibili per \MacOSX
+        \item [x86\_64-linux] Eseguibili per \GNU/Linux (64 bit)
         \item [win32] Eseguibili per Windows
       \end{ttdescription}
       \item [texmf-dist\ \ ]      \envname{TEXMFDIST} e \envname{TEXMFMAIN}
@@ -418,9 +418,9 @@ La strutturazione predefinita è:
   \item[percorso home dell'utente] (\texttt{\$HOME} o
       \texttt{\%USERPROFILE\%})
     \begin{ttdescription}
-      \item[.texlive2017] Dati privati generati e di configurazione relativi ad
+      \item[.texlive2018] Dati privati generati e di configurazione relativi ad
         un'edizione precedente.
-      \item[.texlive2018] Dati privati generati e di configurazione relativi
+      \item[.texlive2019] Dati privati generati e di configurazione relativi
         all'attuale edizione.
       \begin{ttdescription}
         \item [texmf-var\ \ \ ] \envname{TEXMFVAR}, \envname{TEXMFCACHE}
@@ -461,10 +461,10 @@ esempi d'uso di alcune delle sue funzionalità.
 \item [Lua\TeX] è il successore designato di pdf\TeX\ ed è quasi del tutto
 (ma non completamente) compatibile con i predecessori. È anche destinato a
 sostituire le funzioni di Aleph (vedi sotto), per quanto non sia stata
-predisposta la compatibilità tecnica. L'interprete Lua incorportato
+prevista una compatibilità perfetta. L'interprete Lua incorportato
 (\url{http://www.lua.org/}) permette soluzioni eleganti a molti problemi
 spinosi di \TeX. Quando è invocato come \filename{texlua}, si comporta
-come un interprete Lua autonomo ed è già usato in questo modo all'interno
+come un interprete Lua autonomo ed è usato in questo modo all'interno
 di \TL. Il suo sito web è \url{http://www.luatex.org} e il manuale di
 riferimento è \OnCD{texmf-dist/doc/luatex/base/luatexref.pdf}.
 
@@ -542,11 +542,8 @@ directory \dirname{install-tl}.
 \item [Installatore di rete, .exe per Windows:] Scaricatelo da \CTAN{}
 come sopra e fate doppio clic su di esso. Questo avvierà una prima fase
 di decompressione e installazione; fate riferimento alla
-figura~\ref{fig:nsis}. Avete tre scelte: ``Installazione semplice'' avvia
-l'installazione guidata, ``Installazione personalizzata'' avvia
-l'interfaccia grafica per l'installazione avanzata, come descritto nella
-sezione~\ref{sec:wininst}. Una terza opzione permette semplicemente di
-decomprimere il pacchetto.
+figura~\ref{fig:nsis}. Vi dà due scelte: ``Intalla'' e
+``Decomprimi soltanto''.
 
 \item [\DVD{} \TeX{} Collection:] aprite la sotto directory
 \dirname{texlive} del \DVD. Sotto Windows, il programma di installazione
@@ -563,7 +560,7 @@ volete ottenere gli aggiornamenti da Internet, consulate
 
 \begin{figure}[tb]
 \tlpng{nsis_installer}{.6\linewidth}
-\caption{Prima fase dell'installatore .exe per Windows}\label{fig:nsis}
+\caption{Prima fase dell'installatore \code{.exe} per Windows}\label{fig:nsis}
 \end{figure}
 
 Indipendentemente dall'origine, viene eseguito lo stesso programma di
@@ -575,11 +572,10 @@ pricipale pubblicata e l'altra.
 Se avete la necessità di usare un proxy, usate un file
 \filename{~/.wgetrc} o le variabili d'ambiente con le impostazioni proxy
 per Wget
-(\url{http://www.gnu.org/software/wget/manual/html_node/Proxies.html}).
-\TL{} usa sempre il Wget di \GNU\ per il download. Ovviamente questo non
-ha importanza se state installando dal \DVD\ o da un'immagine \ISO.
+(\url{http://www.gnu.org/software/wget/manual/html_node/Proxies.html}),
+o l'equivalente per qualsiasi programma di download usiate. Questo non
+conta se state installando dal \DVD\ o da un'immagine \ISO.
 
-\noindent
 Le sezioni seguenti spiegano l'avvio dell'installazione in maggiore
 dettaglio.
 
@@ -600,21 +596,21 @@ tutte queste varianti. Potreste dover ingrandire la finestra di terminale
 affinché mostri l'intera schermata dell'installatore testuale
 (figura~\ref{fig:text-main}).
 
-Per eseguire l'installazione nella modalità \GUI\ avanzata
-(figura~\ref{fig:gui-main}) avete bisogno del modulo \dirname{Perl::TK})
-compilato con il supporto per XFT, in genere è già così su
-\GNU/Linux, ma non altrettanto spesso su altri sistemi. Detto questo, potete
-eseguire:
+Per installare in modalità \GUI\ (figura~\ref{fig:advanced-lnx}),
+dovete avere installato Tcl/Tk. In questo caso, potete eseguire
 \begin{alltt}
 > \Ucom{perl install-tl -gui}
 \end{alltt}
 
-Per un elenco completo delle diverse opzioni:
+Le vecchie opzioni \code{wizard} e \code{perltk}/\code{expert} sono ancora
+disponibili. Queste richiedono il modulo \dirname{Perl::Tk} compilato con
+il supporto per XFT, che di solito non è un problema con \GNU/Linux, ma spesso
+lo è con gli altri sistemi. Per un elenco completo delle varie opzioni:
 \begin{alltt}
 > \Ucom{perl install-tl -help}
 \end{alltt}
 
-\textbf{Attenzione riguardo ai permessi Unix:} Al momento dell'installazione,
+\textbf{Sui permessi Unix:} Al momento dell'installazione,
 la tua \code{umask} sarà rispettata dall'installatore di \TL{}.
 Quindi, se vuoi che l'installazione sia usabile da altri utenti oltre che da
 te, sii sicuro che le tue impostazioni siano permissive a sufficienza, per
@@ -649,9 +645,7 @@ il Mac.
 
 Se state usando il file zip scaricato e decompresso, oppure se
 l'installatore su \DVD\ non si avvia automaticamente, fate doppio clic su
-\filename{install-tl-windows.bat}. Per ottenere maggiori opzioni di
-configurazione, come la selezione di specifiche collezioni di pacchetti,
-lanciate \filename{install-tl-advanced.bat}.
+\filename{install-tl-windows.bat}.
 
 Potete avviare l'installatore anche dal prompt dei comandi. Qui sotto,
 \texttt{>} denota il prompt; l'input dell'utente è in
@@ -666,8 +660,8 @@ In alternativa potete lanciarlo con un percorso assoluto, come:
 > \Ucom{D:\bs{}texlive\bs{}install-tl-windows}
 \end{alltt}
 per il \DVD\ \TK, supponendo che \dirname{D:} sia l'unità del lettore \DVD. La
-figura~\ref{fig:wizard-w32} mostra l'installazione guidata, che è quella
-preimpostata per Windows.
+figura~\ref{fig:basic-w32} mostra la schermata base dell'installazione \GUI,
+che è quella predefinita per Windows.
 
 Per installare in modalità testuale, usate:
 \begin{alltt}
@@ -682,23 +676,23 @@ Per un elenco completo delle diverse opzioni:
 %%% TODO
 \begin{figure}[tb]
 \begin{boxedverbatim}
-Installing TeX Live 2018 from: ...
+Installing TeX Live 2019 from: ...
 Platform: x86_64-linux => 'GNU/Linux on Intel x86_64'
 Distribution: inst (compressed)
 Directory for temporary files: /tmp
 ...
  Detected platform: GNU/Linux on Intel x86_64
 
- <B> binary platforms: 1 out of 19
+ <B> binary platforms: 1 out of 16
 
- <S> set installation scheme (scheme-full)
+ <S> set installation scheme: scheme-full
 
  <C> customizing installation collections
-     40 collections out of 41, disk space required: 5328 MB
+     40 collections out of 41, disk space required: 5829 MB
 
  <D> directories:
    TEXDIR (the main TeX directory):
-     /usr/local/texlive/2018
+     /usr/local/texlive/2019
    ...
 
  <O> options:
@@ -713,20 +707,21 @@ Actions:
  <H> help
  <Q> quit
 \end{boxedverbatim}
+\vskip-\baselineskip
 \caption{Schermata principale dell'installatore testuale
   (\GNU/Linux)}\label{fig:text-main}
 \end{figure}
 
 \begin{figure}[tb]
-\tlpng{install-lnx-main}{\linewidth}
-\caption{Schermata dell'installatore grafico avanzato
-  (\GNU/Linux)}\label{fig:gui-main}
+\tlpng{basic-w32}{.6\linewidth}
+\caption{Schermata dell'installazione (Windows); il pulsante Avanzate
+  darà qualcosa di simile alla figura~\ref{fig:advanced-lnx}}\label{fig:basic-w32}
 \end{figure}
 
 \begin{figure}[tb]
-\tlpng{wizard-w32}{\linewidth}
-\caption{Schermata dell'installazione guidata
-  (Windows)}\label{fig:wizard-w32}
+\tlpng{advanced-lnx}{\linewidth}
+\caption{Schermata dell'installazione \GUI\ avanzata
+  (\GNU/Linux)}\label{fig:advanced-lnx}
 \end{figure}
 
 
@@ -759,36 +754,27 @@ Voi semplicemente digitate qualcosa al prompt (MAIUSCOLE e minuscole sono
 differenti), premete il tasto Invio e l'intera schermata del terminale
 sarà aggiornata, con il contenuto modificato.
 
-L'interfaccia dell'installatore testuale è così primitiva per una ragione:
-è progettata per funzionare sul maggior numero di piattaforme possibile,
-anche con una versione minimale di Perl.
+L'interfaccia di installazione testuale è così primitiva per farla
+funzionare sul maggior numero possibile di piattaforme, anche con un Perl
+minimale.
 
-\subsubsection{L'installatore grafico avanzato}
+\subsubsection{L'installatore grafico}
+\label{sec:graphical-inst}
 
-La figura~\ref{fig:gui-main} mostra l'installatore grafico avanzato sotto
-\GNU/Linux. Al di là dell'uso di pulsanti e menu, questo installatore non
-differisce di molto da quello testuale.
-
-Questa modalità può essere invocata esplicitamente tramite
+L'installatore grafico predefinito parte semplice, giusto con poche opzioni;
+vedi la figura~\ref{fig:basic-w32}. Può essere avviato con
 \begin{alltt}
-> \Ucom{install-tl -gui=perltk}
+> \Ucom{install-tl -gui}
 \end{alltt}
+Il pulsante Avanzato dà accesso alla maggior parte delle opzioni
+dell'installazione testuale; vedi la figura~\ref{fig:advanced-lnx}.
 
+\subsubsection{Gli installatori obsoleti}
 
-\subsubsection{La semplice installazione guidata}
-
-Sotto Windows, l'azione predefinita è di eseguire il più semplice metodo
-di installazione che potessimo escogitare, chiamato ``installazione
-guidata'' (figura~\ref{fig:wizard-w32}). Questa modalità installa tutto e 
-praticamente non pone domande. Se
-volete personalizzare la vostra installazione, dovete lanciare uno degli
-altri installatori.
-
-Su altre piattaforme, questa modalità può essere invocata esplicitamente con
-\begin{alltt}
-> \Ucom{install-tl -gui=wizard}
-\end{alltt}
-
+Le modalità \texttt{perltk}/\texttt{expert} e \texttt{wizard} sono ancora
+disponibili per i sistemi che hanno Perl/Tk installato. Possono essere
+specificate rispettivamente con gli argomenti \texttt{-gui=perltk} e
+\texttt{-gui=wizard}.
 
 \subsection{Eseguire l'installatore}
 \label{sec:runinstall}
@@ -806,24 +792,22 @@ Available platforms:
 ===============================================================================
    a [ ] Cygwin on Intel x86 (i386-cygwin)
    b [ ] Cygwin on x86_64 (x86_64-cygwin)
-   c [ ] MacOSX current (10.10-10.13) on x86_64 (x86_64-darwin)
-   d [ ] MacOSX legacy (10.6-10.10) on x86_64 (x86_64-darwinlegacy)
+   c [ ] MacOSX current (10.12-) on x86_64 (x86_64-darwin)
+   d [ ] MacOSX legacy (10.6-) on x86_64 (x86_64-darwinlegacy)
    e [ ] FreeBSD on x86_64 (amd64-freebsd)
    f [ ] FreeBSD on Intel x86 (i386-freebsd)
    g [ ] GNU/Linux on ARM64 (aarch64-linux)
-   h [ ] GNU/Linux on ARM (armel-linux)
-   i [ ] GNU/Linux on ARMhf (armhf-linux)
-   j [ ] GNU/Linux on Intel x86 (i386-linux)
-   k [ ] GNU/Linux on PowerPC (powerpc-linux)
-   l [X] GNU/Linux on x86_64 (x86_64-linux)
-   m [ ] GNU/Linux on x86_64 with musl (x86_64-linuxmusl)
-   o [ ] NetBSD on x86_64 (amd64-netbsd)
-   p [ ] NetBSD on Intel x86 (i386-netbsd)
-   s [ ] Solaris on Intel x86 (i386-solaris)
-   t [ ] Solaris on Sparc (sparc-solaris)
-   u [ ] Solaris on x86_64 (x86_64-solaris)
-   v [ ] Windows (win32)
+   h [ ] GNU/Linux on ARMhf (armhf-linux)
+   i [ ] GNU/Linux on Intel x86 (i386-linux)
+   j [X] GNU/Linux on x86_64 (x86_64-linux)
+   k [ ] GNU/Linux on x86_64 with musl (x86_64-linuxmusl)
+   l [ ] NetBSD on x86_64 (amd64-netbsd)
+   m [ ] NetBSD on Intel x86 (i386-netbsd)
+   o [ ] Solaris on Intel x86 (i386-solaris)
+   p [ ] Solaris on x86_64 (x86_64-solaris)
+   s [ ] Windows (win32)
 \end{boxedverbatim}
+\vskip-\baselineskip
 \caption{Menu delle architetture}\label{fig:bin-text}
 \end{figure}
 
@@ -853,6 +837,7 @@ Select scheme:
  i [ ] teTeX scheme (more than medium, but nowhere near full)
  j [ ] custom selection of collections
 \end{boxedverbatim}
+\vskip-\baselineskip
 \caption{Menu degli schemi}\label{fig:scheme-text}
 \end{figure}
 
@@ -860,9 +845,11 @@ La figura~\ref{fig:scheme-text} mostra il menu degli schemi di \TL; da qui
 potete scegliere uno ``schema'', che è un insieme di collezioni di pacchetti.
 Lo schema \optname{full} installa tutto quanto disponibile.
 Questo è lo schema raccomandato, ma potete anche scegliere \optname{basic}
-per un sistema piccolo, \optname{minimal} per scopi di prova e
-\optname{medium} o \optname{teTeX} per una via di mezzo. Ci sono anche
-ulteriori schemi specializzati e specifici per particolari paesi.
+per avere solo plain e \LaTeX, \optname{small} per quache programma in più
+(equvallente alla cosiddetta installazione Basic\TeX\ di Mac\TeX),
+\optname{minimal} per scopi di prova e \optname{medium} o \optname{teTeX} per
+una via di mezzo. Ci sono anche ulteriori schemi specializzati e specifici per
+particolari paesi.
 
 \begin{figure}[tbh]
 \centering \tlpng{stdcoll}{.7\linewidth}
@@ -890,8 +877,8 @@ singoli pacchetti.
 La strutturazione predefinita è descritta nella
 sezione~\ref{sec:texmftrees}, \p.\pageref{sec:texmftrees}. La directory
 predefinita di installazione è
-\dirname{/usr/local/texlive/2018} sotto
-Unix e |%SystemDrive%\texlive\2018| sotto Windows. Questa configurazione
+\dirname{/usr/local/texlive/2019} sotto
+Unix e |%SystemDrive%\texlive\2019| sotto Windows. Questa configurazione
 permette di avere molte installazioni parallele di \TL, ad esempio una per
 ogni edizione (tipicamente per anno, come qui) e di passare tra di loro
 semplicemente modificando il vostro percorso di ricerca.
@@ -899,7 +886,7 @@ semplicemente modificando il vostro percorso di ricerca.
 La directory di installazione può essere modificata impostando la
 cosiddetta \dirname{TEXDIR} nel programma di installazione. La schermata
 \GUI\ per questa ed altre opzioni è mostrata nella
-figura~\ref{fig:gui-main}. Tra le ragioni più comuni per cambiarla ci sono
+figura~\ref{fig:advanced-lnx}. Tra le ragioni più comuni per cambiarla ci sono
 la mancanza di sufficiente spazio su disco in quella partizione (l'intera
 \TL\ richiede diversi gigabyte) o la mancanza di permessi di scrittura per
 la posizione predefinita (non è necessario essere root o amministratori
@@ -916,7 +903,7 @@ per maggiori dettagli.
 
 Una ragionevole scelta alternativa è una directory all'interno della
 vostra home, soprattutto se sarete gli unici utilizzatori. Usate `|~|'
-per specificare la vostra home, come ad esempio in `|~/texlive/2018|'.
+per specificare la vostra home, come ad esempio in `|~/texlive/2019|'.
 
 Raccomandiamo di includere l'anno nel percorso, così da poter tenere
 diverse edizioni di \TL{} fianco a fianco (potete anche mantenere un nome
@@ -963,8 +950,9 @@ Options setup:
             binaries to:
             manpages to:
                 info to:
- <Y> after installation, get package updates from CTAN: [X]
+ <Y> after install, set CTAN as source for package updates: [X]
 \end{boxedverbatim}
+\vskip-\baselineskip
 \caption{Menu delle opzioni (Unix)}\label{fig:options-text}
 \end{figure}
 
@@ -1062,14 +1050,15 @@ per ottenere un elenco delle opzioni della riga di comando. Sia |-| che
 comuni:
 
 \begin{ttdescription}
-\item[-gui] Se possibile, usa l'installatore grafico. Questa opzione
-  richiede il modulo Perl/Tk
+\item[-gui] Usa l'installatore \GUI\ se è possibile. Questo richiede Tcl/Tk
+  versione 8.5 o superiore. Vale per \MacOSX\ ed è distribuito con \TL{}
+  su Windows. Le opzoni obsolete \texttt{-gui=perltk} e \texttt{-gui=wizard}
+  sono ancora disponibili e richiedono il modulo Perl/Tk
   (\url{http://tug.org/texlive/distro.html#perltk}) compilato con il
-  supporto per XFT; se Perl/Tk non è disponibile, l'installazione
+  supporto per XFT; se Tcl/Tk e Perl/Tk non sono disponibili, l'installazione
   prosegue in modalità testuale.
 
-\item[-no-gui] Costringe all'uso dell'installatore testuale, anche sotto
-  Windows.
+\item[-no-gui] Costringe all'uso dell'installatore testuale.
 
 \item[-lang {\sl LL}] Specifica la lingua dell'interfaccia
   dell'installatore sotto forma di un codice standard (di solito di due
@@ -1168,9 +1157,9 @@ da modificare dovrebbe essere \filename{$HOME/.profile} %stopzone
 aggiungere sarebbero simili alle seguenti:
 
 \begin{sverbatim}
-PATH=/usr/local/texlive/2018/bin/i386-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2018/texmf/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2018/texmf/doc/info:$INFOPATH; export INFOPATH
+PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2019/texmf/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2019/texmf/doc/info:$INFOPATH; export INFOPATH
 \end{sverbatim}
 %stopzone
 
@@ -1179,9 +1168,9 @@ Per csh o tcsh, il file da modificare tipicamente è
 tipo:
 
 \begin{sverbatim}
-setenv PATH /usr/local/texlive/2018/bin/i386-linux:$PATH
-setenv MANPATH /usr/local/texlive/2018/texmf/doc/man:$MANPATH
-setenv INFOPATH /usr/local/texlive/2018/texmf/doc/info:$INFOPATH
+setenv PATH /usr/local/texlive/2019/bin/x86_64-linux:$PATH
+setenv MANPATH /usr/local/texlive/2019/texmf/doc/man:$MANPATH
+setenv INFOPATH /usr/local/texlive/2019/texmf/doc/info:$INFOPATH
 \end{sverbatim}
 
 Se già avete delle impostazioni del genere in uno dei file citati,
@@ -1201,8 +1190,8 @@ I nostri due suggerimenti sono: 1)~potete controllare il file
 \filename{/etc/manpath.config} e, se esiste, aggiungere linee come
 
 \begin{sverbatim}
-MANPATH_MAP /usr/local/texlive/2018/bin/i386-linux \
-            /usr/local/texlive/2018/texmf/doc/man
+MANPATH_MAP /usr/local/texlive/2019/bin/x86_64-linux \
+            /usr/local/texlive/2019/texmf/doc/man
 \end{sverbatim}
 
 E 2)~verificate la presenza di un file \filename{/etc/environment} che
@@ -1668,28 +1657,22 @@ scegliere tra alcuni compiti comuni, come indicato in questa schermata:
 \label{sec:tlmgr}
 
 \begin{figure}[tb]
-\tlpng{tlmgr-gui}{\linewidth}
-\caption{\prog{tlmgr} in modalità \GUI: la finestra principale dopo aver
-  premuto il pulsante ``Carica''.}\label{fig:tlmgr-gui}
+\tlpng{tlshell-macos}{\linewidth}
+\caption{\GUI\ \prog{tlshell} che mostra il menu Azioni (\MacOSX)}
+\label{fig:tlshell}
 \end{figure}
 
 \begin{figure}[tb]
-\hbox to \hsize{%
-  \vtop{\hsize=.59\linewidth
-    \null  % make figures align at the top
-    \tlpng{tlmgr-general-options}{\hsize}
-    \caption{\texttt{tlmgr} in modalità \GUI: opzioni generali}
-    \label{fig:tlmgr-general-options}
-  }
-  \hfil
-  \vtop{\hsize=.39\linewidth
-    \null
-    \tlpng{tlmgr-paper-options}{\hsize}
-    \caption{\texttt{tlmgr} in modalità \GUI: opzioni della dimensione del
-    foglio}
-    \label{fig:tlmgr-paper-options}
-  }
-}
+\tlpng{tlcockpit-packages}{.8\linewidth}
+\caption{\GUI\ \prog{tlcockpit} per \prog{tlmgr}}
+\label{fig:tlcockpit}
+\end{figure}
+
+\begin{figure}[tb]
+\tlpng{tlmgr-gui}{\linewidth}
+\caption{Modalità \GUI\ obsoleta di \prog{tlmgr}: finestra principlae dopo aver
+  premuto il pulsante `Carica'}
+\label{fig:tlmgr-gui}
 \end{figure}
 
 \TL{} include un programma chiamato \prog{tlmgr} per gestire \TL{} dopo
@@ -1709,27 +1692,21 @@ programma \prog{texconfig}. Distribuiamo e manteniamo ancora
 \prog{texconfig} per tutti quelli abituati alla sua interfaccia, ma
 attualmente raccomandiamo di usare \prog{tlmgr}.
 
-\subsection{Modalità GUI di \cmdname{tlmgr}}
-\prog{tlmgr} può essere avviato in modalità \GUI{}
+\subsection{Interfacce \GUI\ attuali per \cmdname{tlmgr}}
+
+\TL{} contiene diverse \GUI\ per \prog{tlmgr}. La figura~\ref{fig:tlshell}
+mostra \cmdname{tlshell}, che è scritto in Tcl/Tk e funziona così com'è
+sotto Windows e \MacOSX. La figura~\ref{fig:tlcockpit} mostra \prog{tlcockpit},
+che richiede Java versione~8 o superiore e JavaFX. Entrambi sono pacchetti
+separati.
+
+\prog{tlmgr} stesso può essere avviato in modalità \GUI{}
 (figura~\ref{fig:tlmgr-gui}) con
 \begin{alltt}
 > \Ucom{tlmgr -gui}
 \end{alltt}
-oppure sotto Windows tramite il menu Start: \texttt{Start},
-\texttt{Programmi}, \texttt{TeX Live ...}, \texttt{TeX Live Manager}.
-Dopo aver premuto il pulsante ``Carica'' il programma mostra un elenco dei
-pacchetti disponibili ed installati. Ovviamente assumiamo che il percorso
-di installazione attuale sia valido e raggiungibile.
-
-Le figure~\ref{fig:tlmgr-general-options} e~\ref{fig:tlmgr-paper-options}
-mostrano le schermate con le opzioni generali e il formato di pagina.
-
-\subsection{Altre interfacce grafiche per \cmdname{tlmgr}}
-
-Oltre alla modalità \code{tlmgr -gui} descritta poco sopra, altri due programmi
-permettono di usare \cmdname{tlmgr} da un'interfaccia grafica:
-\cmdname{tlshell} (scritto in Tcl/Tk) e \cmdname{tlcockpit} (scritto in Java).
-Sono inclusi come pacchetti separati.
+Questa estensione \GUI\ richiede Perl/Tk, il cui modulo non è più incluso nella
+distribuzione Perl di \TL\ per Windows.
 
 \subsection{Esempi di invocazioni di \cmdname{tlmgr} dalla riga di comando}
 
@@ -1767,12 +1744,12 @@ running post install action for xetex
 install: xetex-def
 ...
 running mktexlsr
-mktexlsr: Updating /usr/local/texlive/2018/texmf-dist/ls-R...
+mktexlsr: Updating /usr/local/texlive/2019/texmf-dist/ls-R...
 ...
 running fmtutil-sys --missing
 ...
 Transcript written on xelatex.log.
-fmtutil: /usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt installed.
+fmtutil: /usr/local/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt installed.
 \end{fverbatim}
 
 Come potete vedere, \prog{tlmgr} installa le dipendenze e si occupa di ogni
@@ -1859,7 +1836,7 @@ installati come parte di \TL{} solo su Windows.
   file \PS{} e PDF; osservate la figura~\ref{fig:psview}.
 
 \begin{figure}[tb]
-\tlpng{psview}{.6\linewidth}
+\centering \tlpng{psview}{.6\linewidth}
 \caption{PS\_View: ingrandimenti elevatissimi disponibili!}
 \label{fig:psview}
 \end{figure}
@@ -1878,9 +1855,9 @@ installati come parte di \TL{} solo su Windows.
 \item[Strumenti a riga di comando.] Assieme ai soliti programmi di \TL{}
   vengono installate alcune versioni per Windows di tipici programmi Unix
   a riga di comando. Questi programmi includono \cmdname{gzip},
-  \cmdname{zip}, \cmdname{unzip} e gli strumenti della suite \cmdname{xpdf}
-  (\cmdname{pdfinfo}, \cmdname{pdffonts}, \ldots). Il visualizzatore
-  \cmdname{xpdf} non è disponibile per Windows. Un'alternativa tra le tante è 
+  \cmdname{zip}, \cmdname{unzip} e gli strumenti della suite \cmdname{poppler}
+  (\cmdname{pdfinfo}, \cmdname{pdffonts}, \ldots); non è incluso nessun
+  visualizzatore di PDF per Windows. Una possibilità è
   Sumatra PDF, disponibile su
   \url{https://www.sumatrapdfreader.org/}.
 
@@ -2144,10 +2121,10 @@ percorso di ricerca usato per cercare questi file è chiamato
 altra) variabile d'ambiente.
 
 Invece, l'installazione normale dà luogo ad un file
-\file{.../2018/texmf.cnf}. Se dovete apportare delle modifiche ai valori
+\file{.../2019/texmf.cnf}. Se dovete apportare delle modifiche ai valori
 predefiniti (di norma non è necessario), questo è il posto in cui
 piazzarle. Il file di configurazione principale è
-\file{.../2018/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
+\file{.../2019/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
 quest'ultimo file, dato che le vostre modifiche andrebbero perdute quando
 la versione distribuita viene aggiornata.
 
@@ -2992,7 +2969,7 @@ Preparatori degli eseguibili:
 Marc Baudoin (\pkgname{amd64-netbsd}, \pkgname{i386-netbsd}),
 Ken Brown (\pkgname{i386-cygwin}, \pkgname{x86\_64-cygwin}),
 Simon Dales (\pkgname{armhf-linux}),
-Johannes Hielschier (\pkgname{aarch64-linux}),
+Johannes Hielscher (\pkgname{aarch64-linux}),
 Akira Kakuto (\pkgname{win32}),
 Dick Koch (\pkgname{x86\_64-darwin}),
 Nikola Le\v{c}i\'c (\pkgname{amd64-freebsd}, \pkgname{i386-freebsd}),
@@ -3001,9 +2978,7 @@ Mojca Miklavec (\pkgname{i386-linux},
                 \pkgname{x86\_64-darwinlegacy},
                 \pkgname{i386-solaris}, \pkgname{x86\_64-solaris},
                 \pkgname{sparc-solaris}),
-Norbert Preining (\pkgname{x86\_64-linux}),
-Thomas Schmitz (\pkgname{powerpc-linux}),
-Boris Veytsman (\pkgname{armel-linux}).
+Norbert Preining (\pkgname{x86\_64-linux}).
 Per informazioni sul processo di compilazione di \TL, visitate
 \url{http://tug.org/texlive/build.html}.
 
@@ -3944,7 +3919,7 @@ valori da un dato profilo; nuovo comando \code{P} per salvare esplicitamente un
 profilo; nuovi nomi di variabili di profilo (ma i precedenti sono ancora
 accettati).
 
-Sync\TeX: il nuovo nome di file temporaneo ora somiglia a 
+Sync\TeX: il nome del file temporaneo ora somiglia a 
 \code{foo.synctex(busy)} e non a \code{foo.synctex.gz(busy)}
 (niente~\code{.gz}). Le applicazioni e i sistemi di compilazione che
 vogliono rimuovere i file temporanei potrebbero richiedere un adattamento.
@@ -3960,11 +3935,8 @@ neppure per gli aggiornamenti di sicurezza).
 Piattaforme: consultate il paragrafo su Mac\TeX\ qui sopra; nessun altro
 cambiamento.
 
-
 
-\htmlanchor{news}
-\subsection{Presente---2018}
-\label{sec:tlcurrent}
+\subsection{2018}
 
 Kpathsea: la ricerca di file nelle directory non di sistema è ora per default
 insensibile alle maiuscole; per disattivare questo comportamento, impostate il
@@ -3974,7 +3946,7 @@ variabile d'ambiente. Tutti i dettagli nel manuale di Kpathsea
 
 ep\TeX, eup\TeX: nuova primitiva \cs{epTeXversion}.
 
-Lua\TeX: preparazione per migrare a Lua\TeX\ 5.3 nel 2019: un eseguibile
+Lua\TeX: preparazione per migrare a Lua 5.3 nel 2019: un eseguibile
 \code{luatex53} è disponibile nella maggior parte delle piattaforme, ma deve
 essere rinominato in \code{luatex} per funzionare. Altrimenti usate i file di
 \ConTeXt\ Garden (\url{http://wiki.contextgarden.net}); visitate il sito per
@@ -4002,7 +3974,7 @@ di \code{remove}; nuova azione/opzione \code{print-platform-info}.
 
 Piattaforme:
 \begin{itemize*}
-\item Nuove: \code{x86\_64-linuxmusl} e \code{aarch64-linux}.
+\item
 Rimosse: \code{armel-linux}, \code{powerpc-linux}.
 
 \item \code{x86\_64-darwin} supporta le versioni 10.10--10.13
@@ -4015,6 +3987,76 @@ che \code{i386-darwin platforms} sono stati rimossi.
 
 \item Windows: XP non è più supportato.
 \end{itemize*}
+
+
+\htmlanchor{news}
+\subsection{Presente: 2019}
+\label{sec:tlcurrent}
+
+Kpathsea: suddivisione dei path ed espansione delle graffe più consistenti;
+nuova variabile \code{TEXMFDOTDIR} al posto del \code{.}\ esplicito nei path
+consente di cercare più facilmente in sotto directory aggiuntive (consultate
+i commenti in \code{texmf.cnf}).
+
+ep\TeX, eup\TeX: nuove primitive \cs{readpapersizespecial} e \cs{expanded}.
+
+Lua\TeX: adesso si usa Lua 5.3, con i concomitanti cambiamenti all'aritmetica
+e all'interfaccia. La libreria pplib fatta in casa è usata per leggere i file
+pdf, così eliminando la dipendenza da poppler (e la necessità del C++);
+l'interfaccia Lua è cambiata di conseguenza.
+
+MetaPost: il nome del comando \code{r-mpost} è riconosciuto come un alias
+per l'invocazione con l'opzione \code{--restricted} ed è stato aggiunto alla
+lista dei comandi riservati disponibili di default.
+La precisione minima ora è di 2 per la modalità binaria e decimale.
+La modalità binaria non è più disponibile in MPlib ma è ancora disponibile
+nel MetaPost a sé stante.
+
+pdf\TeX: nuova primitiva \cs{expanded}; se il nuovo parametro primitivo
+\cs{pdfomitcharset} è impostato a 1, la stringa \code{/CharSet} è omessa
+dall'output PDF, dato che non può essere garantita corretta in modo fattibile,
+come richiesto da PDF/A-2 e PDF/A-3.
+
+Xe\TeX: nuove primitive \cs{expanded},
+\cs{creationdate},
+\cs{elapsedtime},
+\cs{filedump}, 
+\cs{filemoddate}, 
+\cs{filesize}, 
+\cs{resettimer}, 
+\cs{normaldeviate}, 
+\cs{uniformdeviate}, 
+\cs{randomseed}; esteso \cs{Ucharcat} per produrre i caratteri attivi.
+
+\code{tlmgr}: supporto per \code{curl} come programma di download; uso di
+  \code{lz4} e gzip prima di \code{xz} per i backup locali, se disponibile;
+  preferisce i binari forniti dal sistema a quelli forniti da \TL\ per i
+  programmi di compressione e download, a meno che la variabile d'ambiente
+  \code{TEXLIVE\_PREFER\_OWN} è impostata.
+
+\code{install-tl}: la nuova opzione \code{-gui} (senza argomenti) è predefinita
+su Windows e Macs e lancia una nuova GUI in Tcl/Tk (vedi le
+sezioni~\ref{sec:basic} e~\ref{sec:graphical-inst}).
+
+Utilità:
+\begin{itemize*}
+\item \code{cwebbin} (\url{https://ctan.org/pkg/cwebbin}) è ora l'implementazione
+di CWEB in \TeX\ Live, con il supporto per più dialetti di lingue e l'inclusione
+del programma \code{ctwill} per creare mini-indici.
+
+\item \code{chkdvifont}: riporta le informazioni sui font dai file \dvi{} e
+anche da tfm/ofm, vf, gf, pk.
+
+\item \code{dvispc}: rende un file DVI indipendente dalla pagina rispetto agli
+specials.
+\end{itemize*}
+
+Mac\TeX: \code{x86\_64-darwin} ora supporta la versione 10.12 e successive
+(Sierra, High Sierra, Mojave); \code{x86\_86-darwinlegacy} supporta ancora
+la versione 10.6 e successive. Il controllore ortografico Excalibur non è
+più incluso in quanto richiede il supporto a 32 bit.
+
+Piattaforme: rimossa \code{sparc-solaris}.
 
 
 \subsection{Futuro}
