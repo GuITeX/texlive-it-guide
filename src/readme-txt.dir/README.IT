@@ -41,8 +41,14 @@ Benvenuti a TeX Live
 
   Installazione
 
-   Lo script di installazione è chiamato install-tl
-   (install-tl-windows.bat su Windows) ed ha due modi operativi:
+   Lo script di installazione è chiamato install-tl e si trova alla della
+   struttura delle drectory. Potete lanciarlo con perl install-tl. Su Windows,
+   potete eseguire il file batch aggiuntivo, install-tl-windows.bat. Su Mac
+   probabilmente vorrete installare tramite [10]MacTeX, che ha il suo
+   programma i installazione nativo (è anche disponibile sul DVD, a fianco
+   alla directory texlive/ in cui siete adesso).
+
+   install-tl ha due modi operativi:
 
    -gui (predefinito su Windows e Macs) che esegue di default
           una semplice installazione, usando un'interfaccia grafica, ma se
@@ -57,8 +63,8 @@ Benvenuti a TeX Live
    Package Manager, Gestore dei Pacchetti di TeX Live), che ha sia
    una modalità grafica che una testuale.
 
-   Potete dare l'opzione a riga di comando --help sia per [10]install-tl
-   che per [11]tlmgr per informazioni dettagliate su entrambi i programmi.
+   Potete dare l'opzione a riga di comando --help sia per [11]install-tl
+   che per [12]tlmgr per informazioni dettagliate su entrambi i programmi.
    Visitate i precedenti collegamenti alla documentazione per avere (molte)
    più informazioni.
 
@@ -67,14 +73,14 @@ Benvenuti a TeX Live
    Ecco infine alcune pagine web di riferimento. Queste non sono incluse
    in TeX Live:
 
-     * [12]tug.org/begin.html - se siete nuovi di TeX e/o desiderate del
+     * [13]tug.org/begin.html - se siete nuovi di TeX e/o desiderate del
        materiale introduttivo.
-     * [13]tug.org/interest.html - elenchi generali di risorse web per TeX,
+     * [14]tug.org/interest.html - elenchi generali di risorse web per TeX,
        inclusi documentazione, sistemi, pacchetti, font e molto altro.
-     * [14]tug.org/ctan.html - un punto di accesso alla Comprehensive TeX
+     * [15]tug.org/ctan.html - un punto di accesso alla Comprehensive TeX
        Archive Network (CTAN), che è una raccolta online di tutto ciò che
        riguarda TeX.
-     * [15]tug.org/usergroups.html - l'elenco di tutti i gruppi utenti TeX nel
+     * [16]tug.org/usergroups.html - l'elenco di tutti i gruppi utenti TeX nel
        mondo, con informazioni sui loro contatti. Vi incoraggiamo caldamente ad
        unirvi ad un gruppo di vostra scelta per sostenere TeX Live e le altre
        attività legate a TeX.
@@ -82,7 +88,7 @@ Benvenuti a TeX Live
     Buon lavoro con TeX!
      _________________________________________________________________
 
-   [16]Home page di TeX Live.
+   [17]Home page di TeX Live.
 
 Riferimenti
 
@@ -95,10 +101,11 @@ Riferimenti
    7. file:../texmf-dist/doc/texlive/
    8. file:../doc.html
    9. https://tug.org/texlive/doc.html
-  10. https://tug.org/texlive/doc/install-tl.html
-  11. https://tug.org/texlive/tlmgr.html
-  12. https://tug.org/begin.html
-  13. https://tug.org/interest.html
-  14. https://tug.org/ctan.html
-  15. https://tug.org/usergroups.html
-  16. https://tug.org/texlive/
+  10. https://tug.org/mactex/
+  11. https://tug.org/texlive/doc/install-tl.html
+  12. https://tug.org/texlive/tlmgr.html
+  13. https://tug.org/begin.html
+  14. https://tug.org/interest.html
+  15. https://tug.org/ctan.html
+  16. https://tug.org/usergroups.html
+  17. https://tug.org/texlive/

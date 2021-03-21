@@ -8,7 +8,7 @@
 %
 % Traduzione originaria a cura di Marco Pallante. Attualmente la traduzione
 % è portata avanti in seno al progetto GuITeX del GuIT, Gruppo Utilizzatori
-% Italiani di TeX (http://http://www.guit.sssup.it/).
+% Italiani di TeX (http://www.guit.sssup.it/).
 %
 % Chiunque può contribuire accedendo al repository Git diponibile
 % all'indirizzo
@@ -24,14 +24,14 @@
 \usepackage[T1]{fontenc}
 
 \title{%
-  {\huge \textit{Guida a \TeX\ Live---2019}}
+  {\huge \textit{Guida a \TeX\ Live---2020}}
 }
 
 \author{Karl Berry\\[3mm]
         \url{https://tug.org/texlive/}
        }
 
-\date{Aprile 2019}
+\date{Marzo 2020}
 
 \begin{document}
 \maketitle
@@ -116,8 +116,8 @@ compilati per quelle piattaforme per le quali non forniamo i binari.
 Per quanto riguarda Windows: Windows~7 e successivi sono supportati.
 Windows Vista probabilmente continuerà a funzionare quasi del
 tutto, ma \TL{} non sarà più neppure installato su Windows XP e
-precedenti. Non ci sono specifici eseguibili a 64-bit per Windows, ma gli
-eseguibili a 32-bit dovrebbero funzionare sui sistemi a 64-bit.
+precedenti. \TL{} non include specifici eseguibili a 64-bit per Windows, ma
+gli eseguibili a 32-bit dovrebbero funzionare sui sistemi a 64-bit.
 
 Consulta la sezione~\ref{sec:tl-coll-dists} per scoprire soluzioni
 alternative per Windows e \MacOSX.
@@ -126,7 +126,7 @@ alternative per Windows e \MacOSX.
 \label{sec:basic}
 
 È possibile installare \TL{} dal \DVD{} oppure attraverso Internet
-(\url{http://tug.org/texlive/acquire.html}). Il programma di installazione
+(\url{https://tug.org/texlive/acquire.html}). Il programma di installazione
 via rete è piccolo e scarica tutto ciò che è necessario da Internet.
 
 Il programma di installazione nel \DVD{} vi permette l'installazione su un
@@ -182,6 +182,14 @@ file quando elabora i documento, una funzionalità che può anche essere
 abusata in una grande quantità di modi. Di nuovo, elaborare documenti
 sconosciuti in una nuova sotto directory è la scelta più sicura.
 
+Un altro aspetto della sicurezza è assicurarsi che il materiale scaricato
+non sia stato modificato rispetto a quanto creato. Il programma
+\prog{tlmgr} (sezione~\ref{sec:tlmgr}) eseguirà automaticamente una
+verificca criptografica sui file scaricati se il programma \prog{gpg} (GNU
+Privacy Guard) è disponibile. Non è distribuito come parte di \TL, ma
+visitate \url{https://texlive.info/tlpgp/} per informazioni su \prog{pgp}
+se è necessario.
+
 
 \subsection{Ottenere aiuto}
 \label{sec:help}
@@ -192,53 +200,52 @@ offerto da volontari e utenti casuali, per cui è particolarmente
 importante fare la propria parte prima di chiedere (se preferite un
 supporto commerciale garantito, potete rinunciare del tutto a \TL{} e
 ordinare il sistema di un fornitore; alla pagina
-\url{http://tug.org/interest.html#vendors} trovate un elenco).
+\url{https://tug.org/interest.html#vendors} trovate un elenco).
 
 Ecco una lista di risorse, approssimativamente nell'ordine in cui noi
 raccomandiamo di usarle:
 
 \begin{description}
 \item [Per cominciare] Se siete nuovi di \TeX, alla pagina web
-  \url{http://tug.org/begin.html} troverete una breve introduzione al sistema.
+  \url{https://tug.org/begin.html} troverete una breve introduzione al sistema.
 
 \item [\TeX{} FAQ] Le \TeX{} FAQ sono un enorme compendio di
   risposte ad ogni genere di domanda, dalle più elementari alle più
   oscure. Sono incluse in \TL{} in
   \OnCD{texmf-dist/doc/generic/FAQ-en} e sono disponibili
-  su Internet alla pagina \url{http://www.tex.ac.uk/faq}. Controllate
+  su Internet alla pagina \url{https://www.tex.ac.uk/faq}. Controllate
   prima qui.
 
 \item [\TeX{} Catalogue] Se state cercando un pacchetto, un font, un
   programma o altro in particolare, il \TeX{} Catalogue è il luogo dove
   guardare. È un enorme catalogo con tutte le voci relative a \TeX. Visitate
-  \url{http://ctan.org/catalogue/}.
+  \url{https://ctan.org/pkg/catalogue}.
 
 \item [Risorse Web per \TeX{}] La pagina web
-  \url{http://tug.org/interest.html} ha molti collegamenti relativi a
+  \url{https://tug.org/interest.html} ha molti collegamenti relativi a
   \TeX, in particolare a numerosi libri, manuali ed articoli su tutti
   gli aspetti del sistema.
 
 \item [archivi di supporto] I principali forum di supporto per \TeX\
   includono
-  il sito della comunità \LaTeX{} su \url{http://latex-community.org/},
-  il sito di domande e risposte \url{http://tex.stackexchange.com}, il
+  il sito della comunità \LaTeX{} su \url{https://latex.org},
+  il sito di domande e risposte \url{https://tex.stackexchange.com}, il
   gruppo Usenet \url{news:comp.text.tex} e la mailing list
   \email{texhax@tug.org}. I loro archivi raccolgono anni di domande e risposte
   per il vostro piacere di ricerca tramite, per gli ultimi due,
-  \url{http://groups.google.com/group/comp.text.tex/topics} e
-  \url{http://tug.org/mail-archives/texhax}. E una
-  generica ricerca su web, ad esempio da \url{http://google.com}, non fa
-  mai male.
+  \url{https://groups.google.com/group/comp.text.tex/topics} e
+  \url{https://tug.org/mail-archives/texhax}. E una
+  generica ricerca su web non fa mai male.
 
 \item [porre domande] Se non riuscite a trovare una risposta, potete
   formulare la vostra domanda su
-  \url{http://latex-community.org/} e \url{http://tex.stackexchange.com/}
+  \url{https://latex-community.org/} e \url{https://tex.stackexchange.com/}
   tramite le loro interfacce web, su \dirname{comp.text.tex} tramite Google o
   un programma per Usenet, oppure tramite posta elettronica su
   \email{texhax@tug.org}. Ma prima di scrivere in qualunque posto, leggete
   questa voce delle FAQ, al fine di massimizzare le probabilità di ottenere una
   risposta utile:
-  \url{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=askquestion}.
+  \url{https://texfaq.org/FAQ-askquestion}.
 
 \item [supporto \TL{}] Se volete segnalare un bug o avete dei suggerimenti o
   commenti sulla distribuzione \TL{}, sull'installazione o la
@@ -270,21 +277,21 @@ Il \DVD{} \TK{} include quanto segue:
 \begin{description}
 
 \item [\TL] Un sistema \TeX{} completo da installare sul proprio disco. Home
-  page: \url{http://tug.org/texlive/}.
+  page: \url{https://tug.org/texlive/}.
 
 \item [Mac\TeX] per \MacOSX\ (chiamato attualmente macOS da Apple, ma noi
   continuiamo ad usare il vecchio nome in questo documento), aggiunge a \TL{}
   un installatore nativo per \MacOSX\ ed altre applicazioni Mac. Home page:
-  \url{http://tug.org/mactex/}.
+  \url{https://tug.org/mactex/}.
 
 \item [pro\TeX{}t] Un miglioramento della distribuzione \MIKTEX\ per
   Windows, \ProTeXt\ aggiunge alcuni strumenti supplementari a \MIKTEX\ e
   semplifica l'installazione. È interamente indipendente da \TL{} e ha le
   proprie istruzioni per l'installazione. Home page:
-  \url{http://tug.org/protext}.  
+  \url{https://tug.org/protext}.  
 
 \item [CTAN] Un'instantanea dell'archivio \CTAN{}
-  (\url{http://www.ctan.org/}).
+  (\url{https://ctan.org/}).
 
 \end{description}
 
@@ -314,10 +321,6 @@ un'installazione di \TL.
   dell'installazione e per il supporto specifico per Windows.
 \end{ttdescription}
 
-In aggiunta alle precedenti directory, gli script di installazione e i
-file \filename{README} (in varie lingue) si trovano nella directory 
-principale della distribuzione.
-
 Per quanto riguarda la documentazione, i collegamenti nel file
 \OnCD{doc.html} possono risultare utili. La documentazione per quasi
 tutto (pacchetti, formati, font, manuali dei programmi, 
@@ -333,6 +336,7 @@ Questa stessa documentazione di \TL\ si trova in
 \item{Ceco/Slovacco:} \OnCD{texmf-dist/doc/texlive/texlive-cz}
 \item{Cinese Semplificato:} \OnCD{texmf-dist/doc/texlive/texlive-zh-cn}
 \item{Francese:} \OnCD{texmf-dist/doc/texlive/texlive-fr}
+\item{Giapponese:} \OnCD{texmf-dist/doc/texlive/texlive-ja}
 \item{Inglese:} \OnCD{texmf-dist/doc/texlive/texlive-en}
 \item{Italiano:} \OnCD{texmf-dist/doc/texlive/texlive-it}
 \item{Polacco:} \OnCD{texmf-dist/doc/texlive/texlive-pl}
@@ -352,7 +356,7 @@ mappino le specifiche directory nella propria installazione.
 
 Tutti i percorsi, inclusi quelli personali, dovrebbero seguire la Struttura
 delle Directory di \TeX\ (\TeX\ Directory Structure, \TDS,
-\url{http://tug.org/tds}) con tutta la sua miriade di sotto directory,
+\url{https://tug.org/tds}) con tutta la sua miriade di sotto directory,
 altrimenti i file potrebbero non essere trovati. La sezione
 \ref{sec:local-personal-macros} (\p.\pageref{sec:local-personal-macros})
 descrive ciò con maggior dettaglio. L'ordine che trovate qui è l'ordine
@@ -379,11 +383,11 @@ nella lista hanno priorità rispetto ai primi.
   L'espansione di questa variabile si adatta dinamicamente per ciascun
   utente alla directory individuale dell'utente stesso.
 \item [TEXMFVAR] Il percorso (a livello di ciascun utente) usato da
-  \verb+texconfig+, \verb+updmap+ e \verb+fmtutil+ per memorizzare (nella 
+  \verb+texconfig+, \verb+updmap-user+ e \verb+fmtutil-user+ per memorizzare (nella 
   cache) i dati generati durante l'esecuzione, come i file dei formati e le
   mappe per i font generati.
 \item [TEXMFCONFIG] Il percorso (a livello di ciascun utente) usato dai
-  programmi \verb+texconfig+, \verb+updmap+ e \verb+fmtutil+ per
+  programmi \verb+texconfig+, \verb+updmap-sys+ e \verb+fmtutil-sys+ per
   memorizzare i dati di configurazione modificati.
 \item [TEXMFCACHE] I percorsi usati da \ConTeXt\ MkIV e Lua\LaTeX\
   per memorizzare (nella cache) i dati generati durante l'esecuzione; il valore 
@@ -397,8 +401,8 @@ La strutturazione predefinita è:
   \item[percorso a livello di sistema] può contenere diverse edizioni di \TL{}
   (in Unix di default è \texttt{/url/local/texlive}):
   \begin{ttdescription}
-    \item[2018] Un'edizione precedente.
-    \item[2019] L'attuale edizione.
+    \item[2019] Un'edizione precedente.
+    \item[2020] L'attuale edizione.
     \begin{ttdescription}
       \item [bin] ~
       \begin{ttdescription}
@@ -418,9 +422,9 @@ La strutturazione predefinita è:
   \item[percorso home dell'utente] (\texttt{\$HOME} o
       \texttt{\%USERPROFILE\%})
     \begin{ttdescription}
-      \item[.texlive2018] Dati privati generati e di configurazione relativi ad
+      \item[.texlive2019] Dati privati generati e di configurazione relativi ad
         un'edizione precedente.
-      \item[.texlive2019] Dati privati generati e di configurazione relativi
+      \item[.texlive2020] Dati privati generati e di configurazione relativi
         all'attuale edizione.
       \begin{ttdescription}
         \item [texmf-var\ \ \ ] \envname{TEXMFVAR}, \envname{TEXMFCACHE}
@@ -455,14 +459,14 @@ che non sono legate alla generazione dell'output. Questo programma è
 invocato dalla maggior parte dei formati, come \prog{etex}, \prog{latex},
 \prog{pdflatex}. Il suo sito web è \url{http://www.pdftex.org/}.
 Consultate \OnCD{texmf-dist/doc/pdftex/manual/pdftex-a.pdf} per il manuale
-e \OnCD{texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.tex} per gli
+e \OnCD{texmf-dist/doc/pdftex/samplepdftex/samplepdf.tex} per gli
 esempi d'uso di alcune delle sue funzionalità.
 
 \item [Lua\TeX] è il successore designato di pdf\TeX\ ed è quasi del tutto
 (ma non completamente) compatibile con i predecessori. È anche destinato a
 sostituire le funzioni di Aleph (vedi sotto), per quanto non sia stata
 prevista una compatibilità perfetta. L'interprete Lua incorportato
-(\url{http://www.lua.org/}) permette soluzioni eleganti a molti problemi
+(\url{https://lua.org/}) permette soluzioni eleganti a molti problemi
 spinosi di \TeX. Quando è invocato come \filename{texlua}, si comporta
 come un interprete Lua autonomo ed è usato in questo modo all'interno
 di \TL. Il suo sito web è \url{http://www.luatex.org} e il manuale di
@@ -470,7 +474,7 @@ riferimento è \OnCD{texmf-dist/doc/luatex/base/luatexref.pdf}.
 
 \item [\XeTeX] aggiunge il supporto per l'input in Unicode e per i font
 OpenType e di sistema, implementato usando librerie di terze parti
-standard. Visitate \url{http://tug.org/xetex}.
+standard. Visitate \url{https://tug.org/xetex}.
 
 \item [\OMEGA\ (Omega)] è basato sull'Unicode (caratteri a 16 bit) e
 dunque consente di lavorare con quasi tutti gli alfabeti del mondo
@@ -525,7 +529,7 @@ a pdf\TeX\ (citato in precedenza).
 
 Per cominciare, procuratevi il \DVD{} \TK{} oppure scaricate
 l'installatore di rete di \TL. Consulate
-\url{http://tug.org/texlive/acquire.html} per maggiori informazioni ed
+\url{https://tug.org/texlive/acquire.html} per maggiori informazioni ed
 altri metodi per ottenere il software.
 
 \begin{description} \item [Installatore di rete, .zip o .tar.gz:]
@@ -549,8 +553,8 @@ figura~\ref{fig:nsis}. Vi dà due scelte: ``Intalla'' e
 \dirname{texlive} del \DVD. Sotto Windows, il programma di installazione
 dovrebbe avviarsi automaticamente quando inserite il \DVD. Potete ottenere il
 \DVD\ diventando membri di un gruppo utenti \TeX\ (caldamente consigliato,
-\url{http://tug.org/usergroups.html}) oppure acquistandolo separatamente
-(\url{http://tug.org/store}) o ancora masterizzandolo a partire
+\url{https://tug.org/usergroups.html}) oppure acquistandolo separatamente
+(\url{https://tug.org/store}) o ancora masterizzandolo a partire
 dall'immagine \ISO. Sulla maggior parte dei sistemi potete anche montare
 direttamente l'\ISO. Dopo l'installazione dal \DVD\ o dall'immagine \ISO, se
 volete ottenere gli aggiornamenti da Internet, consulate
@@ -572,7 +576,7 @@ pricipale pubblicata e l'altra.
 Se avete la necessità di usare un proxy, usate un file
 \filename{~/.wgetrc} o le variabili d'ambiente con le impostazioni proxy
 per Wget
-(\url{http://www.gnu.org/software/wget/manual/html_node/Proxies.html}),
+(\url{https://www.gnu.org/software/wget/manual/html_node/Proxies.html}),
 o l'equivalente per qualsiasi programma di download usiate. Questo non
 conta se state installando dal \DVD\ o da un'immagine \ISO.
 
@@ -628,7 +632,7 @@ sezione~\ref{sec:cygwin}.
 
 Come accennato nella sezione~\ref{sec:tl-coll-dists}, abbiamo preparato
 una distribuzione separata per \MacOSX{} chiamata Mac\TeX\
-(\url{http://tug.org/mactex}). Su \MacOSX{} raccomandiamo di usare
+(\url{https://tug.org/mactex}). Su \MacOSX{} raccomandiamo di usare
 l'installatore nativo di Mac\TeX\ al posto dell'installatore di \TL, in
 quanto quello nativo esegue alcuni aggiustamenti specifici per il Mac, in
 particolare per consentire con semplicità il passaggio tra le varie
@@ -676,7 +680,7 @@ Per un elenco completo delle diverse opzioni:
 %%% TODO
 \begin{figure}[tb]
 \begin{boxedverbatim}
-Installing TeX Live 2019 from: ...
+Installing TeX Live 2020 from: ...
 Platform: x86_64-linux => 'GNU/Linux on Intel x86_64'
 Distribution: inst (compressed)
 Directory for temporary files: /tmp
@@ -688,11 +692,11 @@ Directory for temporary files: /tmp
  <S> set installation scheme: scheme-full
 
  <C> customizing installation collections
-     40 collections out of 41, disk space required: 5829 MB
+     40 collections out of 41, disk space required: 6536 MB
 
  <D> directories:
    TEXDIR (the main TeX directory):
-     /usr/local/texlive/2019
+     /usr/local/texlive/2020
    ...
 
  <O> options:
@@ -792,12 +796,12 @@ Available platforms:
 ===============================================================================
    a [ ] Cygwin on Intel x86 (i386-cygwin)
    b [ ] Cygwin on x86_64 (x86_64-cygwin)
-   c [ ] MacOSX current (10.12-) on x86_64 (x86_64-darwin)
+   c [ ] MacOSX current (10.13-) on x86_64 (x86_64-darwin)
    d [ ] MacOSX legacy (10.6-) on x86_64 (x86_64-darwinlegacy)
    e [ ] FreeBSD on x86_64 (amd64-freebsd)
    f [ ] FreeBSD on Intel x86 (i386-freebsd)
    g [ ] GNU/Linux on ARM64 (aarch64-linux)
-   h [ ] GNU/Linux on ARMhf (armhf-linux)
+   h [ ] GNU/Linux on ARMv6/RPi (armhf-linux)
    i [ ] GNU/Linux on Intel x86 (i386-linux)
    j [X] GNU/Linux on x86_64 (x86_64-linux)
    k [ ] GNU/Linux on x86_64 with musl (x86_64-linuxmusl)
@@ -877,8 +881,8 @@ singoli pacchetti.
 La strutturazione predefinita è descritta nella
 sezione~\ref{sec:texmftrees}, \p.\pageref{sec:texmftrees}. La directory
 predefinita di installazione è
-\dirname{/usr/local/texlive/2019} sotto
-Unix e |%SystemDrive%\texlive\2019| sotto Windows. Questa configurazione
+\dirname{/usr/local/texlive/2020} sotto
+Unix e |%SystemDrive%\texlive\2020| sotto Windows. Questa configurazione
 permette di avere molte installazioni parallele di \TL, ad esempio una per
 ogni edizione (tipicamente per anno, come qui) e di passare tra di loro
 semplicemente modificando il vostro percorso di ricerca.
@@ -898,12 +902,12 @@ alcune variabili d'ambiente prima di eseguire il programma di
 installazione (molto probabilmente \envname{TEXLIVE\_INSTALL\_PREFIX} o
 \envname{TEXLIVE\_INSTALL\_TEXDIR}); consultate la documentazione tramite
 |install-tl --help| (disponibile online su
-\url{http://tug.org/texlive/doc/install-tl.html}) per la lista completa e
+\url{https://tug.org/texlive/doc/install-tl.html}) per la lista completa e
 per maggiori dettagli.
 
 Una ragionevole scelta alternativa è una directory all'interno della
 vostra home, soprattutto se sarete gli unici utilizzatori. Usate `|~|'
-per specificare la vostra home, come ad esempio in `|~/texlive/2019|'.
+per specificare la vostra home, come ad esempio in `|~/texlive/2020|'.
 
 Raccomandiamo di includere l'anno nel percorso, così da poter tenere
 diverse edizioni di \TL{} fianco a fianco (potete anche mantenere un nome
@@ -960,9 +964,7 @@ La figura~\ref{fig:options-text} mostra il menu delle opzioni in modalità
 testuale. Ulteriori informazioni su ciascuna opzione:
 
 \begin{description}
-%CM Perché alcuni item di questo elenco sono in inglese ed altri in italiano?
-%CM Non conoscendone la ragione, lascio così com'è.
-\item[Usa come predefinito il formato di pagina lettera al posto dell'A4:]
+\item[use letter size instead of A4 by default:]
   Questa è la selezione del formato di carta predefinito. Ovviamente, se
   lo si desidera, si potrà e si dovrebbe specificare il formato della
   carta in ogni singolo documento.
@@ -973,7 +975,7 @@ testuale. Ulteriori informazioni su ciascuna opzione:
   \filename{texmf.cnf}. Consultate le novità 2010
   (sezione~\ref{sec:2010news}) per maggiori dettagli.
 
-\item[Crea i file di formato:] Per quanto i file di formato non
+\item[create all format files:] Per quanto i file di formato non
   strettamente necessari richiedano tempo per essere generati e spazio su
   disco per essere memorizzati, è comunque raccomandato di lasciare questa
   opzione attiva: se non lo fate, allora i file di formato saranno
@@ -983,11 +985,11 @@ testuale. Ulteriori informazioni su ciascuna opzione:
   modelli di sillabazione nell'installazione, e così potreste trovarvi ad
   avere formati incompatibili.
 
-\item[Installa \ldots\ per font e macro:] Scaricano/installano 
+\item[install font/macro \ldots\ tree:] Scaricano/installano 
   la documentazione e i file sorgenti inclusi nella
   maggior parte dei pacchetti. Non è raccomandato disattivarle.
 
-\item[Crea i collegamenti nelle directory di sistema:] Questa opzione
+\item[create symlinks in standard directories:] Questa opzione
   (solo Unix) evita di dover modificare le variabili di ambiente.
   Senza di essa, le directory di \TL{} devono solitamente essere aggiunte
   alle variabili \envname{PATH}, \envname{MANPATH} e \envname{INFOPATH}.
@@ -1001,7 +1003,8 @@ testuale. Ulteriori informazioni su ciascuna opzione:
   più sicuro e raccomandato è quello di lasciare questa opzione
   disattivata.
 
-\item[after installation \ldots\ \CTAN:] Quando si esegue l'installazione
+\item[after install, set CTAN as source for package updates:]
+  Quando si esegue l'installazione
   da \DVD, questa opzione è abilitata di default, dato che di solito si
   vuole prendere ogni successivo aggiornamento di pacchetti dall'area
   \CTAN\ che è aggiornata durante l'anno. L'unica ragione plausibile per
@@ -1054,7 +1057,7 @@ comuni:
   versione 8.5 o superiore. Vale per \MacOSX\ ed è distribuito con \TL{}
   su Windows. Le opzoni obsolete \texttt{-gui=perltk} e \texttt{-gui=wizard}
   sono ancora disponibili e richiedono il modulo Perl/Tk
-  (\url{http://tug.org/texlive/distro.html#perltk}) compilato con il
+  (\url{https://tug.org/texlive/distro.html#perltk}) compilato con il
   supporto per XFT; se Tcl/Tk e Perl/Tk non sono disponibili, l'installazione
   prosegue in modalità testuale.
 
@@ -1091,7 +1094,7 @@ comuni:
 \item[-in-place] (Documentato solo per completezza: non usate questa
   opzione a meno che non sappiate cosa state facendo.) Se avete già una
   copia di \TL{}, anche ottenuta tramite rsync o svn (consultate
-  \url{http://tug.org/texlive/acquire-mirror.html}),
+  \url{https://tug.org/texlive/acquire-mirror.html}),
   allora questa opzione userà ciò che avete ottenuto, così com'è, ed
   eseguirà solo le necessarie procedure di post installazione. Siete
   avvisati che il file \filename{tlpkg/texlive.tlpdb} potrebbe venire
@@ -1119,7 +1122,7 @@ del tipo:
 indicando un vero nome di un sito e il suo specifico
 percorso che ospita \CTAN al posto di |ctan.example.org/tex-archive|. 
 L'elenco dei mirror di \CTAN\ si trova alla
-pagina \url{http://ctan.org/mirrors}.
+pagina \url{https://ctan.org/mirrors}.
  
 Se il valore specificato è locale (sia tramite percorso che tramite un url
 \texttt{file:/}), saranno usati i file compressi contenuti in una sotto
@@ -1157,9 +1160,9 @@ da modificare dovrebbe essere \filename{$HOME/.profile} %stopzone
 aggiungere sarebbero simili alle seguenti:
 
 \begin{sverbatim}
-PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2019/texmf/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2019/texmf/doc/info:$INFOPATH; export INFOPATH
+PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2020/texmf/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2020/texmf/doc/info:$INFOPATH; export INFOPATH
 \end{sverbatim}
 %stopzone
 
@@ -1168,9 +1171,9 @@ Per csh o tcsh, il file da modificare tipicamente è
 tipo:
 
 \begin{sverbatim}
-setenv PATH /usr/local/texlive/2019/bin/x86_64-linux:$PATH
-setenv MANPATH /usr/local/texlive/2019/texmf/doc/man:$MANPATH
-setenv INFOPATH /usr/local/texlive/2019/texmf/doc/info:$INFOPATH
+setenv PATH /usr/local/texlive/2020/bin/x86_64-linux:$PATH
+setenv MANPATH /usr/local/texlive/2020/texmf/doc/man:$MANPATH
+setenv INFOPATH /usr/local/texlive/2020/texmf/doc/info:$INFOPATH
 \end{sverbatim}
 
 Se già avete delle impostazioni del genere in uno dei file citati,
@@ -1190,8 +1193,8 @@ I nostri due suggerimenti sono: 1)~potete controllare il file
 \filename{/etc/manpath.config} e, se esiste, aggiungere linee come
 
 \begin{sverbatim}
-MANPATH_MAP /usr/local/texlive/2019/bin/x86_64-linux \
-            /usr/local/texlive/2019/texmf/doc/man
+MANPATH_MAP /usr/local/texlive/2020/bin/x86_64-linux \
+            /usr/local/texlive/2020/texmf/doc/man
 \end{sverbatim}
 
 E 2)~verificate la presenza di un file \filename{/etc/environment} che
@@ -1223,7 +1226,7 @@ per gli aggiornamenti futuri. È l'azione predefinita quando si installa dal
 
 Se ci sono problemi con la selezione automatica di un mirror, potete
 specificarne uno in particolare dall'elenco alla pagina
-\url{http://ctan.org/mirrors}. Usate il percorso esatto alla sotto directory
+\url{https://ctan.org/mirrors}. Usate il percorso esatto alla sotto directory
 \dirname{tlnet} su quel mirror, come mostrato in precedenza.
 
 
@@ -1239,7 +1242,7 @@ correlati, ma non identici.
 Su Windows, i font distribuiti con \TL\ sono resi automaticmanete
 disponibili a \XeTeX\ tramite il loro nome. Su \MacOSX, il supporto
 alla ricerca per nome dei font richiede del passi aggiuntivi; visitate
-le pagine dedicate a Mac\TeX\ (\url{http://tug.org/mactex}). Per
+le pagine dedicate a Mac\TeX\ (\url{https://tug.org/mactex}). Per
 altri sistemi Unix, segue la procedura per trovare i font forniti con
 \TL\ tramite il loro nome.
 
@@ -1299,7 +1302,7 @@ la lettura, in caso di dati di cache duplicati avrà la precedenza l'ultima
 corrispondenza trovata.
 
 Per ulteriori informazioni, consultate le pagine
-\url{http://wiki.contextgarden.net/Running_Mark_IV}.
+\url{https://wiki.contextgarden.net/Running_Mark_IV}.
 
 
 \subsubsection{Integrare macro locali e personali}
@@ -1322,7 +1325,7 @@ nelle future edizioni.
 
 In entrambe le posizioni, i file dovrebbero essere posti ognuno nella
 propria sotto directory secondo la Struttura delle Directory di \TeX\
-(\TDS); visitate \url{http://tug.org/tds} o consultate
+(\TDS); visitate \url{https://tug.org/tds} o consultate
 \filename{texmf-dist/web2c/texmf.cnf}. Ad esempio, il file di una
 classe o di un pacchetto \LaTeX{} andrebbero posizionati in
 \dirname{TEXMFLOCAL/tex/latex} o in \dirname{TEXMFHOME/tex/latex}, oppure
@@ -1361,7 +1364,7 @@ la sezione~\ref{sec:tex-extensions}), che vi consentono di usare i font
 del sistema operativo senza alcuna installazione in \TeX.
 
 Se avete comunque bisogno di farlo, visitate la pagina
-\url{http://tug.org/fonts/fontinstall.html} dove abbiamo fatto del nostro
+\url{https://tug.org/fonts/fontinstall.html} dove abbiamo fatto del nostro
 meglio per descrivere la procedura.
 
 
@@ -1373,11 +1376,11 @@ iniziare a creare bellissimi documenti e\slash o font.
 
 Una cosa che vorrete immediatamente cercare è un programma con cui
 elaborare i file. \TL{} installa \TeX{}works su Windows
-(\url{http://tug.org/texworks}) e Mac\TeX\ installa TeXShop
-(\url{http://pages.uoregon.edu/koch/texshop}). Su altri sistemi Unix
+(\url{https://tug.org/texworks}) e Mac\TeX\ installa TeXShop
+(\url{https://pages.uoregon.edu/koch/texshop}). Su altri sistemi Unix
 spetta a voi scegliere un editor. Ci sono molte scelte disponibili, alcune
 delle quali sono elencate nella prossima sezione; consultate anche
-\url{http://tug.org/interest.html#editors}. Qualsiasi editor di testo
+\url{https://tug.org/interest.html#editors}. Qualsiasi editor di testo
 funzionerà; non è necessario qualcosa specifico per \TeX.
 
 Il resto di questa sezione fornisce alcune procedure elementari per verificare che il
@@ -1447,10 +1450,10 @@ elabora il file \filename{.tex} e scrive direttamente un PDF:
 > \Ucom{xpdf sample2e.pdf}
 \end{alltt}
 Né \cmdname{gv}, né \cmdname{xpdf} sono inclusi in \TL{}, quindi dovete
-installarli separatamente. Visitate \url{http://www.gnu.org/software/gv} e
-\url{http://www.foolabs.com/xpdf}, rispettivamente. Ci sono anche tantissimi
+installarli separatamente. Visitate \url{https://www.gnu.org/software/gv} e
+\url{https://www.xpdfreader.com}, rispettivamente. Ci sono anche tantissimi
 altri visualizzatori PDF. Per Windows, noi raccomandiamo di provare
-Sumatra PDF (\url{http://www.sumatrapdfreader.org/free-pdf-reader.html}).
+Sumatra PDF (\url{https://www.sumatrapdfreader.org/free-pdf-reader.html}).
 
 \item Potreste trovare utili, in aggiunta a \filename{sample2e.tex}, i
 seguenti file di prova predefiniti:
@@ -1488,15 +1491,15 @@ sezione~\ref{sec:font-conf-sys}.
 
 Se siete nuovi utilizzatori di \TeX{} o comunque avete bisogno di aiuto
 nella scrittura di documenti \TeX{} o \LaTeX, visitate la pagina
-\url{http://tug.org/begin.html} per alcune risorse introduttive.
+\url{https://tug.org/begin.html} per alcune risorse introduttive.
 
 Ecco i collegamenti ad alcuni altri strumenti che potete prendere in
 considerazione per l'installazione:
 \begin{description}
 \item[Ghostscript] \url{https://ghostscript.com/}
-\item[Perl] \url{http://www.perl.org/} con i pacchetti supplementari da
-      CPAN, \url{http://www.cpan.org/}
-\item[ImageMagick] \url{http://www.imagemagick.com}, per l'elaborazione e
+\item[Perl] \url{https://perl.org/} con i pacchetti supplementari da
+      CPAN, \url{https://cpan.org/}
+\item[ImageMagick] \url{https://imagemagick.org}, per l'elaborazione e
       la conversione di immagini
 \item[NetPBM] \url{http://netpbm.sourceforge.net/}, anch'esso per le
       immagini.
@@ -1506,30 +1509,30 @@ considerazione per l'installazione:
       sono solo per Windows).
   \begin{itemize*}
   \item \cmdname{GNU Emacs} è disponibile anche per Windows, visita
-        \url{http://www.gnu.org/software/emacs/emacs.html}.
+        \url{https://www.gnu.org/software/emacs/emacs.html}.
   \item \cmdname{Emacs con Auc\TeX} per Windows è disponibile su \CTAN. La
-        home page di Auc\TeX\ è \url{http://www.gnu.org/software/auctex}.
+        home page di Auc\TeX\ è \url{https://www.gnu.org/software/auctex}.
   \item \cmdname{SciTE} è disponibile su
-        \url{http://www.scintilla.org/SciTE.html}.
+        \url{https://www.scintilla.org/SciTE.html}.
   \item \cmdname{Texmaker} è un software libero disponibile su
-        \url{http://www.xmlmath.net/texmaker/}.
+        \url{https://www.xm1math.net/texmaker/}.
   \item \cmdname{TeXstudio} è nato come un fork di \cmdname{Texmaker}
-        con funzionalità aggiuntive; \url{http://texstudio.org/}.
+        con funzionalità aggiuntive; \url{https://texstudio.org/}.
   \item \cmdname{TeXnicCenter} è un software libero, disponibile su
-        \url{http://www.texniccenter.org} e nella distribuzione
+        \url{https://www.texniccenter.org} e nella distribuzione
         pro\TeX{}t.
   \item \cmdname{TeXworks} è un software libero disponibile su
-        \url{http://tug.org/texworks} e installato come parte di \TL\ solo
+        \url{https://tug.org/texworks} e installato come parte di \TL\ solo
         su Windows.
   \item \cmdname{Vim} è un software libero disponibile su
-        \url{http://www.vim.org}.
+        \url{https://www.vim.org}.
   \item \cmdname{WinEdt} è un software shareware disponibile su
-        \url{http://tug.org/winedt} o \url{http://www.winedt.com}.
-  \item \cmdname{WinShell} è disponibile su \url{http://www.winshell.de}.
+        \url{https://tug.org/winedt} o \url{https://www.winedt.com}.
+  \item \cmdname{WinShell} è disponibile su \url{https://www.winshell.de}.
   \end{itemize*}
 \end{description}
 Per un elenco molto più lungo di pacchetti e programmi, visitate
-\url{http://tug.org/interest.html}.
+\url{https://tug.org/interest.html}.
 
 
 \section{Installazione specializzate}
@@ -1692,21 +1695,21 @@ programma \prog{texconfig}. Distribuiamo e manteniamo ancora
 \prog{texconfig} per tutti quelli abituati alla sua interfaccia, ma
 attualmente raccomandiamo di usare \prog{tlmgr}.
 
-\subsection{Interfacce \GUI\ attuali per \cmdname{tlmgr}}
+\subsection{Interfacce \GUI\ per \cmdname{tlmgr}}
 
-\TL{} contiene diverse \GUI\ per \prog{tlmgr}. La figura~\ref{fig:tlshell}
-mostra \cmdname{tlshell}, che è scritto in Tcl/Tk e funziona così com'è
-sotto Windows e \MacOSX. La figura~\ref{fig:tlcockpit} mostra \prog{tlcockpit},
-che richiede Java versione~8 o superiore e JavaFX. Entrambi sono pacchetti
-separati.
+\TL{} contiene diverse interfacce \GUI\ per \prog{tlmgr}. Due degne di nota:
+(1)~la figura~\ref{fig:tlshell} mostra \cmdname{tlshell}, che è scritto in Tcl/Tk
+e funziona così com'è sotto Windows e \MacOSX; (2)~la figura~\ref{fig:tlcockpit}
+mostra \prog{tlcockpit}, che richiede Java versione~8 o superiore e JavaFX.
+Entrambi sono pacchetti separati.
 
-\prog{tlmgr} stesso può essere avviato in modalità \GUI{}
-(figura~\ref{fig:tlmgr-gui}) con
+\prog{tlmgr} ha anche una \GUI{} nativa (mostrata in
+figura~\ref{fig:tlmgr-gui}), che è avviata con:
 \begin{alltt}
 > \Ucom{tlmgr -gui}
 \end{alltt}
-Questa estensione \GUI\ richiede Perl/Tk, il cui modulo non è più incluso nella
-distribuzione Perl di \TL\ per Windows.
+Tuttavia questa estensione \GUI\ richiede Perl/Tk, il cui modulo non è più
+incluso nella distribuzione Perl di \TL\ per Windows.
 
 \subsection{Esempi di invocazioni di \cmdname{tlmgr} dalla riga di comando}
 
@@ -1744,12 +1747,12 @@ running post install action for xetex
 install: xetex-def
 ...
 running mktexlsr
-mktexlsr: Updating /usr/local/texlive/2019/texmf-dist/ls-R...
+mktexlsr: Updating /usr/local/texlive/2020/texmf-dist/ls-R...
 ...
 running fmtutil-sys --missing
 ...
 Transcript written on xelatex.log.
-fmtutil: /usr/local/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt installed.
+fmtutil: /usr/local/texlive/2020/texmf-var/web2c/xetex/xelatex.fmt installed.
 \end{fverbatim}
 
 Come potete vedere, \prog{tlmgr} installa le dipendenze e si occupa di ogni
@@ -1774,7 +1777,7 @@ sizes:      657941k
 \end{fverbatim}
 
 Infine, cosa più importante, per ottenere la documentazione completa,
-visitate \url{http://tug.org/texlive/tlmgr.html} oppure eseguite:
+visitate \url{https://tug.org/texlive/tlmgr.html} oppure eseguite:
 \begin{alltt}
 > \Ucom{tlmgr -help}
 \end{alltt}
@@ -1791,8 +1794,7 @@ Sotto Windows, l'installatore fa alcune cose in più:
 \begin{description}
 \item[Menu e collegamenti.] Viene creato nel menu Start un nuovo sotto
   menu ``\TL'' che contiene le voci per alcuni programmi grafici
-  (\prog{tlmgr}, \prog{texdoctk}, il visualizzatore PostScript PS\_View
-  \Dash\ \prog{psv}) e per un po' di documentazione. 
+  (\prog{tlmgr}, \prog{texdoctk}) e per un po' di documentazione. 
 \item[Associazioni dei file.] Se abilitati, \prog{TeXworks}, \prog{Dviout} e
   \prog{PS\_view} diventano ciascuno il programma predefinito per i loro
   rispettivi tipi di file, oppure ottengono una voce nei menu contestuali
@@ -1831,15 +1833,6 @@ installati come parte di \TL{} solo su Windows.
   presenza tramite variabili d'ambiente o impostazioni sul registro di
   sistema. Non si tratta di installazioni complete e non dovrebbero
   interferire con installazioni nel sistema di Perl o Ghostscript.
-
-\item[PS\_View.] Viene installato anche PS\_View, un visualizzatore di
-  file \PS{} e PDF; osservate la figura~\ref{fig:psview}.
-
-\begin{figure}[tb]
-\centering \tlpng{psview}{.6\linewidth}
-\caption{PS\_View: ingrandimenti elevatissimi disponibili!}
-\label{fig:psview}
-\end{figure}
 
 \item[dviout.] Viene installato anche \prog{dviout}, un visualizzatore di
   DVI. All'inizio, quando visualizzate i file con \cmdname{dviout},
@@ -1950,7 +1943,7 @@ elaborare un documento con un gran numero di font grandi.
 
 Per Cygwin, potete incrementare la quantità di memoria disponibile seguendo
 le istruzioni nella Guida dell'Utente di Cygwin
-(\url{http://www.cygwin.com/cygwin-ug-net/setup-maxmem.html}).
+(\url{https://cygwin.com/cygwin-ug-net/setup-maxmem.html}).
 
 Per Windows, dovete creare un file, ad esempio \code{moremem.reg}, con le
 seguenti quattro righe:
@@ -1972,7 +1965,7 @@ corrente invece che per l'intero sistema, usate \code{HKEY\_CURRENT\_USER}).
 \Webc{} è una collezione integrata di programmi legati a \TeX: \TeX{}
 stesso, \MF{}, \MP, \BibTeX{}, ecc. È il cuore di \TL{}. Il sito web di
 \Webc{}, con il manuale più recente e molto altro, è
-\url{http://tug.org/web2c}.
+\url{https://tug.org/web2c}.
 
 Ecco un po' di storia: l'implementazione originale fu realizzata da Tomas
 Rokicki il quale, nel 1987, sviluppò un primo sistema \TeX{}-to-C
@@ -2025,8 +2018,13 @@ Tutti i programmi rispettano queste opzioni \GNU{} standard:
 \item[-{}-version] visualizza le informazioni sulla versione, poi esce.
 \end{ttdescription}
 
+E molti rispettano anche:
+\begin{ttdescription}
+\item[-{}-verbose] stampa un rapporto dettagliato dell'avanzamento
+\end{ttdescription}
+
 Per individuare i file, i programmi \Webc{} usano la libreria di ricerca
-dei percorsi \KPS{} (\url{http://tug.org/kpathsea}). Questa libreria usa
+dei percorsi \KPS{} (\url{https://tug.org/kpathsea}). Questa libreria usa
 una combinazione di variabili d'ambiente e un file di configurazione per
 ottimizzare la ricerca nella (enorme) raccolta di file di \TeX{}. \Webc{}
 può controllare simultaneamente molte directory, cosa utile per mantenere
@@ -2116,17 +2114,30 @@ problemi'' a pagina~\pageref{sec:debugging}).
 
 \KPS{} legge i percorsi di ricerca ed altre definizioni nei \emph{file di
 configurazione al momento dell'esecuzione} chiamati \file{texmf.cnf}. Il
-percorso di ricerca usato per cercare questi file è chiamato
-\envname{TEXMFCNF}, ma non raccomandiamo di impostare questa (o qualunque
-altra) variabile d'ambiente.
+percorso di ricerca \envname{TEXMFCNF} è usato per cercare questi file,
+ma non raccomandiamo di impostare questa (o qualunque altra) variabile
+d'ambiente per scavalcare le directory di sistema.
 
 Invece, l'installazione normale dà luogo ad un file
-\file{.../2019/texmf.cnf}. Se dovete apportare delle modifiche ai valori
+\file{.../2020/texmf.cnf}. Se dovete apportare delle modifiche ai valori
 predefiniti (di norma non è necessario), questo è il posto in cui
 piazzarle. Il file di configurazione principale è
-\file{.../2019/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
+\file{.../2020/texmf-dist/web2c/texmf.cnf}. Non dovreste modificare
 quest'ultimo file, dato che le vostre modifiche andrebbero perdute quando
 la versione distribuita viene aggiornata.
+
+Per inciso, se avete semplicemente bisogno di aggiungere una directory
+personale ad un particolare percorso di ricerca, impostare una variabile
+d'ambiente è un metodo ragionevole:
+\begin{verbatim}
+  TEXINPUTS=.:/my/macro/dir:
+\end{verbatim}
+Affinché l'impostazione resti mantenibile e portable negli anni, usate un
+\samp{:} come terminatore (\samp{;} su Windows) per inserire i percorsi di
+sistema, invece di provare a scriverli tutti esplicitamente (consultate la
+sezione~\ref{sec:default-expansion}). Un'altra possibilità è quella di
+usare l'alberatura \envname{TREEMFHOME} (cfr.
+sezione~\ref{sec:directories}).
 
 \emph{Tutti} i file \file{texmf.cnf} nel percorso di ricerca saranno letti
 e le definizioni in quelli che appaiono per primi sostituiranno quelle nei
@@ -2136,8 +2147,9 @@ quelli provenienti da \verb|$TEXMF/texmf.cnf|.
 
 \begin{itemize*}
 \item
-  I commenti iniziano con \code{\%} e continuano fino alla fine della
-  riga.
+  I commenti iniziano con il carattere \code{\%}, sia all'inizio di una
+  riga che preceduto da uno spazio bianco, e continuano fino alla fine
+  della riga.
 \item
   Le righe vuote sono ignorate.
 \item
@@ -2146,11 +2158,13 @@ quelli provenienti da \verb|$TEXMF/texmf.cnf|.
   precedente. Gli spazi bianchi
   all'inizio delle righe di continuazione non sono ignorati.
 \item
-  Ogni riga rimanente ha la forma:
-\begin{alltt}
-  \var{variabile}[.\var{nomeprogramma}] [=] \var{valore}
-\end{alltt}
-  dove il carattere \samp{=} e gli spazi che lo circondano sono opzionali.
+  Ogni riga rimanente ha la forma:\\
+  \hspace*{2em}\texttt{\var{variabile} \textrm{[}.\var{nomeprogramma}\textrm{]}
+  \textrm{[}=\textrm{]} \var{valore}}\\[1pt]
+  dove il carattere \samp{=} e gli spazi che lo circondano sono opzionali
+  (ma se \var{valore} inizia con \samp{.}, è più semplice usare il \samp{=}
+  per evitare che il punto sia interpretato come qualificatore del nome
+  del programma).
 \item
   Il nome \ttvar{variabile} può contenere un qualunque carattere diverso
   dallo spazio, da \samp{=} e da \samp{.}, ma usare solo i caratteri
@@ -2161,13 +2175,23 @@ quelli provenienti da \verb|$TEXMF/texmf.cnf|.
   \texttt{\var{nomeprogramma}} oppure \texttt{\var{nomeprogramma}.exe}.
   Questo consente, ad esempio, alle diverse varianti di \TeX{} di avere
   diversi percorsi di ricerca.
-\item \var{valore} può contentere qualunque carattere tranne che \code{\%}
-  e \samp{@}. La costruzione \code{\$\var{variabile}.\var{programma}}
-  non è disponibile come valore valido; al suo posto, dovete usare una
-  variabile aggiuntiva. Un \samp{;}\ in \var{valore} è tradotto
-  automaticamente in \samp{:}\ se state usando Unix; questa caratteristica
-  è utile per avere un singolo \file{texmf.cnf} per Unix, MS-DOS e
-  Windows.
+\item Trattato come stringa, \var{valore} può contentere qualunque
+  carattere. Tuttavia in pratica la maggior parte dei valori in
+  \file{texmf.cnf} sono correlati all'espansione dei percorsi e dato che
+  diversi caratteri speciali sono usati nell'espansione (cfr.
+  sezione~\ref{sec:cnf-special-chars}), come parentesi e virgole, questi
+  non possono essere usati nei nomi delle directory.
+
+  Un \samp{;}\ in \var{valore} è tradotto in \samp{:} se state usando
+  Unix, in modo da avere un singolo \file{texmf.cnf} che può supportare
+  sia i sistemi Unix che Windows. Questa traduzione avviene con qualsiasi
+  valore, non solo con i percorsi di ricerca, ma fortunatamente in pratica
+  \samp{;} non è necessario in altri valori.
+
+  La forma \code{\$\var{variabile}.\var{programma}} non è disponibile sul
+  lato destro dell'espressione; al suo posto dovete usare una variabile
+  aggiuntiva.
+
 \item
   Tutte le definizioni vengono lette prima che qualunque cosa sia espansa,
   quindi si può fare riferimento alle variabili prima che siano definite.
@@ -2185,10 +2209,9 @@ mostrato nella figura~\ref{fig:config-sample}.
 \subsubsection{Espansione dei percorsi}
 \label{sec:path-expansion}
 
-
 \KPS{} riconosce nei percorsi di ricerca alcuni caratteri e costrutti
 speciali, simili a quelli disponibili nelle shell di Unix. Come esempio
-generale, il complesso percorso \verb+~$USER/{foo,bar}//baz+ viene espanso
+generale, il percorso \verb+~$USER/{foo,bar}//baz+ viene espanso
 in tutte le directory sotto \file{foo} e \file{bar}, nella home dell'utente
 \texttt{\$USER}, che contengono a loro volta una directory o un file di
 nome \file{baz}. Queste espansioni sono spiegate nelle prossime sezioni.
@@ -2231,33 +2254,28 @@ Una caratteristica utile è l'espansione delle parentesi graffe, che
 significa che, per esempio, \verb+v{a,b}w+ viene espanso in
 \verb+vaw:vbw+. L'annidamento delle parentesi è permesso. Tale
 caratteristica è usata per implementare gerarchie \TeX{} multiple,
-assegnando una lista di nomi tra graffe a \code{\$TEXMF}. Ad esempio, in
-\file{texmf.cnf}, si trova la seguente definizione (semplificata per questo
-esempio):
+assegnando una lista di nomi tra graffe a \code{\$TEXMF}.
+Nel \file{texmf.cnf} distribuito, viene fatta una definizione
+(semplificata per questo esempio) di questo tipo:
 \begin{verbatim}
   TEXMF = {$TEXMFVAR,$TEXMFHOME,!!$TEXMFLOCAL,!!$TEXMFDIST}
 \end{verbatim}
-Possiamo usarla per definire, ad esempio, il percorso di input per \TeX:
+Quindi la usiamo per definire, ad esempio, il percorso di input per \TeX:
 \begin{verbatim}
   TEXINPUTS = .;$TEXMF/tex//
 \end{verbatim}
 %$
-che vuol dire che, dopo aver guardato nella directory attuale, la ricerca
-proseguirà (\emph{soltanto}) nei rami \code{\$TEXMFVAR/tex},
-\code{\$TEXMFHOME/tex}, \code{\$TEXMFLOCAL/tex} e \code{\$TEXMFDIST/tex}
-(gli ultimi due usando i database \file{ls-R}). È un modo comodo
-per avere due strutture \TeX{} parallele, una ``congelata'' (ad
-esempio su un \CD) e l'altra aggiornata di continuo con nuove versioni non
-appena diventino disponibili. Usando la variabile \code{\$TEXMF} in tutte
-le definizioni, si è sicuri di cercare innanzitutto nel ramo
-aggiornato.
+che vuol dire che, dopo aver guardato nella directory attuale, saranno
+esaminati i percorsi \code{\$TEXMFVAR/tex}, \code{\$TEXMFHOME/tex},
+\code{\$TEXMFLOCAL/tex} e \code{\$TEXMFDIST/tex} (gli ultimi due usando i
+database \file{ls-R}).
 
 \subsubsection{Espansione delle sotto directory}
 \label{sec:subdirectory-expansion}
 
 In un elemento di percorso, due o più barre (slash) consecutive alla fine
 di una directory \var{d} sono sostituite da tutte le sotto directory di
-\var{d}: prima quelle che si trovano direttamente sotto \var{d}, quindi
+\var{d\/}: prima quelle che si trovano direttamente sotto \var{d}, quindi
 quelle all'interno delle prime e così via. Ad ogni livello, l'ordine in
 cui le directory sono cercate \emph{non è specificato}.
 
@@ -2269,18 +2287,18 @@ così via, ma non in \file{/a/b/c} o \file{/a/1}.
 È possibile usare più volte il costrutto \samp{//} in un percorso, ma ogni
 \samp{//} all'inizio di un percorso viene ignorato.
 
-\subsubsection{Elenco dei caratteri speciali e loro significato: un
-  riepilogo}
+\subsubsection{Riepilogo dei caratteri speciali in \file{texmf.cnf}}
+\label{sec:cnf-special-chars}
 
-Il seguente elenco riassume i caratteri speciali nei file di
+Il seguente elenco riassume i caratteri speciali e i costrutti nei file di
 configurazione di \KPS{}.
 
 % need a wider space for the item labels here.
 \newcommand{\CODE}[1]{\makebox[3em][l]{\code{#1}}}
 \begin{ttdescription}
 \item[\CODE{:}] Separatore nella specifica di un percorso; all'inizio o
-  alla fine di un percorso sostituisce l'espansione di percorso
-  predefinita.\par
+  alla fine di un percorso, o doppio nel mezzo, sostituisce l'espansione
+  di percorso predefinita.\par
 \item[\CODE{;}] Separatore nei sistemi non Unix (si comporta come
   \code{:}).
 \item[\CODE{\$}] Espansione di una variabile.
@@ -2289,28 +2307,36 @@ configurazione di \KPS{}.
 \item[\CODE{//}] Espansione di sotto directory (può trovarsi ovunque in un
   percorso tranne che al suo inizio).
 \item[\CODE{\%}] Inizio di un commento.
-\item[\CODE{\bs}] Carattere di continuazione (consente alle voci di
-  continuare su più linee).
+\item[\CODE{\bs}] Alla fine di una linea, carattere di continuazione per
+  permettere voci di più linee.
 \item[\CODE{!!}] Cerca \emph{solo} nei database per individuare un file,
     \emph{non} cerca sul disco.
 \end{ttdescription}
 
+Quando esattamente un carattere sarà considerato speciale o si comporterà
+come sé stesso dipende dal contesto in cui è usato. Le regole sono
+intrinseche nei livelli multipli di interpretazione della configurazione
+(parsing, espansione, ricerca, \ldots)\ e quindi, sfortunatamente, non
+possono essere espresse in modo conciso. Non esiste un meccanismo di
+\emph{escape} generale; in particolare, \samp{\bs} non è un ``carattere di
+escape'' nei file \file{texmf.cnf}.
+
+Quando è il momento di scegliere i nomi delle directory per
+l'istallazione, è più sicuro saltarli completamente.
 
 \subsection{Database di nomi di file}
 \label{sec:filename-database}
 
 \KPS{} si sforza di minimizzare gli accessi al disco per le ricerche.
-Infatti, in installazioni con parecchie directory, cercare un dato file
-in ognuna di esse può richiedere una quantità di tempo eccessiva (vero
-soprattutto se si devono scorrere molte centinaia di directory di
-font). Quindi, \KPS{} può usare un file (tipo testo) di ``database'' costruito
-esternamente, chiamato \file{ls-R}, che associa file a directory, evitando
-in questo modo di cercare esaustivamente sul disco.
+Nonostante ciò, nella \TL\ standard o in qualunque installazione con un
+numero sufficiente di directory, esplorare qualunque possibile directory
+per un dato file richiederebbe un tempo eccessivamente lungo. Per questo
+\KPS{} può usare un file di ``database'' testuale costruito esternamente,
+chiamato \file{ls-R}, che mappa file a directory, evitando così la
+necessità di esplorare esaustivamente il disco.
 
 Un secondo file di database, \file{aliases}, permette di dare nomi
-aggiuntivi ai file elencati in \file{ls-R}. Questa caratteristica può
-essere utile per conformare i file sorgenti alla convenzione dei nomi
-\acro{DOS} 8.3.
+aggiuntivi ai file elencati in \file{ls-R}.
 
 \subsubsection{Il database di nomi}
 \label{sec:ls-R}
@@ -2375,7 +2401,7 @@ Le opzioni più comuni sono descritte in seguito.
   associato un suffisso non ambiguo, come i file di supporto di \MP{} e i
   file di configurazione di \cmdname{dvips}, dovete specificare il nome
   così come è conosciuto da \KPS{}, come \texttt{tex} o \texttt{enc
-  files}. Eseguite \texttt{kpsewhich -{}-help} per un elenco.
+  files}. Eseguite \texttt{kpsewhich -{}-help-formats} per un elenco.
 
 \item[\texttt{-{}-mode=\var{stringa}}]\mbox{}\\
   Imposta il nome della modalità a \ttvar{stringa}; questa opzione ha
@@ -2701,121 +2727,50 @@ sono:
   \texttt{hash\_extra} è \texttt{50000}.
 \end{ttdescription}
 
-\noindent Ovviamente questa funzionalità non è un sostituto per una vera
+\noindent Questa funzionalità non è un sostituto per una vera
 allocazione dinamica di memoria e array, ma dato che questi sono
 estremamente difficili da implementare negli attuali sorgenti di \TeX,
 questi parametri di esecuzione forniscono un pratico compromesso per
 offrire  un minimo di flessibilità.
 
+\htmlanchor{texmfdotdir}
+\subsection{\texttt{\$TEXMFDOTDIR}}
+\label{sec:texmfdotdir}
 
-\begin{comment}
-\section{Compilare su una nuova piattaforma Unix}
-
-Se avete una piattaforma per la quale non sono inclusi gli eseguibili,
-avrai bisogno di compilare \TeX{} e compagni. Non è difficile come sembra.
-Quello di cui avete bisogno è interamente contenuto nella directory
-\texttt{source} della distribuzione.
-
-\subsection{Prerequisiti}
-
-Avrete bisogno di almeno 100 megabyte di spazio su disco per compilare
-tutto \TeX{} e i suoi programmi di supporto. Avrete anche bisogno di un
-compilatore ANSI C, un'utilità \cmdname{make}, un analizzatore
-lessicale e un generatore di parser. Raccomandiamo la versione \GNU{} di
-questi programmi (\cmdname{gcc}, \GNU \cmdname{make}, \cmdname{m4},
-\cmdname{flex}, \cmdname{bison}). Potreste essere in grado di lavorare con
-altri compilatori C e programmi \cmdname{make}, ma dovrete conoscere bene
-i principi di compilazione di programmi Unix per superare i problemi.
-
-Inoltre il comando \texttt{uname} deve restituire un valore significativo.
-
-
-\subsection{Configurazione}
-
-Per cominciare, eseguite una normale installazione di \TL{} sul vostro
-disco (consultate la sezione~\ref{sec:install-disk} a
-\p.\pageref{sec:install-disk}). Potreste voler saltare l'installazione di
-tutti gli eseguibili pregenerati.
-
-Quindi, prelevate i sorgenti dal file \texttt{tar} compresso presente
-nella directory \dirname{source} sul vostro disco e spostatevi nella
-directory dove lo avete posizionato.
-
-Successivamente, eseguite \cmdname{configure} con una riga di comando come
-questa:
-\begin{alltt}
-> \Ucom{sh configure -prefix=/usr/local/TeX}
+Nei vari posti qui sopra, abbiamo dato diversi percorsi di ricerca che
+iniziano per \code{.} (per cercarre prima nella directory corrente), come
+in
+\begin{alltt}\small
+TEXINPUTS=.;$TEXMF/tex//
 \end{alltt}
 
-La directory \optname{-prefix} è quella dove avete installato l'albero di
-supporto; la strutturazione della directory sarà come segue (dove \$TEXDIR
-sta per la directory che avete scelto):
-
-\noindent
-\begin{tabular}{>{\ttfamily}ll@{}}
-  \dirname{$TEXDIR/share/texmf}          & albero principale con
-                                         & font, \qquad macro, ecc\\
-  \dirname{$TEXDIR/man}                  & pagine di manuale Unix\\
-  \dirname{$TEXDIR/info}                 & manuali Info in stile \GNU\\
-  \dirname{$TEXDIR/bin/$PLATFORM}        & eseguibili\\
-\end{tabular}
-%$
-
-Se volete escludere il livello di directory \dirname{$PLATFORM}, ossia
-volete piazzare gli eseguibili direttamente in \dirname{$TEXDIR/bin},
-specificate l'opzione \verb|--disable-multiplatform| a
-\cmdname{configure}.
-
-Date uno sguardo ai messaggi restituiti da \verb|./configure --help| per
-ulteriori opzioni che potete usare. Ad esempio, potete saltare la
-compilazione di \OMEGA{} ed \eTeX.
-
-
-\subsection{Eseguire \cmdname{make}}
-
-Siate sicuri che né la variabile d'ambiente, né l'opzione
-\texttt{noclobber} siano impostate. Quindi, eseguite il \cmdname{make}
-principale in questo modo:
-\begin{alltt}
-> \Ucom{make world}
+Questa è una semplificazione. Il file \code{texmf.cnf} che distribuiamo in
+\TL{} usa \filename{$TEXMFDOTDIR} al posto del semplice \samp{.}, come in:
+\begin{alltt}\small
+TEXINPUTS=$TEXMFDOTDIR;$TEXMF/tex//
 \end{alltt}
-e rilassatevi\ldots
+(nel file distribuito, anche il secondo elemento del percorso è
+leggermente più complesso di \filename{$TEXMF/tex//}, ma è un dettaglio;
+qui vogliamo parlare di \filename{$TEXMFDOTDIR}).
 
-In alternativa, potete voler salvare in un registro tutti i messaggi
-restituiti, come in:
-\begin{alltt}
-> \Ucom{sh -c "make world >world.log 2>\&1" \&}
-\end{alltt}
+Il motivo per usare la variabile \filename{$TEXMFDOTDIR} nelle definizioni
+dei percorsi invece del semplice \samp{.} è soltanto per poterla
+ridefinire. Ad esempio, un documento commplesso potrebbe avere molti file
+sorgente organizzati in molte sotto directory. Per gestire questo, potete
+impostare \filename{TEXMFDOTDIR} a \filename{.//} (ad esempio
+nell'ambiente in cui compilate il documento) e saranno esplorate tutte
+(attenzione: non usate \filename{.//} automaticamente; di solito è
+fortemente indesiderato e potenzialmente insicuro cercare tra tutte le
+sotto directory per un documento qualunque).
 
-Prima di credere che tutto sia andato bene, controllate il file di
-registro per eventuali errori: \GNU \cmdname{make} usa sempre la stringa
-\samp{***} quando un comando fallisce. Inoltre, controllate se tutti i
-programmi sono stati compilati:
+Come altro esempio, potreste non voler cercare per nulla nella directory
+attuale, per esempio se avete organizzato i vostri file per essere
+individuati tramite percorsi espliciti. Potete impostare
+\filename{$TEXMFDOTDIR} a, per dire, \filename{/nonesuch} o qualunque
+altra directory non esistente per questo.
 
-\begin{alltt}
-> \Ucom{cd \var{TEXDIR}/bin/\var{archname}}
-> \Ucom{ls | wc}
-\end{alltt}
-Il risultato dovrebbe essere oltre 200 (potete controllare il numero
-esatto con il contenuto della directory \dirname{bin} della
-distribuzione).
-
-Se avete bisogno di privilegi speciali per \texttt{make install}, potete
-separare l'esecuzione di \samp{make world} in due parti, come segue:
-\begin{alltt}
-> \Ucom{make all}
-> \Ucom{su}
-> \Ucom{make install strip}
-\end{alltt}
-
-Dopo aver installato i vostri nuovi eseguibili, dovreste eseguire le
-normali procedure di post installazione fornite nella
-sezione~\ref{sec:postinstall} (\p.\pageref{sec:postinstall}).
-
-Inoltre, se desiderate rendere disponibili i vostri eseguibili ad altri,
-contattateci. Saremo felici di inserirli nelle pagine web di \TL.
-\end{comment}
-
+Il valore predefinito di \filename{$TEXMFDOTDIR} è semplicemente \samp{.},
+come impostato nel nostro \filename{texmf.cnf}.
 
 \htmlanchor{ack}
 \section{Ringraziamenti}
@@ -2831,9 +2786,9 @@ elencati qui sotto.
 (TUG, DANTE e.V., NTG e GUST,
 rispettivamente), che forniscono la necessaria infrastruttura tecnica ed
 amministrativa. Unitevi al gruppo utenti \TeX\ più vicino a voi
-(consultate la pagina \url{http://tug.org/usergroups.html})!
+(consultate la pagina \url{https://tug.org/usergroups.html})!
 
-\item Il team di CTAN (\url{http://ctan.org}), che distribuisce le
+\item Il team di CTAN (\url{https://ctan.org}), che distribuisce le
 immagini di \TL{} e fornisce l'infrastruttura comune per gli aggiornamenti
 dei pacchetti, dalla quale dipende \TL.
 
@@ -2867,8 +2822,9 @@ prematuramente nel giugno 2009 e dedichiamo questa documentazione alla sua
 memoria.
 
 \item Hans Hagen per la grande quantità di collaudi e per aver permesso al
-suo pacchetto \ConTeXt{} (\url{http://pragma-ade.com}) di lavorare
-nell'infrastruttura di \TL.
+suo pacchetto \ConTeXt{} (\url{https://pragma-ade.com}) di lavorare
+nell'infrastruttura di \TL\ e per guidare continuamente lo sviluppo di
+\TeX.
 
 \item \Thanh, Martin Schr\"oder e il team di pdf\TeX{}
 (\url{http://pdftex.prg}) per i continui miglioramenti delle capacità di
@@ -2876,6 +2832,9 @@ nell'infrastruttura di \TL.
 
 \item Hartmut Henkel per i significativi contributi allo sviluppo di
 pdf\TeX, Lua\TeX{} e molto ancora.
+
+\item Shunshaku Hirata, per i contributi originalissimi e per continuare
+su DVIPDFM$x$.
 
 \item Taco Hoekwater per gli importanti forzi nel rinnovato sviluppo di
 MetaPost e (Lua)\TeX{} (\url{http://luatex.org}) stesso, per aver
@@ -2898,7 +2857,10 @@ aver investito tempo e fatica per integrarlo in \TL, così come per la
 versione iniziale dell'installatore di Mac\TeX{} e per l'editor
 \TeX{}works, che raccomandiamo.
 
-\item Dick Koch per mantenere Mac\TeX{} (\url{http://tug.org/mactex}) a
+\item Hironori Kitagawa, per il tanto lavoro su p\TeX\ e il relativo
+supporto.
+
+\item Dick Koch per mantenere Mac\TeX\ (\url{https://tug.org/mactex}) a
 distanza molto ravvicinata da \TL{} e per il suo gran buon umore nel
 farlo.
 
@@ -2907,10 +2869,12 @@ all'infrastruttura e
 all'installatore di \TL{} 2008, così come per gli sforzi di ricerca sotto
 Windows, lo script \texttt{getnonfreefonts} e molto altro.
 
-\item Anche Siep Kroonenberg per importanti contributi all'infrastruttura e
-all'installatore di \TL{} 2008, specialmente sotto Windows, e il grosso
-del lavoro di aggiornamento di questo manuale per descrivere queste
-funzionalità.
+\item Siep Kroonenberg, anche lui per importanti contributi
+all'infrastruttura e all'installatore di \TL{} 2008, specialmente sotto
+Windows, e il grosso del lavoro di aggiornamento di questo manuale per
+descrivere queste funzionalità.
+
+\item Clerk Ma, per la correzione dei bug e le estensioni nel motore.
 
 \item Mojca Miklavec, per il grande aiuto con \ConTeXt, per aver fornito gli
 eseguibili per molte piattaforme e per tanto altro ancora.
@@ -2919,6 +2883,9 @@ eseguibili per molte piattaforme e per tanto altro ancora.
 per aver compresso gli enormi file di dati di \pkgname{pst-geo} così che
 potessimo includerli e, soprattutto, per il suo notevole lavoro su
 \pkgname{hyperref}.
+
+\item Phelype Oleinik, per l'\cs{input} confinato nel gruppo tra i motori
+nel 2020, e molto altro.
 
 \item Petr Ok\v{s}ak che ha coordinato e controllato con grande attenzione
 tutto il materiale in ceco e in slovacco.
@@ -2944,6 +2911,9 @@ marzo 2016 e noi dedichiamo il lavoro che va avanti alla sua memoria.
 \item Luigi Scarso, per aver continuato lo sviluppo di Metapost, Lua\TeX\
 e molto altro ancora.
 
+\item Andreas Scherer per \texttt{cwebbit}, l'implementazione di CWEB
+usata in \TL{}.
+
 \item Tomasz Trzeciak per aiuti su vasta scala con Windows.
 
 \item Vladimir Volovich per il sostanziale aiuto nel porting e in altre
@@ -2963,6 +2933,12 @@ supporto per \MacOSX{}.
 
 \item Graham Williams, l'artefice del Catalogo \TeX{} dei pacchetti.
 
+\item Joseph Wright, per il tanto lavoro sul rendere le stesse
+funzionalità primitive disponibili su tutti i motori.
+
+\item Hironobu Yamashita, per il tanto lavoro su p\TeX\ e il relativo
+supporto.
+
 \end{itemize*}
 
 Preparatori degli eseguibili:
@@ -2980,7 +2956,7 @@ Mojca Miklavec (\pkgname{i386-linux},
                 \pkgname{sparc-solaris}),
 Norbert Preining (\pkgname{x86\_64-linux}).
 Per informazioni sul processo di compilazione di \TL, visitate
-\url{http://tug.org/texlive/build.html}.
+\url{https://tug.org/texlive/build.html}.
 
 Attuali traduttori della documentazione:
 Denis Bitouz\'e \& Patrick Bideault (francese),
@@ -2992,7 +2968,7 @@ Petr Sojka \& Jan Busa (ceco\slash slovacco),
 Boris Veytsman (russo),
 Zofia Walczak (polacco),
 Uwe Ziegenhagen (tedesco), La pagina web della documentazione di
-\TL{} è \url{http://tug.org/texlive/doc.html}.
+\TL{} è \url{https://tug.org/texlive/doc.html}.
 
 Ovviamente il più importante ringraziamento deve andare a Donald Knuth,
 innanzitutto per aver inventato \TeX{} e poi per averlo donato al mondo.
@@ -3010,7 +2986,7 @@ razionale, \CD{} per tutti i sistemi. Questo era un obiettivo troppo
 ambizioso a quel tempo, ma non solo diede origine al \CD{} di grande successo
 4All\TeX{}, ma altresì spinse il gruppo di lavoro del TUG Technical
 Council verso una \emph{Struttura delle Directory \TeX{}} (\TDS{}, \TeX{}
-Directory Structure, \url{http://tug.org/tds}), che specificò come creare
+Directory Structure, \url{https://tug.org/tds}), che specificò come creare
 collezioni coerenti e gestibili di file di supporto a \TeX. Una bozza
 completa della \TDS{} fu pubblicata nel numero di dicembre 1995 di
 \textsl{TUGboat} e fu chiaro dalle fasi iniziali che un prodotto
@@ -3044,7 +3020,7 @@ pacchetti furono memorizzati in file XML. Ma il cambiamento principale per
 \TeX\ Live 5 fu che tutto il software non libero fu rimosso. Tutto in
 \TL{} era pensato per essere compatibile con le Debian Free Software
 Guidelines (linee guida Debian sul software libero,
-\url{http://www.debian.org/intro/free}); abbiamo fatto del nostro meglio
+\url{https://debian.org/intro/free}); abbiamo fatto del nostro meglio
 per controllare le condizioni di licenza di tutti i pacchetti, ma
 apprezzeremo tantissimo ogni segnalazione di errori.
 
@@ -3124,7 +3100,7 @@ percorso \envname{ENCFONTS}. \cmdname{updmap} tenterà di avvisarvi su file
 che possono provocare problemi.
 
 Per i metodi per gestire questa ed altre informazioni, visitate la pagina
-\url{http://tug.org/texlive/mapenc.html}.
+\url{https://tug.org/texlive/mapenc.html}.
 
 \item \TK{} è stata espansa con l'aggiunta di un \CD{} installabile basato
 su \MIKTEX, per coloro che preferiscono quell'implementazione a Web2C.
@@ -3192,7 +3168,7 @@ essere definito anche se il file generato è un DVI.
 
   \item L'espansione microtipografica dei font può essere usata più
   facilmente.\\
-  \url{http://www.ntg.nl/pipermail/ntg-pdftex/2004-May/000504.html}
+  \url{https://www.ntg.nl/pipermail/ntg-pdftex/2004-May/000504.html}
 
   \item Tutti i parametri che prima erano impostati tramite lo speciale
   file di configurazione \filename{pdftex.cfg} devono essere adesso
@@ -3223,11 +3199,11 @@ in tutti i programmi \TeX, per mezzo dell'opzione \optname{-enc} \Dash\
 ricodifica generale dell'input e dell'output, permettendo il supporto
 completo per l'Unicode (in UTF-8). Consultate
 \OnCD{texmf-dist/doc/generic/enctex/} e
-\url{http://www.olsak.net/enctex.html}.
+\url{http://olsak.net/enctex.html}.
 
 \item Aleph, un nuovo motore che combina \eTeX\ ed \OMEGA, è disponibile.
 Alcune informazioni sono disponibili in \OnCD{texmf-dist/doc/aleph/base} e
-su \url{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=aleph}. Il formato
+su \url{https://texfaq.org/FAQ-enginedev}. Il formato
 basato su \LaTeX{} per Aleph è chiamato \textsf{lamed}.
 
 \item L'ultimo aggiornamento di \LaTeX\ ha una nuova versione della
@@ -3237,14 +3213,14 @@ Per altri svariati aggiornamenti, consultate i file \filename{ltnews} in
 
 \item \cmdname{dvipng}, un nuovo programma per convertire i DVI in
 immagini PNG, è incluso. Consultate
-\url{http://www.ctan.org/pkg/dvipng}.
+\url{https://ctan.org/pkg/dvipng}.
 
 \item Abbiamo ridotto il pacchetto \pkgname{cbgreek} ad un insieme di font
 di ``medie'' dimensioni, con il consenso e i suggerimenti dell'autore
 (Claudio Beccari). I font omessi sono quelli invisibili, quelli profilati
 e i trasparenti, che sono usati abbastanza raramente, mentre noi avevamo
 bisogno di spazio. L'insieme completo è ovviamente disponibile su
-CTAN (\url{http://mirror.ctan.org/tex-archive/fonts/greek/cbfonts}).
+CTAN (\url{https://ctan.org/pkg/cbgreek-complete}).
 
 \item \cmdname{oxdvi} è stato rimosso; usate semplicemente \cmdname{xdvi}.
 
@@ -3339,12 +3315,12 @@ latex --translate-file=empty.tcx vostrofile.tex
 
 Nell'edizione 2006--2007, la nuova aggiunta più rilevante a \TL{} è stato il
 programma \XeTeX, disponibile con i comandi \texttt{xetex} e
-\texttt{xelatex}; visitate il sito \url{http://scripts.sil.org/xetex}.
+\texttt{xelatex}; visitate il sito \url{https://scripts.sil.org/xetex}.
 
 Anche MetaPost ha ricevuto un aggiornamento degno di nota, mentre altri ne
 sono stati pianificati per il futuro
-(\url{http://tug.org/metapost/articles}), così come per pdf\TeX{}
-(\url{http://tug.org/applications/pdftex}).
+(\url{https://tug.org/metapost/articles}), così come per pdf\TeX{}
+(\url{https://tug.org/applications/pdftex}).
 
 I \filename{.fmt} di \TeX{} (formati ad alta velocità) e i file simili per
 MetaPost e \MF{} adesso sono posizionati in sotto directory di
@@ -3362,7 +3338,7 @@ linee \texttt{\%\&}).
 
 Ovviamente anche quest'anno ha visto (i soliti) centinaia di altri
 aggiornamenti ai pacchetti ed ai programmi. Come sempre, visitate
-CTAN (\url{http://mirror.ctan.org}) per tutti gli aggiornamenti.
+CTAN (\url{https://ctan.org}) per tutti gli aggiornamenti.
 
 Internamente, i sorgenti sono ora memorizzati tramite Subversion, con
 un'interfaccia web standard per visitarli; il collegamento è sulla nostra
@@ -3371,7 +3347,7 @@ che questo fornisca un fondamento stabile per lo sviluppo negli anni a
 venire.
 
 Infine, nel maggio 2006 Thomas Esser ha annunciato che non avrebbe più
-aggiornato te\TeX{} (\url{http://tug.org/tetex}). Come risultato, c'è
+aggiornato te\TeX{} (\url{https://tug.org/tetex}). Come risultato, c'è
 stata un'impennata nell'interesse verso \TL, specialmente tra i distributori
 di \GNU/Linux (c'è un nuovo schema di installazione in \TL{} chiamato
 \texttt{tetex}, che fornisce un equivalente approssimativo).  Speriamo che
@@ -3439,7 +3415,7 @@ dentro gli eseguibili, per semplificare gli aggiornamenti.
 
 Infine, in questa edizione sono stati inclusi i cambiamenti fatti da
 Donald Knuth nella sua ``messa a punto di \TeX\ del 2008''. Consultate
-\url{http://tug.org/TUGboat/Articles/tb29-2/tb92knut.pdf}.
+\url{https://tug.org/TUGboat/Articles/tb29-2/tb92knut.pdf}.
 
 
 \subsubsection{2009}
@@ -3459,13 +3435,13 @@ Computer Modern: sono stati integrati alcuni cambiamenti nelle forme
 fatti da Knuth nei sorgenti Metafont nel corso degli anni e
 l'\emph{hinting} è stato aggiornato. I font Euler sono stati ridisegnati 
 meticolosamente da Hermann Zapf (visitate
-\url{http://tug.org/TUGboat/Articles/tb29-2/tb92hagen-euler.pdf}). In ogni
+\url{https://tug.org/TUGboat/Articles/tb29-2/tb92hagen-euler.pdf}). In ogni
 caso, le metriche non hanno subito modifiche. La pagina dei font AMS è
-\url{http://www.ams.org/tex/amsfonts.html}.
+\url{https://ams.org/tex/amsfonts.html}.
 
 Il nuovo editor \GUI{} \TeX{}works è incluso per Windows così come in
 Mac\TeX. Per le altre piattaforme e per ulteriori informazioni, consultate
-il sito di \TeX{}works, \url{http://tug.org/texworks}. Si tratta di un
+il sito di \TeX{}works, \url{https://tug.org/texworks}. Si tratta di un
 programma multi piattaforma ispirato all'editor TeXShop per \MacOSX\ e che
 ha come obiettivo la facilità d'uso.
 
@@ -3473,7 +3449,7 @@ Il programma per la grafica Asymptote è stato incluso per diverse
 piattaforme. Esso implementa un linguaggio descrittivo per la grafica
 basato su testo vagamente simile a MetaPost, ma con un supporto avanzato
 al 3D ed altre caratteristiche. Il suo sito web è
-\url{http://asymptote.sourceforge.net}.
+\url{https://asymptote.sourceforge.io}.
 
 Il programma \code{dvipdfm} è stato sostituito da \code{dvipdfmx}, che
 opera in una speciale modalità di compatibilità quando viene invocato con
@@ -3490,7 +3466,7 @@ avessero una qualche possibilità di funzionare su più di una versione.
 
 Una varietà di cambiamenti minori: adesso usiamo la compressione
 \pkgname{xz}, il rimpiazzo stabile per \pkgname{lzma}
-(\url{http://tukaani.org/xz/}); il carattere |$| è ammesso nei nomi dei
+(\url{https://tukaani.org/xz/}); il carattere |$| è ammesso nei nomi dei
 file quando non introduce il nome di variabile noto; la libreria Kpathsea
 è ora multi-thread (lo sfrutta MetaPost); l'intera compilazione di
 \TL{} è ora basata su Automake.%stopzone
@@ -3520,7 +3496,7 @@ caricato mettendo |\newcommand{\DoNotLoadEpstopdf}{}| (o |\def...|) prima
 della dichiarazione \cs{documentclass}. Non viene caricato neppure se viene
 usato il pacchetto \pkgname{pst-pdf}. Per maggiori dettagli, consultate la
 documentazione del pacchetto \pkgname{epstopdf}
-(\url{http://ctan.org/pkg/epstopdf-pkg}).
+(\url{https://ctan.org/pkg/epstopdf-pkg}).
 
 Un cambiamento correlato è che adesso è abilitata per default l'esecuzione
 di alcuni comandi esterni a \TeX, tramite la funzionalità \cs{write18}.
@@ -3551,16 +3527,16 @@ autobackup 0}.
 Nuovi programmi inclusi: il motore p\TeX\ e le utilità correlate per la
 composizione in giapponese; il programma \BibTeX{}U per un \BibTeX\
 compatibile con Unicode; l'utilità \prog{chktex}
-(\url{http://baruch.ev-en.org/proj/chktex}) per controllare i documenti
-\AllTeX; il traduttore da DVI a SVG \prog{dvisvgm}
-(\url{http://dvisvgm.sourceforge.net}).
+(originariamente da \url{http://baruch.ev-en.org/proj/chktex}) per
+controllare i documenti \AllTeX; il traduttore da DVI a SVG \prog{dvisvgm}
+(\url{https://dvisvgm.de}).
 
 Ora sono inclusi gli eseguibili per queste nuove piattaforme:
 \code{amd64-freebsd}, \code{amd64-kfreebsd}, \code{i386-freebsd},
 \code{i386-kfreebsd}, \code{x86\_64-darwin}, \code{x86\_64-solaris}.
 
 Un cambiamento in \TL{} 2009 che ci siamo dimenticati di evidenziare: numerosi
-eseguibili legati a \TeX4ht (\url{http://tug.org/tex4ht}) sono stati rimossi
+eseguibili legati a \TeX4ht (\url{https://tug.org/tex4ht}) sono stati rimossi
 dalle directory degli eseguibili. Il programma generico \code{mk4ht} può
 essere usato per eseguire una qualunque tra le varie combinazioni di
 \code{tex4ht}.
@@ -3671,7 +3647,7 @@ miglioramenti.
 \cmdname{tlmgr}: nuova azione di \emph{affissione} (\code{pinning}) per
 facilitare la configurazione di repository multipli; la relativa sezione
 in \verb|tlmgr --help|, visibile online su
-\url{http://tug.org/texlive/doc/tlmgr.html#MULTIPLE-REPOSITORIES},
+\url{https://tug.org/texlive/doc/tlmgr.html#MULTIPLE-REPOSITORIES},
 ne parla più approfonditamente.
 
 Piattaforme: \pkgname{armhf-linux}, \pkgname{mips-irix},
@@ -3694,11 +3670,10 @@ parole per facilitare la ridisposizione del testo PDF:
 
 Lua\TeX: sono stati fatti notevoli cambiamenti e correzioni al caricamento dei
 font e alla sillabazione. L'aggiunta più grande è una nuova variante del
-motore, \code{luajittex}
-(\url{http://foundry.supelec.fr/projects/luajittex}) e i suoi fratelli
-\code{texluajit} e \code{texluajitc}. Questo motore usa un compilatore Lua
-just-in-time (esiste un articolo dettagliato su \textsl{TUGboat} all'indirizzo
-\url{http://tug.org/TUGboat/tb34-1/tb106scarso.pdf}). \code{luajittex} è
+motore, \code{luajittex} e i suoi fratelli \code{texluajit} e
+\code{texluajitc}. Questo motore usa un compilatore Lua
+just-in-time (articolo \textsl{TUGboat} dettagliato su
+\url{https://tug.org/TUGboat/tb34-1/tb106scarso.pdf}). \code{luajittex} è
 ancora in fase di sviluppo, non è disponibile su tutte le piattaforme ed è
 notevolmente meno stabile di \code{luatex}. Né noi né i suoi sviluppatori
 lo raccomandano eccetto che per lo scopo di sperimentare la
@@ -3722,8 +3697,7 @@ le utilità del sistema operativo con lo stesso nome. Può essere ancora (e
 tuttora) invocato con \code{mtxrun --script pstopdf}.
 
 \cmdname{psutils} è stato notevolmente revisionato da un nuovo
-%CM mantenitore non mi piace ma non sono riuscita a trovare qualcosa di meglio
-mantenitore. Come risultato, molte utilità usate raramente (\code{fix*},
+manutentore. Come risultato, molte utilità usate raramente (\code{fix*},
 \code{getafm}, \code{psmerge}, \code{showchar}) ora si trovano solo nella
 directory \dirname{scripts/} invece che essere eseguibili accessibili
 direttamente (si può tornare indietro, se si rivela problematico). Un
@@ -3797,7 +3771,7 @@ directory, invece di usare sempre il \envname{PATH} esistente.
 Piattaforme: \pkgname{*-kfreebsd} rimossa, dato che \TeX\ Live è ora
 facilmente disponibile tramite il meccanismo di piattaforma del sistema.
 Il supporto per alcune piattaforme aggiuntive è disponibile come
-eseguibili personalizzati (\url{http://tug.org/texlive/custom-bin.html}).
+eseguibili personalizzati (\url{https://tug.org/texlive/custom-bin.html}).
 In più, alcune piattaforme adesso sono omesse dal \DVD\ (semplicemente per
 risparmiare spazio), ma possono essere installate normalmente via
 internet.
@@ -3809,7 +3783,7 @@ Lua\TeX: cambiamenti radicali alle primitive, che sono state sia
 rinominate che rimosse, assieme ad alcune riorganizzazioni della
 struttura dei nodi. Questi cambiamenti sono ricapitolati in un articolo
 di Hans Hagen, ``Lua\TeX\ 0.90 backend changes for PDF and more''
-(\url{http://tug.org/TUGboat/tb37-1/tb115hagen-pdf.pdf}); per tutti
+(\url{https://tug.org/TUGboat/tb37-1/tb115hagen-pdf.pdf}); per tutti
 i dettagli, consultate il manuale di Lua\TeX,
 \OnCD{texmf-dist/doc/luatex/base/luatex.pdf}.
 
@@ -3854,8 +3828,8 @@ Ghostscript.
 Infrastruttura: supporto per il file di configurazione di \code{tlmgr}
 a livello di sistema; verifica delle checksum dei pacchetti; se GPG è
 disponibile, verifica la firma degli aggiornamenti di rete. Queste
-verifiche avvengono sia nell'installatore che in \code{tlmgr} (se
-GPG non è disponibile, gli aggiornamenti avvengono come di consueto).
+verifiche avvengono sia nell'installatore che in \code{tlmgr}. Se
+GPG non è disponibile, gli aggiornamenti avvengono come di consueto.
 
 Piattaforme: rimosse \code{alpha-linux} e \code{mipsel-linux}.
 
@@ -3876,11 +3850,15 @@ Xe\TeX: font Unicode/OpenType Math ora basati sulla tabella di supporto
 MATH di HarfBuzz; correzione di alcuni bug.
 
 %CM non so come tradurre "special" in questo contesto, ma non penso sia "speciale"
-Dvips: fa sì che l'ultima dimensione di carta speciale vinca, per
+%MP il dizionario https://www.wordreference.com/enit/special ha come
+% possibile traduzione di "special", "offerta", "offerta speciale"; penso
+% qui "special" possa avere un significato del genere, ma in italiano
+% suona un po' male, quindi ho liberamente sostituito "offerta" con
+% "proposta"
+Dvips: fa sì che l'ultima proposta di dimensione carta vinca, per
 coerenza con \code{dvipdfmx} e con le attese dei pacchetti; l'opzione
 \code{-L0} (impostazione di configurazione \code{L0}) ripristina il
-%CM non so come tradurre "special" in questo contesto, ma non penso sia "speciale"
-comportamento precedente in cui vince la prima dimensione speciale.
+comportamento precedente in cui vince la prima proposta di dimensione.
 
 ep\TeX, eup\TeX: nuove primitive \cs{pdfuniformdeviate},
 \cs{pdfnormaldeviate}, \cs{pdfrandomseed}, \cs{pdfsetrandomseed},
@@ -3910,7 +3888,7 @@ l'opzione \code{-user}).
 La speranza è che questo riduca il costante problema di invocare la
 modalità utente per sbaglio e quindi perdere i futuri aggiornamenti di
 sistema. Consultate
-\url{http://tug.org/texlive/scripts-sys-user.html} per i dettagli.
+\url{https://tug.org/texlive/scripts-sys-user.html} per i dettagli.
 
 \code{install-tl}: i percorsi personali come \envname{TEXMFHOME} su Mac sono
 ora impostati di default agli stessi valori di Mac\TeX\ (|~/Library/...|).
@@ -3942,14 +3920,14 @@ Kpathsea: la ricerca di file nelle directory non di sistema è ora per default
 insensibile alle maiuscole; per disattivare questo comportamento, impostate il
 parametro \code{texmf\_casefold\_search} a~\code{0} in \code{texmf.cnf} o nella
 variabile d'ambiente. Tutti i dettagli nel manuale di Kpathsea
-(\url{http://tug.org/kpathsea}).
+(\url{https://tug.org/kpathsea}).
 
 ep\TeX, eup\TeX: nuova primitiva \cs{epTeXversion}.
 
 Lua\TeX: preparazione per migrare a Lua 5.3 nel 2019: un eseguibile
 \code{luatex53} è disponibile nella maggior parte delle piattaforme, ma deve
 essere rinominato in \code{luatex} per funzionare. Altrimenti usate i file di
-\ConTeXt\ Garden (\url{http://wiki.contextgarden.net}); visitate il sito per
+\ConTeXt\ Garden (\url{https://wiki.contextgarden.net}); visitate il sito per
 maggiori informazioni.
 
 MetaPost: correzioni per direzioni di path sbagliate,  per output di TFM e di PNG.
@@ -3989,9 +3967,7 @@ che \code{i386-darwin platforms} sono stati rimossi.
 \end{itemize*}
 
 
-\htmlanchor{news}
-\subsection{Presente: 2019}
-\label{sec:tlcurrent}
+\subsection{2019}
 
 Kpathsea: suddivisione dei path ed espansione delle graffe più consistenti;
 nuova variabile \code{TEXMFDOTDIR} al posto del \code{.}\ esplicito nei path
@@ -4059,6 +4035,79 @@ più incluso in quanto richiede il supporto a 32 bit.
 Piattaforme: rimossa \code{sparc-solaris}.
 
 
+\htmlanchor{news}
+\subsection{Presente: 2020}
+\label{sec:tlcurrent}
+
+Generale: \begin{itemize}
+\item La primitiva \cs{input} in tutti i motori \TeX, incluso \texttt{tex},
+ora accetta anche come argomento un nome di file delimitato da gruppo, come
+estensione dipendente dal sistema. L'uso con il solito filename delimitato da
+spazi/token non è cambiato. L'argomento delimitato da gruppo era implementato
+precedentemente in Lua\TeX; ora è disponibile per tutti i motori. I caratteri
+ASCII dei doppi apici (\texttt{"}) sono rimossi dal nome del file, ma oltre
+questo resta invariato dopo la divisione in token. Questo non riguarda
+attualmente il comando \cs{input} di \LaTeX\ in quanto è una ridefinizione
+macro della primitiva standard \cs{input}.
+
+\item Nuova opzione \texttt{--cnf-lline} per \texttt{kpsewhich}, \texttt{tex},
+\texttt{mf} e tutti gli altri motori per supportare impostazioni di
+configurazione arbitrarie sulla riga di comando.
+
+\item L'aggiunta delle varie primitive ai diversi motori in questo e nei
+precedenti anni è pensata per concludersi con un insieme comune di funzionlità
+disponibili tra tutti i motori (\textsl{\LaTeX\ News \#31},
+\url{https://latex-project.org/news}).
+
+\end{itemize}
+
+ep\TeX, eup\TeX: nuove primitive \cs{Uchar}, \cs{Ucharcat},
+\cs{current(x)spacingmode}, \cs{ifincsname}; rivedere \cs{fontchar??} e
+\cs{iffontchar}. Per il solo eup\TeX: \cs{currentcjktoken}.
+
+Lua\TeX: integrazione con la libreria HarfBuzz disponibile come nuovo motore
+\texttt{luahbtex} (usato per \texttt{lualatex}) e \texttt{luajithbtex}. Nuove
+primitive: \cs{eTeXgluestretchorder}, \cs{eTeXglueshrinkorder}.
+
+pdf\TeX: nuova primitiva \cs{pdfmajorversion}; questa semplicemente cambia il
+numero di versione del PDF prodotto; non ha effetto su alcun contenuto del
+PDF. \cs{pdfximage} e simili ora cercano i file di immagine nello stesso modo
+di \cs{openin}.
+
+p\TeX: nuove primitive \cs{ifjfont}, \cs{iftfont}. Anche in ep\TeX, up\TeX,
+eup\TeX.
+
+Xe\TeX: correzioni per \cs{Umathchardef}, \cs{XeTeXinterchartoks},
+\cs{pdfsavepos}.
+
+Dvips: codifiche in uscita per i font bitmap, per migliori capacità di
+copia/incolla
+(\url{https://tug.org/TUGboat/tb40-2/tb125rokicki-type3search.pdf}).
+
+Mac\TeX: Mac\TeX\ e \texttt{x86\_64-darwin} ora richiedono la 10.13 o
+successive (High~Sierra, Mojave e Catalina); \texttt{x86\_64-darwinlegacy}
+supporta la 10.6 e successive. Mac\TeX\ è certificato e i programmi a riga di
+comando hanno runtime irrobustiti come richiesto ora da Apple per i pacchetti
+di installazione. BibDesk e \TeX\ Live Utility non fanno parte di Mac\TeX\
+perché non sono certificati, ma un file \filename{README} elenca gli indirizzi
+da dove possono essere ottenuti.
+
+\code{tlmgr} e infrastruttura: \begin{itemize*}
+\item prova di nuovo automaticamente (una sola volta) i pacchetti il cui
+download è fallito;
+\item nuova opzione \texttt{tlmgr check texmfdbs} per verificare la
+consistenza dei file \texttt{ls-R} e delle specifiche \texttt{!!} in ogni
+sotto directory;
+\item usa nomi di file versionati per i container dei pacchetti, come in
+\texttt{tlnet/archive/\textsl{pkgname}.rNNN.tar.xz}; dovrebbe essere
+invisibile agli utenti, ma è un'importante cambiamento nella distribuzione;
+\item le informazioni \texttt{catalogue-date} non sono più propagate dal
+\TeX~Catalogue, dato che erano spesso non collegate agli aggiornamenti dei
+pacchetti.
+\end{itemize*}
+
+
+
 \subsection{Futuro}
 
 \TL{} non è perfetto, e mai lo sarà. Abbiamo intenzione di continuare a
@@ -4066,12 +4115,12 @@ rilasciare nuove versioni e vorremmo fornire più documentazione, più programmi
 e un insieme sempre migliore e meglio controllato di font, di macro e di tutto
 quanto legato a \TeX.  Questo lavoro è fatto completamente da volontari nel
 loro tempo libero e quindi c'è sempre molto da fare. Visitate il sito
-\url{http://tug.org/texlive/contribute.html}.
+\url{https://tug.org/texlive/contribute.html}.
 
 Potete inviare correzioni, suggerimenti e offerte d'aiuto a:
 \begin{quote}
 \email{tex-live@tug.org} \\
-\url{http://tug.org/texlive}
+\url{https://tug.org/texlive}
 \end{quote}
 
 \medskip

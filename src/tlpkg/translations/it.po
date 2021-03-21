@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Tex Live translation\n"
 "Report-Msgid-Bugs-To: tex-live@tug.org\n"
 "POT-Creation-Date: 2019-03-25 02:23+0100\n"
-"PO-Revision-Date: 2019-04-02 15:06+0200\n"
+"PO-Revision-Date: 2020-03-24 08:19+0100\n"
 "Last-Translator: Enrico Gregorio <enrico.gregorio@gmail.com>\n"
 "Language-Team: <>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: tlpkg/installer/tracked-install.pl:27
 msgid "Installation process"
@@ -1386,7 +1386,7 @@ msgstr "Usa l'archivio di rete standard"
 #: texmf-dist/scripts/texlive/tlmgrgui.pl:2578
 msgid "Loading remote repository - this may take some time, please be patient ..."
 msgstr ""
-"Caricamento dell'archivio remoto - ciò potrebbe richiedere qualche minuto, "
+"Caricamento dell'archivio remoto - questo potrebbe richiedere qualche minuto, "
 "attendi …"
 
 #: texmf-dist/scripts/texlive/tlmgrgui.pl:2604
@@ -1599,7 +1599,7 @@ msgstr "Aggiunte per utente"
 
 #: tlpkg/installer/install-tl-gui.tcl:1272
 msgid "More ..."
-msgstr "Di più …"
+msgstr "Altro …"
 
 #: tlpkg/installer/install-tl-gui.tcl:1281
 msgid ""
